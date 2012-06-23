@@ -1,0 +1,20 @@
+- model_class = Deal.new.class
+.page-header
+  - flash.each do |name, msg|
+    %div{class: "alert alert-#{name == :notice ? 'success' : 'error'}"}
+      %a{ class: 'close', "data-dismiss" => 'alert'}x
+      = msg
+  %h1 Admin Section
+  %h2=t '.title', :default => model_class.model_name.human.pluralize
+  = link_to "New Deal", new_admin_deal_path, class: 'btn'
+%ul.thumbnails
+  - @deals.each do |deal|
+    %li.span4
+      = link_to admin_deal_path(deal) do
+        .thumbnail
+          = image_tag "http://placehold.it/260x180&text=#{deal.name} pic" 
+        .caption
+          = deal.name 
+          %strong= number_to_currency deal.price
+
+
