@@ -13,22 +13,42 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to 'Deals', deals_path, class: 'brand'
+          = link_to  deals_path, class: 'brand' do
+            =image_tag 'logo-header.png'
           .nav-collapse
-            %ul.nav
-              %li= link_to 'Browse Deals', deals_path
-              %li= link_to 'Contact Us'
-              %li= link_to 'Cart'
-              %li= link_to 'Admin', admin_deals_path
-              %form.navbar-search.pull-left
-                %input{ type: 'text', class: 'search-query', placeholder: 'Search'}
             %ul.nav.pull-right
-              %li= link_to 'Logout', '#'
+              %li.nav-center-vertical
+                .btn-group.nav
+                  %button{ class: 'btn btn-large btn-inverse'} Support
+                  %button{ class: 'btn btn-large btn-inverse'} Account
+              %li.nav-center-vertical
+                %p Logged In as:
+                %p Haley
+              %li.nav-center-vertical
+                %button{ class: 'btn btn-large btn-inverse'} Log Out
+    %ul.breadcrumb.no-background
+      %li
+        = link_to 'Dashboard', '#'
+        %span.divider /
+      %li.active
+        = link_to 'Select Meals', '#'
     .container
+
       .row
-        .span8
+        .span9
           = yield
-        .span4
-          %h2 Other Info
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .span3
+          .box
+            .top
+              %h2 Lunch Bag
+            .middle
+              .item
+                .title
+                  Burger Sandwich
+                .special
+                  No Tomato
+                .price
+                  $6.99
+          %button.btn.btn-large.btn-block.buy Buy Now
+          
 

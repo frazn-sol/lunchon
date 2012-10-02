@@ -1,16 +1,8 @@
 - model_class = Deal.new.class
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize
-
 %ul.thumbnails
   - @deals.each do |deal|
-    %li.span4
-      = link_to deal_path(deal) do
-        .thumbnail
-          = image_tag "http://placehold.it/260x180&text=#{deal.name} pic" 
-        .caption
-          = deal.name 
-          %strong= number_to_currency deal.price
-          = link_to "Buy Now",'#', class: 'btn btn-mini btn-success'
+    %li.span3
+      = image_tag "http://placehold.it/180x180&text=#{deal.name} pic", class: 'img-rounded'
+      %div.rating.stars_1 
 
 
