@@ -2,6 +2,6 @@
   - @deals.each do |deal|
     %li.span3
       = image_tag deal.image_url(:thumb).to_s, class: 'img-rounded'
-      %div.rating.stars_1 
+      %div{ class: deals_rating_class(deal)}
 
 
