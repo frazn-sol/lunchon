@@ -1,8 +1,7 @@
-- model_class = Deal.new.class
 %ul.thumbnails
   - @deals.each do |deal|
     %li.span3
-      = image_tag "http://placehold.it/180x180&text=#{deal.name} pic", class: 'img-rounded'
+      = image_tag deal.image_url(:thumb).to_s, class: 'img-rounded'
       %div.rating.stars_1 
 
 

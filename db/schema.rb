@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623202043) do
+ActiveRecord::Schema.define(:version => 20121002233132) do
 
   create_table "comments", :force => true do |t|
     t.integer  "deal_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20120623202043) do
     t.decimal  "price"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "image"
   end
 
 end

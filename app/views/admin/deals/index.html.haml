@@ -12,7 +12,8 @@
     %li.span4
       = link_to admin_deal_path(deal) do
         .thumbnail
-          = image_tag "http://placehold.it/260x180&text=#{deal.name} pic" 
+          -#= image_tag "http://placehold.it/260x180&text=#{deal.name} pic" 
+          = image_tag deal.image_url(:thumb).to_s, class: 'img-rounded'
         .caption
           = deal.name 
           %strong= number_to_currency deal.price
