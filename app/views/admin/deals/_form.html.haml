@@ -1,8 +1,0 @@
-= simple_form_for [:admin, @deal], html: { multipart: true, class: 'form-horizontal' } do |f|
-  .control-group
-    = f.input :name
-    = f.input :price
-    = f.input :image, as: :file
-  .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_deals_path, :class => 'btn'

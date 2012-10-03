@@ -1,6 +1,6 @@
 class Deal < ActiveRecord::Base
   has_many :comments
-  attr_accessible :name, :price, :image
+  attr_accessible :name, :price, :image, :rating
   validates_numericality_of :price
   validates_presence_of :name, :price
 
