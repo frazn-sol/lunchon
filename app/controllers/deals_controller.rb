@@ -18,7 +18,7 @@ class DealsController < ApplicationController
     @comment = @deal.comments.find_by_id(comment_id)
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render 'show', layout: nil}
       format.json { render json: @deal }
     end
   end

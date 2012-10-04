@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121003004450) do
+ActiveRecord::Schema.define(:version => 20121004000007) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -57,10 +57,20 @@ ActiveRecord::Schema.define(:version => 20121003004450) do
   create_table "deals", :force => true do |t|
     t.string   "name"
     t.decimal  "price"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.string   "image"
     t.decimal  "rating"
+    t.integer  "restaurant_id"
+    t.text     "description"
+  end
+
+  add_index "deals", ["restaurant_id"], :name => "index_deals_on_restaurant_id"
+
+  create_table "restaurants", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

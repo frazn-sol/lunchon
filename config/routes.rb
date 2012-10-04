@@ -1,4 +1,4 @@
-Grep::Application.routes.draw do
+Lunchon::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -6,11 +6,6 @@ Grep::Application.routes.draw do
   root :to => 'deals#index'
   resources :deals, only: [:show, :index]
 
-  namespace :admin do
-    resources :deals do 
-      resources :comments
-    end
-  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

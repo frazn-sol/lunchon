@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Grep::Application.load_tasks
+Lunchon::Application.load_tasks

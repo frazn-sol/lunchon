@@ -1,7 +1,9 @@
 %ul.thumbnails
   - @deals.each do |deal|
     %li.span3
-      = image_tag deal.image_url(:thumb).to_s, class: 'img-rounded'
+      = link_to deal_path(deal), class: 'deal_modal', data: {toggle: 'modal', target: '#modal'} do
+        = image_tag deal.image_url(:thumb).to_s, class: 'img-rounded'
       %div{ class: deals_rating_class(deal)}
 
+#modal.modal.hide.fade
 
