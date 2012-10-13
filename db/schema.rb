@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013135641) do
+ActiveRecord::Schema.define(:version => 20121013181856) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -56,17 +56,24 @@ ActiveRecord::Schema.define(:version => 20121013135641) do
 
   create_table "deals", :force => true do |t|
     t.string   "name"
-    t.decimal  "price",          :precision => 10, :scale => 0
+    t.decimal  "price",          :precision => 10, :scale => 2
     t.datetime "created_at",                                    :null => false
     t.datetime "updated_at",                                    :null => false
     t.string   "image"
-    t.decimal  "rating",         :precision => 10, :scale => 0
     t.integer  "restaurant_id"
     t.text     "description"
-    t.decimal  "original_price", :precision => 10, :scale => 0
+    t.decimal  "original_price", :precision => 10, :scale => 2
   end
 
   add_index "deals", ["restaurant_id"], :name => "index_deals_on_restaurant_id"
+
+  create_table "ratings", :force => true do |t|
+    t.integer  "deal_id"
+    t.integer  "user_id"
+    t.float    "rating"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "restaurants", :force => true do |t|
     t.string   "name"
