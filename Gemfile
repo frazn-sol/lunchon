@@ -6,7 +6,7 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activeadmin'
-gem 'sqlite3'
+gem 'mysql2'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'carrierwave'
