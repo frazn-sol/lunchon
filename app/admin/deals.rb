@@ -6,7 +6,9 @@ ActiveAdmin.register Deal do
       row :restaurant_id
       row :price
       row :original_price
-      row :rating
+      row :rating do
+        deal.avg_rating
+      end
       row :description
       row :image do
         image_tag deal.image_url(:thumb).to_s

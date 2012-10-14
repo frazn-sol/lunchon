@@ -12,5 +12,5 @@
     .span4
       %h2= number_to_currency @deal.price
     .span4
-      %button.btn.btn-primary Add to Cart
+      = link_to 'Add to Cart', '#', class: 'btn btn-primary add_to_cart', data: {url: cart_items_path(deal_id: @deal.id)}
 

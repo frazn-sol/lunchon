@@ -5,6 +5,8 @@ Lunchon::Application.routes.draw do
 
   root :to => 'deals#index'
   resources :deals, only: [:show, :index]
+  resources :cart_items, only: [:create, :index]
+  resources :cart
 
 
   # The priority is based upon order of creation:
