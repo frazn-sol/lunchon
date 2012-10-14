@@ -3,8 +3,10 @@ Lunchon::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root :to => 'deals#index'
-  resources :deals, only: [:show, :index]
+  root :to => 'main#index'
+  scope 'api' do
+    resources :deals, only: [:show, :index]
+  end
   resources :cart_items, only: [:create, :index]
   resources :cart
 

@@ -1,13 +1,15 @@
 class DealsController < ApplicationController
+  respond_to :json
   # GET /deals
   # GET /deals.json
   def index
     @deals = Deal.all
+    respond_with @deals
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @deals }
-    end
+    #respond_to do |format|
+      #format.html # index.html.erb
+      #format.json { render json: @deals }
+    #end
   end
 
   # GET /deals/1
