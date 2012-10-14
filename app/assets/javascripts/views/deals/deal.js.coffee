@@ -3,12 +3,17 @@ class Lunchon.Views.Deal extends Backbone.View
   tagName: 'li'
   
   events:
-    'click': 'showDeal'
+    'click': 'showDealModal'
+
 
   render: ->
     $(@el).html(@template(deal: @model))
     this
 
-  showDeal: ->
-    console.log("show deal")
-    Backbone.history.navigate("deals/#{@model.get('id')}")
+  showDealModal: (event) ->
+    console.log('showDealModal')
+    event.preventDefault()
+    $this = $(@el).find('a')
+    modalHtml = new Lunchon.Views.DealModal(model: @model)
+    $target = $($this.data('target'))
+    $target.html(modalHtml.render().el)

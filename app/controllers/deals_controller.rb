@@ -3,7 +3,7 @@ class DealsController < ApplicationController
   # GET /deals
   # GET /deals.json
   def index
-    @deals = Deal.all
+    @deals = Deal.includes(:restaurant).all
     respond_with @deals
 
     #respond_to do |format|

@@ -11,6 +11,6 @@ class Deal < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def avg_rating
-    ratings.average(:rating).to_f.round(0.5)
+    (ratings.average(:rating).to_f*2.0).round / 2.0
   end
 end

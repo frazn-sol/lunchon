@@ -1,0 +1,23 @@
+<div class='modal-body'>
+  <div class='row-fluid'>
+    <div class='span4'>
+      <img src='<%= @deal.get('image')['image']['thumb']['url'] %>' class='img-rounded'>
+    </div>
+    <div class='span4'>
+      <h2> <%= @deal.get('name') %> </h2>
+      <h3> <%= @deal.get('restaurant')?['name'] || 'None Yet' %> </h3>
+      <p> <%= @deal.get('description') %> </p>
+    </div>
+    <div class='span4'>
+      <img src='assets/sample_map.png' class='img-rounded'>
+    </div>
+  </div>
+  <div class='row-fluid'>
+    <div class='span4'>
+      <h2> <%= accounting.formatMoney @deal.get('price') %> </h2>
+    </div>
+    <div class='span4'>
+      <button class='btn btn-primary add_to_cart'>Buy Now</button>
+    </div>
+  </div>
+</div>
