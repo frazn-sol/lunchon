@@ -3,6 +3,16 @@ class DealSerializer < ApplicationSerializer
   has_one :restaurant
   attribute :rating
   attribute :rating_class
+  attribute :price
+  attribute :original_price
+
+  def price
+    object.price.to_f
+  end
+
+  def original_price
+    object.original_price.to_f
+  end
 
   def rating
     object.avg_rating

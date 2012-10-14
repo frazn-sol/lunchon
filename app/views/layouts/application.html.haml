@@ -34,19 +34,12 @@
         = link_to 'Select Meals', '#'
     .container
       .row
-        = yield
-        .span3
+        = yield :container
+        #cart.span3
           .box
             .top
               %h2 Lunch Bag
-            .middle
-              .item
-                .title
-                  Burger Sandwich
-                .special
-                  No Tomato
-                .price
-                  $6.99
+            #cart_items.middle
           %button.btn.btn-large.btn-block.buy Buy Now
           
 

@@ -11,7 +11,6 @@ class Lunchon.Views.Deal extends Backbone.View
     this
 
   showDealModal: (event) ->
-    console.log('showDealModal')
     event.preventDefault()
     $this = $(@el).find('a')
     modalHtml = new Lunchon.Views.DealModal(model: @model)
