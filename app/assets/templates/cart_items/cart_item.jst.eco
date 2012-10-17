@@ -1,0 +1,6 @@
+<div class='name'>
+  <a class="close pull-left" href="#">&times;</a>
+  <%= @cart_item.get('deal_name') %>
+</div>
+<div class='price'><%=accounting.formatMoney @cart_item.get('price') %></div>
+

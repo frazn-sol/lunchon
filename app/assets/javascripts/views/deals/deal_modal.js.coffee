@@ -5,10 +5,12 @@ class Lunchon.Views.DealModal extends Backbone.View
     'click button.add_to_cart': 'addToCart'
 
   addToCart: (event) ->
-    console.log('addToCart')
-    cart_item = new Lunchon.Models.CartItem deal_id: @model.get('id'), price: @model.get('price'), original_price: @model.get('original_price')
+    cart_item = new Lunchon.Models.CartItem deal_id: @model.get('id'), deal_name: @model.get('name'), price: @model.get('price'), original_price: @model.get('original_price')
+    cart_item_view = new Lunchon.Views.CartItem(model: cart_item)
     Lunchon.cart_items.add cart_item
-    console.log(Lunchon.cart_items)
+    console.log(cart_item_view)
+    $('div#cart_items').append(cart_item_view.render().el)
+    $('#modal').modal('hide')
 
   render: ->
     $(@el).html(@template(deal: @model))
