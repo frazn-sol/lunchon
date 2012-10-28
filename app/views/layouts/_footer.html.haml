@@ -1,0 +1,29 @@
+.container
+  %ul.breadcrumb
+    %li
+      &copy; Lunchon.co 2012
+      %span.divider &middot;
+    %li
+      %a Contact Us
+      %span.divider &middot;
+    %li
+      %a FAQ
+      %span.divider &middot;
+    %li
+      %a Press
+      %span.divider &middot;
+    %li
+      %a Privacy
+      %span.divider &middot;
+    %li
+      %a Terms of Use
+      %span.divider &middot;
+    - if user_signed_in?
+      %li
+        = link_to "Log Out", destroy_user_session_path, method: 'delete'
+        %span.divider.last &middot;
+    - else
+      %li
+        = link_to "Log In", new_user_session_path
+        %span.divider.last &middot;
+
