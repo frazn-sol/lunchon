@@ -5,8 +5,6 @@ class Lunchon.Views.CartItemsIndex extends Backbone.View
 
 
   initialize: ->
-    console.log('init cart_items')
     @collection.on('add', @appendItem, this)
 
   appendItem: ->
-    console.log(this)

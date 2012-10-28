@@ -5,7 +5,7 @@ class Lunchon.Views.CartItem extends Backbone.View
     'click a.close': 'removeItem'
 
   removeItem: ->
-    console.log('remove item')
+    Lunchon.cart.removeItem @.model
     $(@el).remove()
 
   render: ->

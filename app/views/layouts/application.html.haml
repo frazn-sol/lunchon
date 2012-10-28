@@ -1,11 +1,11 @@
 !!!
 %html
   %head
-    %title Sample App
+    %title Lunchon.co
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tag
-  %body
+  %body.wooden
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -40,6 +40,9 @@
             .top
               %h2 Lunch Bag
             %div#cart_items.middle
+            %div#cart_total.bottom
+              %span Total:
+              %span.total $0.00
           %button.btn.btn-large.btn-block.buy Buy Now
           
 
