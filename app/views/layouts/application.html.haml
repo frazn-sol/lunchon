@@ -13,7 +13,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to  deals_path, class: 'brand' do
+          = link_to  root_path, class: 'brand' do
             =image_tag 'logo-header.png'
           .nav-collapse
             %ul.nav.pull-right
@@ -21,11 +21,27 @@
                 .btn-group.nav
                   %button{ class: 'btn btn-large btn-inverse'} Support
                   %button{ class: 'btn btn-large btn-inverse'} Account
-              %li.nav-center-vertical
-                %p Logged In as:
-                %p Haley
-              %li.nav-center-vertical
-                %button{ class: 'btn btn-large btn-inverse'} Log Out
+              - if user_signed_in?
+                %li.nav-center-vertical
+                  %p Logged In as:
+                  %p= current_user.email
+                %li.nav-center-vertical
+                  = link_to "Log Out", destroy_user_session_path, class: 'btn btn-large btn-inverse test', method: 'delete'
+              - else
+                %li.nav-center-vertical
+                  .btn-group.nav
+                    = link_to "Log In", new_user_session_path, class: 'btn btn-large btn-inverse'
+                    = link_to "Sign Up", new_user_registration_path, class: 'btn btn-large btn-inverse'
+    .container
+      .row
+      - if flash[:notice]
+        %div.span9.alert#notice
+          %button{class: 'close', data: {dismiss: 'alert'}} &times;
+          %p#notice= flash[:notice]
+      - if flash[:alert]
+        %div.alert.span9.alert-error
+          %a{class: 'close', data: {dismiss: 'alert'}, href: '#'} &times;
+          = flash[:alert]
     %ul.breadcrumb.no-background
       %li
         = link_to 'Dashboard', '#'

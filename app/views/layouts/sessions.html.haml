@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title Lunchon.co
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tag
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a{ :class => 'btn btn-navbar', 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse'}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to  root_path, class: 'brand' do
+            =image_tag 'logo-header.png'
+          .nav-collapse
+            %ul.nav.pull-right
+              %li.nav-center-vertical
+                .btn-group.nav
+                  %button{ class: 'btn btn-large btn-inverse'} Support
+    .container
+      .row
+        = yield
+          
+
