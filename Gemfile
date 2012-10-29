@@ -16,7 +16,7 @@ gem "active_model_serializers", :git => "git://github.com/josevalim/active_model
 gem 'mysql2'
 gem 'haml-rails'
 gem 'simple_form'
-gem 'carrierwave'
+gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
 gem 'rmagick'
 gem 'backbone-on-rails'
 
