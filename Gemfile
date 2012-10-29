@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end 
+
 gem 'rails', '3.2.6'
 
 # Bundle edge Rails instead:
@@ -25,6 +31,10 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass'
+end
+
+group :development do
+  gem 'capistrano'
 end
 
 gem 'jquery-rails'
