@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/jnicklas/carrierwave.git
+  revision: 0008d78557863c0684ab47f095e8ca5850bdcec6
+  specs:
+    carrierwave (0.7.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+
+GIT
   remote: git://github.com/josevalim/active_model_serializers.git
   revision: 634f5ba91e6b1218319dace0fee9e10a9b2ec8b8
   specs:
@@ -66,9 +74,6 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    carrierwave (0.6.2)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -212,7 +217,7 @@ DEPENDENCIES
   backbone-on-rails
   bootstrap-sass
   capistrano
-  carrierwave
+  carrierwave!
   coffee-rails (~> 3.2.1)
   haml-rails
   jquery-rails
