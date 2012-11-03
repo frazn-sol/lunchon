@@ -1,19 +1,15 @@
 class DealsController < ApplicationController
   respond_to :json
-  # GET /deals
-  # GET /deals.json
-  def index
-    @deals = Deal.includes(:restaurant).all
-    respond_with @deals
 
-    #respond_to do |format|
-      #format.html # index.html.erb
-      #format.json { render json: @deals }
-    #end
+  def index
+    @deals = Deal.includes(:restaurant, :ratings).all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @deals }
+    end
   end
 
-  # GET /deals/1
-  # GET /deals/1.json
   def show
     @deal = Deal.find(params[:id])
     comment_id = @deal.comments.pluck(:id).shuffle.first
@@ -25,8 +21,6 @@ class DealsController < ApplicationController
     end
   end
 
-  # GET /deals/new
-  # GET /deals/new.json
   def new
     @deal = Deal.new
 
@@ -36,13 +30,10 @@ class DealsController < ApplicationController
     end
   end
 
-  # GET /deals/1/edit
   def edit
     @deal = Deal.find(params[:id])
   end
 
-  # POST /deals
-  # POST /deals.json
   def create
     @deal = Deal.new(params[:deal])
 
@@ -57,8 +48,6 @@ class DealsController < ApplicationController
     end
   end
 
-  # PUT /deals/1
-  # PUT /deals/1.json
   def update
     @deal = Deal.find(params[:id])
 
@@ -73,8 +62,6 @@ class DealsController < ApplicationController
     end
   end
 
-  # DELETE /deals/1
-  # DELETE /deals/1.json
   def destroy
     @deal = Deal.find(params[:id])
     @deal.destroy

@@ -9,10 +9,9 @@ class Lunchon.Views.DealsIndex extends Backbone.View
 
   render: ->
     $(@el).addClass('thumbnails deals').html(@template())
-    $(@el).parent().append($('<div>').attr('id', 'modal').addClass('modal hide fade'))
     @collection.each(@appendDeal)
     this
 
-  appendDeal: (deal) ->
+  appendDeal: (deal) =>
     view = new Lunchon.Views.Deal(model: deal)
-    $('ul.deals').append(view.render().el)
+    $(@el).append(view.render().el)

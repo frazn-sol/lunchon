@@ -5,12 +5,17 @@ Lunchon::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root :to => 'main#index'
+  root :to => 'deals#index'
   scope 'api' do
     resources :deals, only: [:show, :index]
   end
-  resources :cart_items, only: [:create, :index]
-  resources :cart
+  resources :cart_items, only: [:create, :index] 
+
+  resources :carts do
+    put :add_item, on: :collection
+  end
+
+  resources :deals
 
 
   # The priority is based upon order of creation:

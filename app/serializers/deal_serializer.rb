@@ -1,10 +1,15 @@
 class DealSerializer < ApplicationSerializer
-  attributes :id, :description, :image, :name, :price, :original_price
+  attributes :id, :description, :name, :price, :original_price
   has_one :restaurant
   attribute :rating
   attribute :rating_class
   attribute :price
   attribute :original_price
+  attribute :image
+
+  def image
+    { thumb: {url: object.image.thumb.url}}
+  end
 
   def price
     object.price.to_f

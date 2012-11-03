@@ -10,7 +10,16 @@ class Deal < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  def avg_rating
-    (ratings.average(:rating).to_f*2.0).round / 2.0
+  def avg_rating(round=true)
+    ratings_ary = ratings.pluck(:rating)
+    divisor = [ratings_ary.size, 1].max.to_f
+    avg = ratings_ary.reduce(0){ |sum, r|  sum +=r}/divisor
+    round ? round_to_half(avg) : avg
+  end
+
+
+  private 
+  def round_to_half(num)
+    (num*2.0).round/2.0
   end
 end
