@@ -3,6 +3,7 @@ class DealsController < ApplicationController
 
   def index
     @deals = Deal.includes(:restaurant, :ratings).all
+    @deals_json = @deals.map{ |d| DealSerializer.new(d).as_json}.to_json
 
     respond_to do |format|
       format.html # index.html.erb
