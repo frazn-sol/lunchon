@@ -23,6 +23,8 @@ Lunchon::Application.routes.draw do
     get :remove_item
     post :remove_item
     post :clear
+    post :set_quantity
+    get :set_quantity
   end
 
 

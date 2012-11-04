@@ -1,6 +1,8 @@
 <div class='name'>
-  <a class="close pull-left" href="#">&times;</a>
-  <%= @lunch_bag_item.get('name') %>
-  <span class='quantity'>(<%= @lunch_bag_item.get('quantity') %>)</span>
+  <form class='form-inline'>
+    <a class="close pull-left" href="#">&times;</a>
+    <input type="text" class='quantity' value=<%= @lunch_bag_item.get('quantity') %>>
+    <label> <%= @lunch_bag_item.get('name') %> </label>
+    <span class='price'><%=accounting.formatMoney @lunch_bag_item.total_price() %></span>
+  </form>
 </div>
-<div class='price'><%=accounting.formatMoney @lunch_bag_item.total_price() %></div>

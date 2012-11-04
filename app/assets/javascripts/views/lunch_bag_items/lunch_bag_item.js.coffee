@@ -3,13 +3,26 @@ class Lunchon.Views.LunchBagItem extends Backbone.View
 
   events:
     'click a.close': 'removeItem'
+    'change input.quantity': 'changeQuantity'
 
   removeItem: ->
-    console.log('remove item')
-    #Lunchon.cart.removeItem @.model
-    #$(@el).remove()
-
+    @callChangeQuantity(0)
+    $(@el).remove()
   
+  changeQuantity: (event) ->
+    event.preventDefault()
+    @callChangeQuantity($(event.target).val())
+
+  callChangeQuantity: (quantity) ->
+    deal_id = @model.get('deal_id')
+    $.ajax
+      url: 'lunch_bag/set_quantity'
+      dataType: 'json'
+      type: 'post'
+      data: {deal_id: deal_id, quantity: quantity}
+      success: (data) ->
+        Lunchon.lunch_bag.build(data)
+
   render: ->
     $(@el).html(@template(lunch_bag_item: @model))
     this
