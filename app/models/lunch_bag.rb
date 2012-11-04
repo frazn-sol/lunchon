@@ -1,12 +1,12 @@
 class LunchBag
   cattr_accessor :discounts
   @@discounts = {
-                 0 => BigDecimal.new(0.00,2),
-                 1 => BigDecimal.new(0.10,2),
-                 2 => BigDecimal.new(0.20,2),
-                 3 => BigDecimal.new(0.30,2),
-                 4 => BigDecimal.new(0.40,2),
-                 5 => BigDecimal.new(0.50,2)
+                 0 => BigDecimal.new("0.00"),
+                 1 => BigDecimal.new("0.10"),
+                 2 => BigDecimal.new("0.20"),
+                 3 => BigDecimal.new("0.30"),
+                 4 => BigDecimal.new("0.40"),
+                 5 => BigDecimal.new("0.50")
                 }
   attr_accessor :item_args, :items, :deal_ids
 
