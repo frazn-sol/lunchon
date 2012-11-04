@@ -5,8 +5,6 @@ describe DealsController do
     true
   end
   it 'builds a lunch_bag in the index action' do
-    #deal1 = FactoryGirl.create(:deal, original_price: 10)
-    #deal2 = FactoryGirl.create(:deal, original_price: 10)
     get :index
     assigns[:lunch_bag].should be_a LunchBag
   end
