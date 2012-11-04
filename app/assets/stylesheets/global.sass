@@ -71,7 +71,8 @@ ul.breadcrumb
     color: grey
 .box
   border-radius: 8px
-  min-height: 400px
+  min-height: 100px
+  overflow: auto
   background-color: whitesmoke
   .top
     border-top-left-radius: 8px
@@ -91,29 +92,29 @@ ul.breadcrumb
       .price
         float: right
         padding-right: 25px
-#cart_items
+#lunch_bag
   padding-left: 15px
   font-weight: bold
+  .empty_lunch_bag
+    float: right
   div.name
     margin-top: 25px
     .close
       margin-top: -3px
       padding-right: 5px
+  div.quantity
+
   div.price
     float: right
     margin-top: -5px
     padding-right: 25px
 #cart_total
-  top: 500px
-  position: absolute
+  //bottom: 210px
+  //position: absolute
   padding-left: 15px
+  padding-top: 25px
   font-weight: bold
-  div.name
-    margin-top: 25px
-    .close
-      margin-top: -3px
-      padding-right: 5px
-  div.total
+  .totals
     float: right
     margin-top: -5px
     padding-right: 25px

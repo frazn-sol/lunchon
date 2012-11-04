@@ -1,0 +1,2 @@
+module LunchBagHelper
+end

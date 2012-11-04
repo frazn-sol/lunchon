@@ -17,6 +17,14 @@ Lunchon::Application.routes.draw do
 
   resources :deals
 
+  resource :lunch_bag, controller: :lunch_bag do
+    get :add_item
+    post :add_item
+    get :remove_item
+    post :remove_item
+    post :clear
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

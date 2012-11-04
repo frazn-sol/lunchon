@@ -5,6 +5,7 @@ class Lunchon.Routers.Deals extends Backbone.Router
   initialize: ->
     @collection = new Lunchon.Collections.Deals
     @collection.reset($('#container').data 'deals')
+    this
 
   index: ->
     view = new Lunchon.Views.DealsIndex(collection: @collection)

@@ -4,6 +4,7 @@ class DealsController < ApplicationController
   def index
     @deals = Deal.includes(:restaurant, :ratings).all
     @deals_json = @deals.map{ |d| DealSerializer.new(d).as_json}.to_json
+    @lunch_bag = LunchBag.new({items: session[:lunch_bag] || {}})
 
     respond_to do |format|
       format.html # index.html.erb

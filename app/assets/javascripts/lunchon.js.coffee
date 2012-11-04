@@ -4,8 +4,9 @@ window.Lunchon =
   Views: {}
   Routers: {}
   init: ->
-    new Lunchon.Routers.Deals
-    @cart = new Lunchon.Models.Cart
+    @deals = new Lunchon.Routers.Deals
+    @lunch_bag = new Lunchon.Models.LunchBag
+
     Backbone.history.start()
 
 $(document).ready ->

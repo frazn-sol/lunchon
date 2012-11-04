@@ -1,0 +1,21 @@
+<div id='lunch_bag' class='middle'>
+</div>
+<div id='cart_total' class='bottom'>
+  <div class='totals'>
+    <div class='price'>
+      Total Price:
+      <span class='total'> <%= accounting.formatMoney @lunch_bag.total_price %></span>
+    </div>
+    <div class='price'>
+      Your Cost:
+      <span class='total'> <%=  accounting.formatMoney @lunch_bag.discounted_price %></span>
+    </div>
+    <div class='savings'>
+      Your Discount:
+      <span class='discount'> <%= @lunch_bag.discountStr() %></span>
+    </div>
+    <div class='empty_lunch_bag'>
+      <a class='empty_lunch_bag' href='#'>Delete All</a>
+    </div>
+  </div>
+</div>

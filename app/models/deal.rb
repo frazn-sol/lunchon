@@ -17,6 +17,10 @@ class Deal < ActiveRecord::Base
     round ? round_to_half(avg) : avg
   end
 
+  def to_lunch_bag
+    {deal_id: id, name: name, original_price: original_price.to_f}
+  end
+
 
   private 
   def round_to_half(num)
