@@ -8,7 +8,10 @@ class DealSerializer < ApplicationSerializer
   attribute :image
 
   def image
-    { thumb: {url: object.image.thumb.url}}
+    {
+      thumb: {url: object.image.thumb.url},
+      featured: {url: object.image.featured.url}
+    }
   end
 
   def price

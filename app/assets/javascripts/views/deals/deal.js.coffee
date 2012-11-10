@@ -6,7 +6,7 @@ class Lunchon.Views.Deal extends Backbone.View
     'click': 'showDealModal'
 
   render: ->
-    $(@el).html(@template(deal: @model))
+    $(@el).html(@template(deal: @model, size: @model.get('size')))
     this
 
   showDealModal: (event) ->

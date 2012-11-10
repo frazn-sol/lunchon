@@ -2,7 +2,6 @@ class Lunchon.Views.DealsIndex extends Backbone.View
 
   template: JST['deals/index']
   model: Lunchon.Models.Deal
-  tagName: 'ul'
 
   initialize: ->
     @collection.on('reset', @render, this)
@@ -12,6 +11,12 @@ class Lunchon.Views.DealsIndex extends Backbone.View
     @collection.each(@appendDeal)
     this
 
-  appendDeal: (deal) =>
-    view = new Lunchon.Views.Deal(model: deal)
-    $(@el).append(view.render().el)
+  appendDeal: (deal, index) =>
+    if index < 2
+      deal.set('size', 'featured')
+      view = new Lunchon.Views.Deal(model: deal)
+      $(@el).find('ul.featured').append(view.render().el)
+    else
+      deal.set('size', 'thumb')
+      view = new Lunchon.Views.Deal(model: deal)
+      $(@el).find('ul.thumb').append(view.render().el)
