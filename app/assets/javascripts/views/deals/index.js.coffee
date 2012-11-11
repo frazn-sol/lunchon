@@ -12,7 +12,7 @@ class Lunchon.Views.DealsIndex extends Backbone.View
     this
 
   appendDeal: (deal, index) =>
-    if index < 2
+    if deal.get('featured')
       deal.set('size', 'featured')
       view = new Lunchon.Views.Deal(model: deal)
       $(@el).find('ul.featured').append(view.render().el)

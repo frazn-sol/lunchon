@@ -6,6 +6,7 @@ class DealSerializer < ApplicationSerializer
   attribute :price
   attribute :original_price
   attribute :image
+  attribute :featured
 
   def image
     {
