@@ -1,0 +1,6 @@
+.name
+  %form.form-inline
+    %a.close.pull-left(href= '#') &times;
+    %input{ type: 'text', class: 'quantity', value: @lunch_bag_item.get('quantity')}
+    %label= @lunch_bag_item.get('name')
+    %span{ class: 'price'}= accounting.formatMoney @lunch_bag_item.total_price()

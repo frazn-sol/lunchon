@@ -1,0 +1,15 @@
+%div{ id: 'lunch_bag', class: 'middle'}
+%div{ id: 'cart_total', class: 'bottom'}
+  .totals
+    .price
+      Total Price:
+      %span.total= accounting.formatMoney(@lunch_bag.total_price)
+    .price
+      Your Cost:
+      %span.total= accounting.formatMoney(@lunch_bag.discounted_price)
+    .savings
+      Your Discount:
+      %span.discount= @lunch_bag.discountStr()
+    .empty_lunch_bag
+      %a{ class: 'empty_lunch_bag', href: '#'} Delete All
+  

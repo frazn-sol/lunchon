@@ -1,0 +1,18 @@
+.modal-body
+  .row-fluid
+    .span4
+      %img{ src: @deal.get('image')['thumb']['url'], class: 'img-rounded'}
+    .span4
+      %h2= @deal.get('name')
+      %h3= @deal.get('restaurant')?['name'] || 'None Yet'
+      %p= @deal.get('description')
+    .span4
+      %img{ src: 'assets/sample_map.png', class: 'img-rounded'}
+  .row-fluid
+    .span4
+      %h2= accounting.formatMoney @deal.get('original_price')
+    .span4
+      - if @deal.get('remaining') == 0
+        %button.btn.btn-primary.add_to_cart.disabled Sold Out
+      - else
+        %button.btn.btn-primary.add_to_cart Add to Lunch Bag
