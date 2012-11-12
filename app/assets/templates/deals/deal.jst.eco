@@ -1,4 +1,5 @@
 <a class= 'deal_modal' data-toggle='modal' data-target='#modal' href='api/deals/<%= @deal.id %>' >
   <img src='<%= @deal.get('image')[@size]['url'] %>' class='img-rounded'>
 </a>
+<div class='remaining'><%= @deal.get('remaining') %></div>
 <div class='rating <%= @deal.get('rating_class')%>'/>

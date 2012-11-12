@@ -7,6 +7,7 @@ class DealSerializer < ApplicationSerializer
   attribute :original_price
   attribute :image
   attribute :featured
+  attribute :remaining
 
   def image
     {
@@ -29,5 +30,9 @@ class DealSerializer < ApplicationSerializer
 
   def rating_class
     "stars_#{rating.to_s.sub('.','')}"
+  end
+
+  def remaining
+    rand(25)
   end
 end

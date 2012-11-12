@@ -6,7 +6,7 @@ class Lunchon.Views.DealModal extends Backbone.View
 
   addToLunchBag: (event) ->
     event.preventDefault()
-    Lunchon.lunch_bag.addItem @model
+    Lunchon.lunch_bag.addItem @model unless @model.get('remaining') == 0
     $('#modal').modal('hide')
 
   render: ->

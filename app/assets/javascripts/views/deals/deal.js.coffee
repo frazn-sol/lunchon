@@ -1,6 +1,7 @@
 class Lunchon.Views.Deal extends Backbone.View
   template: JST['deals/deal']
   tagName: 'li'
+  className: 'deal'
   
   events:
     'click': 'showDealModal'

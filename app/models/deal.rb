@@ -4,7 +4,7 @@ class Deal < ActiveRecord::Base
   belongs_to :restaurant
 
   attr_accessible :name, :price, :image, :rating, :restaurant_id, :description, :original_price
-  attr_accessor :featured
+  attr_accessor :featured, :remaining
 
   validates_numericality_of :price, :original_price
   validates_presence_of :name, :price, :original_price
