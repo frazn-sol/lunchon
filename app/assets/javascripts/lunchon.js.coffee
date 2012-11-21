@@ -6,6 +6,7 @@ window.Lunchon =
   init: ->
     @deals = new Lunchon.Routers.Deals
     @lunch_bag = new Lunchon.Models.LunchBag
+    @buy_button = new Lunchon.Models.BuyButton
 
     Backbone.history.start()
 

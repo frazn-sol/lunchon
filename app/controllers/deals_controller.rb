@@ -6,6 +6,7 @@ class DealsController < ApplicationController
     @deals[-2..-1].map{ |d| d.featured=true}
     @deals_json = @deals.map{ |d| DealSerializer.new(d).as_json}.to_json
     @lunch_bag = LunchBag.new({items: session[:lunch_bag] || {}})
+    @is_user_signed_in = user_signed_in?
 
     respond_to do |format|
       format.html # index.html.erb

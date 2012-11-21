@@ -1,0 +1,44 @@
+.modal-body
+  %dl.dl-horizontal.headings
+    %dt Quantity
+    %dd Deal Name
+  - for lunch_bag_item in @lunch_bag_items
+    - do (lunch_bag_item) ->
+      %dl.dl-horizontal.items
+        %dt= lunch_bag_item.get('quantity')
+        %dd= lunch_bag_item.get('name')
+  %dl.dl-horizontal
+    %dt Total Cost
+    %dd
+      %strong= accounting.formatMoney(@total_cost)
+  %form.form-horizontal
+    .control-group
+      .control-label Card Info
+      .controls
+        %input{type: 'text', name: 'card_number', placeholder: 'Card Number', class: 'input-medium'}
+        %input{type: 'text', name: 'card_code', placeholder: 'Security Code', class: 'input-small'}
+    .control-group
+      .control-label Expiration
+      .controls
+        %select{class: 'input-small', name: 'card_month'}
+          %option 1
+          %option 2
+          %option 3
+          %option 4
+          %option 5
+          %option 6
+          %option 7
+          %option 8
+          %option 9
+          %option 10
+          %option 11
+          %option 12
+        %select{class: 'input-small', name: 'card_year'}
+          %option 2012
+          %option 2013
+          %option 2014
+          %option 2015
+          %option 2016
+    .control-group
+      .controls
+        %button{class: 'btn btn-primary', type: 'submit'} Complete Purchase
