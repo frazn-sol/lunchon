@@ -56,11 +56,6 @@
             .top
               %h2 Lunch Bag
             %div.lunch_bag
-
-          .bottom
-            - if user_signed_in?
-              = link_to 'Buy Now', '#', class: 'btn btn-large btn-block buy'
-            - else
-              = link_to "Log In to Purchase", new_user_session_path, class: 'btn btn-large btn-inverse btn-block buy'
+          .buy_button
     #footer
       = render 'layouts/footer'

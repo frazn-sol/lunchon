@@ -1,0 +1,4 @@
+- if @is_user_signed_in
+  %a{class: 'btn btn-large btn-block buy', href: '#', data: { toggle: 'modal', target: '#modal'}} Buy Now
+- else
+  %a{class: 'btn btn-large btn-inverse btn-block buy_login', href: 'users/sign_in'} Log In to Purchase
