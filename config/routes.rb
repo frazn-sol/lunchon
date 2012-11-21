@@ -9,11 +9,6 @@ Lunchon::Application.routes.draw do
   scope 'api' do
     resources :deals, only: [:show, :index]
   end
-  resources :cart_items, only: [:create, :index] 
-
-  resources :carts do
-    put :add_item, on: :collection
-  end
 
   resources :deals
 
