@@ -1,9 +1,8 @@
 class DealSerializer < ApplicationSerializer
-  attributes :id, :description, :name, :price, :original_price
+  attributes :id, :description, :name
   has_one :restaurant
   attribute :rating
   attribute :rating_class
-  attribute :price
   attribute :original_price
   attribute :image
   attribute :featured
@@ -16,10 +15,6 @@ class DealSerializer < ApplicationSerializer
     }
   end
 
-  def price
-    object.price.to_f
-  end
-
   def original_price
     object.original_price.to_f
   end
@@ -30,9 +25,5 @@ class DealSerializer < ApplicationSerializer
 
   def rating_class
     "stars_#{rating.to_s.sub('.','')}"
-  end
-
-  def remaining
-    rand(25)
   end
 end

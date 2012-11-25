@@ -11,7 +11,8 @@
     %dt Total Cost
     %dd
       %strong= accounting.formatMoney(@total_cost)
-  %form.form-horizontal
+  %form.form-horizontal{ action: 'api/purchases', method: 'post'}
+    %input{type: 'hidden', name: @csrf_param, value: @csrf_token }
     .control-group
       .control-label Card Info
       .controls
@@ -41,4 +42,4 @@
           %option 2016
     .control-group
       .controls
-        %button{class: 'btn btn-primary', type: 'submit'} Complete Purchase
+        %button{class: 'btn btn-primary purchase', type: 'submit'} Complete Purchase

@@ -2,7 +2,7 @@ class DealsController < ApplicationController
   respond_to :json
 
   def index
-    @deals = Deal.includes(:restaurant, :ratings).all.shuffle
+    @deals = Deal.includes(:restaurant, :ratings, :purchase_items).all.shuffle
     @deals[-2..-1].map{ |d| d.featured=true}
     @deals_json = @deals.map{ |d| DealSerializer.new(d).as_json}.to_json
     @lunch_bag = LunchBag.new({items: session[:lunch_bag] || {}})

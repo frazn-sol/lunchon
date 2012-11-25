@@ -1,10 +1,21 @@
 ActiveAdmin.register Deal do
+  index do |deal|
+    column :id
+    column :name
+    column :restaurant
+    column :contract
+    column :quantity_purchased
+    column :original_price
+    default_actions
+  end
+
   show do |deal|
     attributes_table do
       row :id
       row :name
-      row :restaurant_id
-      row :price
+      row :contract_id
+      row :restaurant
+      row :quantity_purchased
       row :original_price
       row :rating do
         deal.avg_rating
@@ -23,11 +34,11 @@ ActiveAdmin.register Deal do
 
   form do |deal|
     deal.inputs 'Deal' do
-      deal.input :restaurant
+      deal.input :contract_id
       deal.input :name
-      deal.input :price
       deal.input :original_price
-      deal.input :image
+      deal.input :quantity_purchased
+      deal.input :image, hint: deal.template.image_tag(deal.object.image.url(:thumb)) 
       deal.input :description
     end
     deal.buttons

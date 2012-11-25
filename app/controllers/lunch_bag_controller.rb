@@ -18,7 +18,7 @@ class LunchBagController < ApplicationController
   end
 
   def clear
-    session[:lunch_bag] = Hash.new(0)
+    clear_lunch_bag
     render json: lunch_bag.to_json
   end
 

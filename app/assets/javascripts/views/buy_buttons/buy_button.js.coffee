@@ -11,9 +11,7 @@ class Lunchon.Views.BuyButton extends Backbone.View
   showPurchaseModal: (event) ->
     event.preventDefault()
     $this = $(@el).find('a')
-    total_cost = 15.45
-    modalHtml = new Lunchon.Views.BuyButtonModal(total_cost: total_cost)
-    console.log('showPurchaseModal')
+    modalHtml = new Lunchon.Views.BuyButtonModal()
     $target = $($this.data('target'))
     $target.html(modalHtml.render().el)
     

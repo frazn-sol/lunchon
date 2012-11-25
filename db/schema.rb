@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031004853) do
+ActiveRecord::Schema.define(:version => 20121125174636) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(:version => 20121031004853) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-  create_table "cart_items", :force => true do |t|
-    t.integer "deal_id"
-    t.integer "cart_id"
-  end
-
-  create_table "carts", :force => true do |t|
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "deal_id"
     t.text     "message"
@@ -62,18 +54,46 @@ ActiveRecord::Schema.define(:version => 20121031004853) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "deals", :force => true do |t|
-    t.string   "name"
-    t.decimal  "price",          :precision => 10, :scale => 2
-    t.datetime "created_at",                                    :null => false
-    t.datetime "updated_at",                                    :null => false
-    t.string   "image"
+  create_table "contracts", :force => true do |t|
     t.integer  "restaurant_id"
-    t.text     "description"
-    t.decimal  "original_price", :precision => 10, :scale => 2
+    t.decimal  "price",           :precision => 10, :scale => 2, :default => 0.0
+    t.decimal  "value",           :precision => 10, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
+    t.integer  "number_of_deals"
   end
 
-  add_index "deals", ["restaurant_id"], :name => "index_deals_on_restaurant_id"
+  create_table "deals", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",                                        :null => false
+    t.datetime "updated_at",                                        :null => false
+    t.string   "image"
+    t.integer  "contract_id"
+    t.text     "description"
+    t.decimal  "original_price",     :precision => 10, :scale => 2
+    t.integer  "quantity_purchased"
+  end
+
+  add_index "deals", ["contract_id"], :name => "index_deals_on_restaurant_id"
+
+  create_table "purchase_items", :force => true do |t|
+    t.integer  "purchase_id"
+    t.string   "deal_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "redemption_code"
+    t.datetime "redeemed_at"
+  end
+
+  add_index "purchase_items", ["redemption_code"], :name => "index_purchase_items_on_redemption_code"
+
+  create_table "purchases", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "cc_transaction_id"
+    t.decimal  "price",             :precision => 10, :scale => 2, :default => 0.0
+    t.datetime "created_at",                                                        :null => false
+    t.datetime "updated_at",                                                        :null => false
+  end
 
   create_table "ratings", :force => true do |t|
     t.integer  "deal_id"

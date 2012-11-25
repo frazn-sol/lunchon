@@ -20,7 +20,7 @@
               %li.nav-center-vertical
                 .btn-group.nav
                   %button{ class: 'btn btn-large btn-inverse'} Support
-                  %button{ class: 'btn btn-large btn-inverse'} Account
+                  %a{ class: 'btn btn-large btn-inverse', href: "/#purchases"} Account
               - if user_signed_in?
                 %li.nav-center-vertical
                   %p Logged In as:
