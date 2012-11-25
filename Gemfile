@@ -13,7 +13,7 @@ gem 'rake', '0.8.7'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activeadmin'
-gem "active_model_serializers", :git => "git://github.com/josevalim/active_model_serializers.git"
+gem "active_model_serializers", :git => "git://github.com/rails-api/active_model_serializers.git"
 gem 'mysql2'
 gem 'haml-rails'
 gem 'simple_form'

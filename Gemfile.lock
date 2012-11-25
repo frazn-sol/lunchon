@@ -7,8 +7,8 @@ GIT
       activesupport (>= 3.2.0)
 
 GIT
-  remote: git://github.com/josevalim/active_model_serializers.git
-  revision: 634f5ba91e6b1218319dace0fee9e10a9b2ec8b8
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 720f1dabf8858b55fa2542fccad4a04b075f951c
   specs:
     active_model_serializers (0.5.2)
       activemodel (>= 3.0)
