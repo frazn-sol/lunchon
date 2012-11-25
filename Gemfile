@@ -16,15 +16,16 @@ gem 'activeadmin'
 gem "active_model_serializers", :git => "git://github.com/rails-api/active_model_serializers.git"
 gem 'mysql2'
 gem 'haml-rails'
+gem 'sass'
 gem 'simple_form'
 gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
 gem 'rmagick'
 gem 'backbone-on-rails'
+gem 'sass-rails',   '~> 3.2.3'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
