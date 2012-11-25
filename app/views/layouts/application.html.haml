@@ -26,7 +26,7 @@
                   %p Logged In as:
                   %p= current_user.email
                 %li.nav-center-vertical
-                  = link_to "Log Out", destroy_user_session_path, class: 'btn btn-large btn-inverse test', method: 'delete'
+                  = link_to "Log Out", destroy_user_session_path, class: 'btn btn-large btn-inverse log-out', method: 'delete'
               - else
                 %li.nav-center-vertical
                   .btn-group.nav
