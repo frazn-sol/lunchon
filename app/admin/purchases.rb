@@ -9,7 +9,9 @@ ActiveAdmin.register Purchase do
       number_to_currency purchase.price
     end
     column 'Purchased On', :created_at
-    column 'Discount', :discount_percentage
+    column 'Discount' do |purchase|
+      number_to_percentage purchase.discount_percentage*100, precision: 2, strip_insignificant_zeros: true
+    end
     default_actions
   end
 
