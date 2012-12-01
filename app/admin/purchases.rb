@@ -9,6 +9,7 @@ ActiveAdmin.register Purchase do
       number_to_currency purchase.price
     end
     column 'Purchased On', :created_at
+    column 'Discount', :discount_percentage
     default_actions
   end
 

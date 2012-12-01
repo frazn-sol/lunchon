@@ -14,6 +14,7 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new user_id: current_user.id, cc_transaction_id: params[:cc_transaction_id]
     lunch_bag = LunchBag.new({items: session[:lunch_bag] || {}})
     @purchase.price = lunch_bag.discounted_price
+    @purchase.discount_percentage = lunch_bag.discount_percentage
     @purchase.build_purchase_items(lunch_bag.items)
 
     if @purchase.save
