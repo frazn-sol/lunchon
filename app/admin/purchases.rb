@@ -1,4 +1,17 @@
 ActiveAdmin.register Purchase do
+  menu priority: 5
+  index do 
+    column :id
+    column :user_id do |purchase|
+      purchase.user.email
+    end
+    column :price do |purchase|
+      number_to_currency purchase.price
+    end
+    column 'Purchased On', :created_at
+    default_actions
+  end
+
   show do |purchase|
     attributes_table do
       row :id

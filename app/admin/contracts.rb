@@ -1,4 +1,5 @@
 ActiveAdmin.register Contract do
+  menu priority: 4
   index do |contract|
     column :id
     column :restaurant

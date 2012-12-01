@@ -1,4 +1,5 @@
 ActiveAdmin.register Deal do
+  menu priority: 4
   index do |deal|
     column :id
     column :name
