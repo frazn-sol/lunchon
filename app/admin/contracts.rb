@@ -1,11 +1,15 @@
 ActiveAdmin.register Contract do
   menu priority: 4
-  index do |contract|
+  index do 
     column :id
     column :restaurant
     column :number_of_deals
     column :price
     column :value
+    column :total_discount
+    column 'Total Discount' do |contract|
+      number_to_percentage contract.total_discount*100, precision: 2, strip_insignificant_zeros: true
+    end
     default_actions
   end
 
