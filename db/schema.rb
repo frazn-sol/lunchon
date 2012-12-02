@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216141140) do
+ActiveRecord::Schema.define(:version => 20121202130140) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -110,10 +110,11 @@ ActiveRecord::Schema.define(:version => 20121216141140) do
   create_table "purchase_items", :force => true do |t|
     t.integer  "purchase_id"
     t.integer  "deal_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
     t.string   "redemption_code"
     t.datetime "redeemed_at"
+    t.datetime "redemption_completed_at"
   end
 
   add_index "purchase_items", ["redemption_code"], :name => "index_purchase_items_on_redemption_code"
@@ -137,7 +138,7 @@ ActiveRecord::Schema.define(:version => 20121216141140) do
 
   create_table "redemptions", :force => true do |t|
     t.integer  "purchase_item_id"
-    t.string   "codec"
+    t.string   "code"
     t.boolean  "redeemable"
     t.datetime "requested_at"
     t.datetime "redeemed_at"
