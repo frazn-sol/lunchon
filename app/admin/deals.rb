@@ -35,11 +35,11 @@ ActiveAdmin.register Deal do
 
   form do |deal|
     deal.inputs 'Deal' do
-      deal.input :contract_id
+      deal.input :contract
       deal.input :name
       deal.input :original_price
       deal.input :quantity_purchased
-      deal.input :image, hint: deal.template.image_tag(deal.object.image.url(:thumb)) 
+      deal.input :image, hint: deal.template.image_tag(deal.object.image.url(:thumb) || 'default_deal.png') 
       deal.input :description
     end
     deal.buttons
