@@ -6,7 +6,6 @@ ActiveAdmin.register Contract do
     column :number_of_deals
     column :price
     column :value
-    column :total_discount
     column 'Total Discount' do |contract|
       number_to_percentage contract.total_discount*100, precision: 2, strip_insignificant_zeros: true
     end
@@ -51,6 +50,7 @@ ActiveAdmin.register Contract do
       f.input :number_of_deals
       f.input :price
       f.input :value
+      f.input :total_discount
       f.has_many :contract_conditions do |cc|
         cc.inputs  do
           cc.input :verbage
