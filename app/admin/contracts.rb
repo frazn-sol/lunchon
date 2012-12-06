@@ -18,6 +18,9 @@ ActiveAdmin.register Contract do
       row :restaurant_id
       row :price
       row :value
+      row 'Total Discount' do 
+        number_to_percentage contract.total_discount*100, precision: 2, strip_insignificant_zeros: true
+      end
       row :number_of_deals
       panel "Deals" do
         table_for contract.deals do
