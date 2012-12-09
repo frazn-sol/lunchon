@@ -10,8 +10,8 @@ class Lunchon.Routers.Purchases extends Backbone.Router
     $('#cart').remove()
 
   purchases: ->
-    @collection.fetch( 
-      success: => 
+    @collection.fetch(
+      success: =>
         @removeCart()
         view = new Lunchon.Views.PurchasesIndex(collection: @collection)
         $('#container').html(view.render().el)

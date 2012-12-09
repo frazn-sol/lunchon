@@ -6,18 +6,6 @@
     Total cost:
     %span.purchase_cost= accounting.formatMoney(@purchase.get('price'))
   %ul.purchase_items
-    - for purchase_item in @purchase.get('purchase_items')
-      %li
-        %h4= purchase_item['deal_name']
-          %span.small.restaurant_name= " from #{purchase_item['restaurant_name']}"
-        - if purchase_item['redeemed_at']
-          %p
-            Redeemed at:
-            %span.redeemed_at= purchase_item['redeemed_at']
-        - else
-          %p
-            Redemption Code:
-            %span.redemption_code= purchase_item['redemption_code']
 
 
 

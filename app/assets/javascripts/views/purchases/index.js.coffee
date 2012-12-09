@@ -2,18 +2,16 @@ class Lunchon.Views.PurchasesIndex extends Backbone.View
 
   template: JST['purchases/index']
   model: Lunchon.Models.Purchase
-  tagName: 'ul'
-  className: 'purchases well'
 
   initialize: ->
-    #@collection.on('reset', @render, this)
     @collection.on('fetch', @render, this)
 
   render: ->
-    $('#container').html(@el)
+    @$el.html(@template())
     @collection.each(@appendPurchase)
+    @$el.find('ul.purchases').append $('<li>Clicking "Generate Redemption Certificate" will void ALL other certificates for that item</span>')
     this
 
   appendPurchase: (purchase, index) =>
     view = new Lunchon.Views.Purchase(model: purchase)
-    $(@el).append(view.render().el)
+    @$el.find('ul.purchases').append(view.render().el)

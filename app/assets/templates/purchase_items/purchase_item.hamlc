@@ -1,0 +1,12 @@
+%div.row
+  %div.span4
+    %h4= @purchase_item.get('deal_name')
+      %span.small.restaurant_name= " from #{@purchase_item.get('restaurant_name')}"
+
+  - if @purchase_item.get('redeemed_at')
+    %div.span3.redeemed_at
+      Redeemed at:
+      %span= @purchase_item.get('redeemed_at')
+  - else
+    %div.span3.redeemed
+      %button.btn.btn-primary.generate_redemption Generate Redemption Certificate
