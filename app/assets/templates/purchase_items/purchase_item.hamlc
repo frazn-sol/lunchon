@@ -8,5 +8,5 @@
       Redeemed at:
       %span= @purchase_item.get('redeemed_at')
   - else
-    %div.span3.redeemed
-      %button.btn.btn-primary.generate_redemption Generate Redemption Certificate
+    %div.span3.redeem
+      %button{class: "btn btn-primary generate_redemption", data: { toggle: 'modal', target: '#modal'} } Generate Redemption Certificate

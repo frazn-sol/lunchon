@@ -1,0 +1,54 @@
+.modal-header
+  %image{ src: '/assets/logo-header.png', alt: 'Lunchon.co'}
+  .pull-right
+    %address
+      132 Regions Way
+      %br
+      Jupiter, FL 33548
+      %br
+      ph. 561.762.0238
+      %br
+.modal-body.redemption
+  .row-fluid
+    .span6
+      .small= @redemption.get('restaurant_name')
+      %h3.deal_name= @redemption.get('deal_name')
+    .span6
+      .pull-right
+        ADSSSFSD
+  %p.small= "The amount paid for this voucher (#{accounting.formatMoney(@redemption.get('purchase_price'))}) with #{@redemption.get('restaurant_name')} NEVER EXPIRES"
+  %p.small= "The promotional values expires SOME DATE"
+  .fine_print
+    %strong The Fine Print:
+    %br
+    Limit 1 per visit, not valid with other deals.
+  .row-fluid
+    .span6
+      %address
+        %strong Redeem At:
+        %br
+        = @redemption.get('restaurant_name')
+        %br
+        911 Village Blvd
+        %br
+        West Palm Beach, FL 33409
+        %br
+        ph. 561.242.2800
+        %br
+    .span6
+      .pull-right
+        %address
+          %strong Business Hours:
+          %br
+          Sunday-Thursday 11am - 2pm
+          %br
+          Friday-Saturday 11am - 3pm
+          %br
+
+  .fine_print.tiny
+    This deal can be used immediately. May order ahead. Ordering times vary by merchant. Limit 1 Voucher per person - Limit 1 Bulk Buy Voucher
+    per group - Vouchers cannot be combined with any other offer or promotion - ENTIRE VALUE OF THE VOUCHER MUST BE USED IN A SINGLE ORDER AND
+    MAY NOT BE USED OVER MULTIPLE ORDERS - VOUCHER MAY NOT BE USED TOWARDS TAX AND GRATUITY - Tax and gratiuty is based of of the original bill
+    before discounts are applied - Paid Value does not expire - Promotional value expires 2 weeks from purchase date - Other conditions/charges
+    may apply. Subject to LunchOn Terms & Conditions
+

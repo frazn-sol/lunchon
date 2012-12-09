@@ -12,4 +12,8 @@ class PurchaseItem < ActiveRecord::Base
     deal.name
   end
 
+  def purchase_price
+    deal.original_price * (1- purchase.discount_percentage)
+  end
+
 end

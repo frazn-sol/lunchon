@@ -10,7 +10,10 @@ class Lunchon.Views.PurchaseItem extends Backbone.View
 
   generateRedemption: (event) ->
     event.preventDefault()
-    console.log('generate redemption')
+    $this = $(@el).find('button')
+    modalHtml = new Lunchon.Views.RedemptionModal(model: @model)
+    $target = $($this.data('target'))
+    $target.html(modalHtml.render().el)
 
   render: ->
     @$el.html(@template(purchase_item: @model))
