@@ -35,6 +35,14 @@ module Encoder
       e2 = encoder.encode(6).to_i
       e1.should_not be_within(1).of e2
     end
+    
+    it 'generates unique codes' do
+      e1 = encoder.encode(5)
+      e2 = encoder.encode(55)
+      p e1
+      p e2
+      e1.should_not == e2
+    end
 
     it 'decodes correctly' do
       [1,3,5,6,10,55,65,56,100,1005].each do |e|
