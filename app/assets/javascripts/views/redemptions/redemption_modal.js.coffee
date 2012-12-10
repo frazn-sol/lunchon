@@ -7,15 +7,11 @@ class Lunchon.Views.RedemptionModal extends Backbone.View
 
   emailRedemption: (event) ->
     event.preventDefault()
-    alert "email"
-    #$('#modal').modal('hide')
 
   pdfRedemption: (event) ->
     event.preventDefault()
-    alert "pdf"
-    #$('#modal').modal('hide')
 
   render: ->
-    console.log @model
-    $(@el).html(@template(redemption: @model))
+    @$el.html(@template(redemption: @model))
+    @$el.find('#barcode').barcode('123456789012','ean13', {barWidth: 2, barHeight:30, fontSize: 12})
     this

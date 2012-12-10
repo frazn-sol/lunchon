@@ -1,6 +1,6 @@
 class Purchase < ActiveRecord::Base
   belongs_to :user
-  has_many   :purchase_items
+  has_many   :purchase_items, dependent: :destroy
   attr_accessible :cc_transaction_id, :price, :user_id
 
   def build_purchase_items(lunch_bag_items)

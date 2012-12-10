@@ -1,4 +1,4 @@
-.modal-header
+.modal-header.redemption-header
   %image{ src: '/assets/logo-header.png', alt: 'Lunchon.co'}
   .pull-right
     %address
@@ -14,8 +14,7 @@
       .small= @redemption.get('restaurant_name')
       %h3.deal_name= @redemption.get('deal_name')
     .span6
-      .pull-right
-        ADSSSFSD
+      .pull-right#barcode.barcode
   %p.small= "The amount paid for this voucher (#{accounting.formatMoney(@redemption.get('purchase_price'))}) with #{@redemption.get('restaurant_name')} NEVER EXPIRES"
   %p.small= "The promotional values expires SOME DATE"
   .fine_print
@@ -51,4 +50,9 @@
     MAY NOT BE USED OVER MULTIPLE ORDERS - VOUCHER MAY NOT BE USED TOWARDS TAX AND GRATUITY - Tax and gratiuty is based of of the original bill
     before discounts are applied - Paid Value does not expire - Promotional value expires 2 weeks from purchase date - Other conditions/charges
     may apply. Subject to LunchOn Terms & Conditions
-
+  .help_message
+    Need Help?  Call Lunchon to Speak to Our Customer Care Right Away!
+.modal-footer
+  .pull-left#barcode.barcode
+  %button.btn.email Email Certificate
+  %button.btn.to_pdf Save as PDF
