@@ -1,9 +1,10 @@
 module Encoder
   class Base
     Seed = 1834
-    attr_accessor :seed, :required_length
+    attr_accessor :seed, :required_length, :time_seed
     def initialize(options={})
       @seed = options.fetch(:seed, Seed)
+      @time_seed = options.fetch(:time_seed, Time.now).sec.to_s
       @required_length = options.fetch(:required_length, @seed.to_s.length)
     end
 
@@ -39,7 +40,7 @@ module Encoder
     end
 
     def padded_id
-      @id.ljust(required_length, @id).to_i
+      @id.ljust(required_length, time_seed).to_i
     end
   end
 

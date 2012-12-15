@@ -11,9 +11,13 @@ class Lunchon.Views.PurchaseItem extends Backbone.View
   generateRedemption: (event) ->
     event.preventDefault()
     $this = $(@el).find('button')
-    modalHtml = new Lunchon.Views.RedemptionModal(model: @model)
-    $target = $($this.data('target'))
-    $target.html(modalHtml.render().el)
+    redemption = new Lunchon.Models.Redemption purchase_item_id: @model.get('id')
+    redemption.save {},
+      success: (model,response) ->
+        modalHtml = new Lunchon.Views.RedemptionModal(model: model)
+        $target = $($this.data('target'))
+        $target.html(modalHtml.render().el)
+      error: (model,response) ->
 
   render: ->
     @$el.html(@template(purchase_item: @model))

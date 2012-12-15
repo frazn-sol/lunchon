@@ -9,6 +9,7 @@ Lunchon::Application.routes.draw do
   scope 'api' do
     resources :deals, only: [:show, :index]
     resources :purchases
+    resources :redemptions
   end
 
   resources :deals

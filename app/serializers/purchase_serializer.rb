@@ -4,7 +4,7 @@ class PurchaseSerializer < ApplicationSerializer
   has_many :purchase_items
 
   def created_at
-    object.created_at.to_s(:long)
+    object.created_at.strftime("%b %e, %Y %l:%M%p")
   end
 
 end

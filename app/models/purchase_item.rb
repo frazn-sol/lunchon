@@ -16,4 +16,8 @@ class PurchaseItem < ActiveRecord::Base
     deal.original_price * (1- purchase.discount_percentage)
   end
 
+  def invalidate_redemptions
+    redemptions.each{ |r| r.update_column :redeemable, false}
+  end
+
 end
