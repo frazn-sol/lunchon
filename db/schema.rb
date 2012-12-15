@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202122453) do
+ActiveRecord::Schema.define(:version => 20121215174632) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -82,6 +82,22 @@ ActiveRecord::Schema.define(:version => 20121202122453) do
 
   add_index "deals", ["contract_id"], :name => "index_deals_on_restaurant_id"
 
+  create_table "locations", :force => true do |t|
+    t.integer  "restaurant_id"
+    t.string   "street_1"
+    t.string   "street_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "hours"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "locations", ["restaurant_id"], :name => "index_locations_on_restaurant_id"
+
   create_table "purchase_items", :force => true do |t|
     t.integer  "purchase_id"
     t.string   "deal_id"
@@ -108,6 +124,15 @@ ActiveRecord::Schema.define(:version => 20121202122453) do
     t.float    "rating"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "redemptions", :force => true do |t|
+    t.integer  "purchase_item_id"
+    t.string   "code"
+    t.boolean  "redeemable"
+    t.datetime "requested_at"
+    t.datetime "redeemed_at"
+    t.integer  "redeemed_by"
   end
 
   create_table "restaurants", :force => true do |t|
