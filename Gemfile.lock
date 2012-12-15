@@ -106,6 +106,7 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    geocoder (1.1.5)
     haml (3.1.7)
     haml-rails (0.3.5)
       actionpack (>= 3.1, < 4.1)
@@ -233,6 +234,7 @@ DEPENDENCIES
   carrierwave!
   coffee-rails (~> 3.2.1)
   factory_girl_rails
+  geocoder
   haml-rails
   haml_coffee_assets
   jquery-rails

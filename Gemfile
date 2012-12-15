@@ -15,6 +15,7 @@ gem 'rake', '0.8.7'
 gem 'activeadmin'
 gem "active_model_serializers", :git => "git://github.com/rails-api/active_model_serializers.git"
 gem 'mysql2'
+gem 'geocoder'
 gem 'haml-rails'
 gem 'sass'
 gem 'simple_form'
