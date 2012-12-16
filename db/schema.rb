@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202130140) do
+ActiveRecord::Schema.define(:version => 20121216141140) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(:version => 20121202130140) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-  create_table "cart_items", :force => true do |t|
-    t.integer "deal_id"
-    t.integer "cart_id"
-  end
-
-  create_table "carts", :force => true do |t|
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "deal_id"
     t.text     "message"
@@ -85,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20121202130140) do
     t.string   "image"
     t.integer  "contract_id"
     t.text     "description"
-    t.decimal  "original_price",     :precision => 10, :scale => 0
+    t.decimal  "original_price",     :precision => 10, :scale => 2
     t.integer  "quantity_purchased"
   end
 
@@ -109,12 +101,11 @@ ActiveRecord::Schema.define(:version => 20121202130140) do
 
   create_table "purchase_items", :force => true do |t|
     t.integer  "purchase_id"
-    t.integer  "deal_id"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.string   "deal_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "redemption_code"
     t.datetime "redeemed_at"
-    t.datetime "redemption_completed_at"
   end
 
   add_index "purchase_items", ["redemption_code"], :name => "index_purchase_items_on_redemption_code"
