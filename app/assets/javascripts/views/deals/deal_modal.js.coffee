@@ -10,6 +10,7 @@ class Lunchon.Views.DealModal extends Backbone.View
     $('#modal').modal('hide')
 
   render: ->
-    $(@el).html(@template(deal: @model))
+    shortestDistance = @model.get('distances')[0]?.toFixed(0)
+    $(@el).html(@template(deal: @model, shortestDistance: shortestDistance))
     this
 

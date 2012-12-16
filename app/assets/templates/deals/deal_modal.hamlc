@@ -8,6 +8,8 @@
       %p= @deal.get('description')
     .span4
       %img{ src: 'assets/sample_map.png', class: 'img-rounded'}
+      -if @shortestDistance
+        %span.distance= "about #{@shortestDistance} miles away"
   .row-fluid
     .span4
       %h2= accounting.formatMoney @deal.get('original_price')
