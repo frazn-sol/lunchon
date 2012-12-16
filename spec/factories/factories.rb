@@ -13,10 +13,6 @@ FactoryGirl.define do
     contract_id 1
   end
 
-  factory :contract do
-    restaurant_id 1
-  end
-
   factory :restaurant do
     name
   end
