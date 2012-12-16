@@ -58,6 +58,9 @@ ActiveAdmin.register Restaurant do
       f.input :name
       f.has_many :locations do |l|
         l.inputs  do
+          if l.object.persisted?
+            l.input :_destroy, as: :boolean, label: 'delete'
+          end
           l.input :street_1
           l.input :street_2
           l.input :city
