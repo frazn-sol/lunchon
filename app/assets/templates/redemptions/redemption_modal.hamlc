@@ -28,21 +28,22 @@
         %br
         = @redemption.get('restaurant_name')
         %br
-        911 Village Blvd
+        = @restaurant_location.street_1
         %br
-        West Palm Beach, FL 33409
+        - if @restaurant_location.street_2
+          = @restaurant_location.street_2
+          %br
+        = "#{@restaurant_location.city}, #{@restaurant_location.state} #{@restaurant_location.zip}"
         %br
-        ph. 561.242.2800
+        = "Ph #{@restaurant_location.phone}"
         %br
     .span6
       .pull-right
         %address
           %strong Business Hours:
-          %br
-          Sunday-Thursday 11am - 2pm
-          %br
-          Friday-Saturday 11am - 3pm
-          %br
+          - for hour in @hours
+            %br
+            = hour
 
   .fine_print.tiny
     This deal can be used immediately. May order ahead. Ordering times vary by merchant. Limit 1 Voucher per person - Limit 1 Bulk Buy Voucher
@@ -50,9 +51,8 @@
     MAY NOT BE USED OVER MULTIPLE ORDERS - VOUCHER MAY NOT BE USED TOWARDS TAX AND GRATUITY - Tax and gratiuty is based of of the original bill
     before discounts are applied - Paid Value does not expire - Promotional value expires 2 weeks from purchase date - Other conditions/charges
     may apply. Subject to LunchOn Terms & Conditions
-  .help_message
-    Need Help?  Call Lunchon to Speak to Our Customer Care Right Away!
 .modal-footer
+  .help_message Need Help?  Call Lunchon to Speak to Our Customer Care Right Away!
   .pull-left#barcode.barcode
   %button.btn.email Email Certificate
   %button.btn.to_pdf Save as PDF

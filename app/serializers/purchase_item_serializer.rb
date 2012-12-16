@@ -5,6 +5,7 @@ class PurchaseItemSerializer < ApplicationSerializer
   attribute :deal_id
   attribute :id
   attribute :purchase_price
+  has_one :restaurant
 
 
   def redeemed_at

@@ -37,6 +37,9 @@ ActiveAdmin.register Restaurant do
           column 'ZIP' do |l|
             l.zip
           end
+          column 'Phone' do |l|
+            l.phone
+          end
           column 'Hours' do |l|
             l.hours
           end
@@ -66,6 +69,7 @@ ActiveAdmin.register Restaurant do
           l.input :city
           l.input :state
           l.input :zip
+          l.input :phone
           l.input :hours
         end
       end
