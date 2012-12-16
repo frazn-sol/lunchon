@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121215174632) do
+ActiveRecord::Schema.define(:version => 20121216141140) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20121215174632) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "cart_items", :force => true do |t|
+    t.integer "deal_id"
+    t.integer "cart_id"
+  end
+
+  create_table "carts", :force => true do |t|
+  end
+
   create_table "comments", :force => true do |t|
     t.integer  "deal_id"
     t.text     "message"
@@ -67,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20121215174632) do
     t.datetime "updated_at",                                                      :null => false
     t.integer  "number_of_deals"
     t.decimal  "total_discount",  :precision => 10, :scale => 2, :default => 0.0
+    t.string   "name"
   end
 
   create_table "deals", :force => true do |t|
@@ -76,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20121215174632) do
     t.string   "image"
     t.integer  "contract_id"
     t.text     "description"
-    t.decimal  "original_price",     :precision => 10, :scale => 2
+    t.decimal  "original_price",     :precision => 10, :scale => 0
     t.integer  "quantity_purchased"
   end
 
@@ -100,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20121215174632) do
 
   create_table "purchase_items", :force => true do |t|
     t.integer  "purchase_id"
-    t.string   "deal_id"
+    t.integer  "deal_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "redemption_code"
@@ -128,7 +137,7 @@ ActiveRecord::Schema.define(:version => 20121215174632) do
 
   create_table "redemptions", :force => true do |t|
     t.integer  "purchase_item_id"
-    t.string   "code"
+    t.string   "codec"
     t.boolean  "redeemable"
     t.datetime "requested_at"
     t.datetime "redeemed_at"

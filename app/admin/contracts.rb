@@ -3,6 +3,7 @@ ActiveAdmin.register Contract do
   index do 
     column :id
     column :restaurant
+    column :name
     column :number_of_deals
     column :price
     column :value
@@ -16,6 +17,7 @@ ActiveAdmin.register Contract do
     attributes_table do
       row :id
       row :restaurant_id
+      row :name
       row :price
       row :value
       row 'Total Discount' do 
@@ -50,6 +52,9 @@ ActiveAdmin.register Contract do
   form do |f|
     f.inputs do
       f.input :restaurant
+      if f.object.persisted?
+        f.input :name
+      end
       f.input :number_of_deals
       f.input :price
       f.input :value
