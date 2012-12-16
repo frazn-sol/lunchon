@@ -7,7 +7,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Active Contracts" do
           Contract.scoped.order(:created_at).each do |contract|
-            display_name = "#{contract.restaurant.name} ##{contract.id}"
+            display_name = "#{contract.restaurant.name} #{contract.name}"
             columns do
               column do
                 span link_to(display_name, admin_contract_path(contract))
