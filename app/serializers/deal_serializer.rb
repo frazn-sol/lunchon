@@ -7,7 +7,6 @@ class DealSerializer < ApplicationSerializer
   attribute :image
   attribute :featured
   attribute :remaining
-  attribute :distances
 
   def image
     {
@@ -28,7 +27,4 @@ class DealSerializer < ApplicationSerializer
     "stars_#{rating.to_s.sub('.','')}"
   end
 
-  def distances
-    object.restaurant.locations.map{ |l|  l.distance_from(options[:current_location])}.sort
-  end
 end

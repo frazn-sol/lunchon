@@ -8,6 +8,8 @@ window.Lunchon =
     @purchases = new Lunchon.Routers.Purchases
     @lunch_bag = new Lunchon.Models.LunchBag
     @buy_button = new Lunchon.Models.BuyButton
+    @locations = new Lunchon.Collections.Locations
+
 
     Backbone.history.start()
 

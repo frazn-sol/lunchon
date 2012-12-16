@@ -2,17 +2,16 @@ class DealsController < ApplicationController
   respond_to :json
 
   def index
-    @request_location = request.location
-
     @deals = Deal.includes(:restaurant, :ratings, :purchase_items).all.shuffle
     @deals[-2..-1].map{ |d| d.featured=true}
-    @deals_json = @deals.map{ |d| DealSerializer.new(d, current_location: [@request_location.latitude, @request_location.longitude]).as_json}.to_json
+    @deals_json = @deals.map{ |d| DealSerializer.new(d).as_json}.to_json
+    @locations_json = Location.all.map{ |l| LocationSerializer.new(l).as_json }.to_json
     @lunch_bag = LunchBag.new({items: session[:lunch_bag] || {}})
     @is_user_signed_in = user_signed_in?
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render( json: @deals, current_location: [@request_location.latitude, @request_location.longitude])}
+      format.json { render( json: @deals)}
     end
   end
 
