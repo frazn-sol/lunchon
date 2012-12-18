@@ -24,6 +24,10 @@ class Deal < ActiveRecord::Base
     restaurant.name
   end
 
+  def contract_conditions
+    contract.contract_conditions
+  end
+
   def to_lunch_bag
     {deal_id: id, name: name, original_price: original_price.to_f}
   end

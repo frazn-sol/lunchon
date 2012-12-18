@@ -1,5 +1,5 @@
 class RedemptionSerializer < ApplicationSerializer
-  attributes :id, :code, :purchase_price
+  attributes :id, :code, :purchase_price, :contract_conditions
   attribute  :expiration_date
   attribute  :deal_name
   attribute  :restaurant_name

@@ -3,7 +3,7 @@ class Redemption < ActiveRecord::Base
   attr_accessible :code, :purchase_item_id, :redeemable, :redeemed_at, :redeemed_by, :requested_at
   
 
-  delegate :restaurant, :deal, :purchase_price, to: :purchase_item
+  delegate :restaurant, :deal, :purchase_price, :contract_conditions, to: :purchase_item
 
   def generate_code
     self.code = "#{encoded_restaurant}#{encoded_purchase_item}"

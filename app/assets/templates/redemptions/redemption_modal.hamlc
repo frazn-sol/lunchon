@@ -6,7 +6,7 @@
       %br
       Jupiter, FL 33548
       %br
-      Ph 561.762.0238
+      Ph 561.247.1207
       %br
 .modal-body.redemption
   .row-fluid
@@ -20,7 +20,9 @@
   .fine_print
     %strong The Fine Print:
     %br
-    Limit 1 per visit, not valid with other deals.
+    - for condition in  @redemption.get('contract_conditions')
+      = condition.verbage
+      %br
   .row-fluid
     .span6
       %address

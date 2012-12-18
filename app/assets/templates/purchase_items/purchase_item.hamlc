@@ -9,4 +9,4 @@
       %span= @purchase_item.get('redeemed_at')
   - else
     %div.span3.redeem
-      %button{class: "btn btn-primary generate_redemption", data: { toggle: 'modal', target: '#redemption_modal'} } Generate Redemption Certificate
+      %button{class: "btn btn-primary generate_redemption", data: { toggle: 'modal', target: '#redemption_modal'} } Redeem Now
