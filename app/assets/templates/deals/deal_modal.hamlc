@@ -10,6 +10,17 @@
       %img{ src: 'assets/sample_map.png', class: 'img-rounded'}
       -if @shortestDistance
         %span.distance= "about #{@shortestDistance} miles away"
+      .tiny.grey
+        %address
+          = @restaurant_location.get 'street_1'
+          %br
+          - if @restaurant_location.get 'street_2'
+            = @restaurant_location.get 'street_2'
+            %br
+          = "#{@restaurant_location.get('city')}, #{@restaurant_location.get('state')} #{@restaurant_location.get('zip')}"
+          %br
+          = "Ph #{@restaurant_location.get('phone')}"
+          %br
   .row-fluid
     .span4
       %h2= accounting.formatMoney @deal.get('original_price')

@@ -11,7 +11,8 @@ class Lunchon.Views.DealModal extends Backbone.View
 
   render: ->
     restaurant_id = @model.get('restaurant').id
+    restaurant_location = Lunchon.locations.where({restaurant_id: restaurant_id})[0]
     shortestDistance = Lunchon.locations.where({restaurant_id: restaurant_id})[0]?.get('distance')?.toFixed(1)
-    $(@el).html(@template(deal: @model, shortestDistance: shortestDistance))
+    $(@el).html(@template(deal: @model, shortestDistance: shortestDistance, restaurant_location: restaurant_location))
     this
 
