@@ -4,6 +4,13 @@ ActiveAdmin.register Restaurant do
     attributes_table do
       row :id
       row :name
+      panel 'Merchant Users' do
+        table_for restaurant.merchants do
+          column 'Email' do |m|
+            link_to m.email, admin_merchant_path(m.id)
+          end
+        end
+      end
       panel 'Contracts' do
         table_for restaurant.contracts do
           column 'Name' do |c|

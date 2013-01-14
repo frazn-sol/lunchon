@@ -9,10 +9,14 @@ Lunchon::Application.routes.draw do
   scope 'api' do
     resources :deals, only: [:show, :index]
     resources :purchases
-    resources :redemptions
+    resources :redemptions do
+      post :validate, on: :collection
+    end
   end
 
   resources :deals
+  match 'redeem' => 'redemptions#edit', as: 'redeem'
+  #   match 'products/:id' => 'catalog#view'
 
   resource :lunch_bag, controller: :lunch_bag do
     get :add_item

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216230823) do
+ActiveRecord::Schema.define(:version => 20130106155432) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(:version => 20121216230823) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "cart_items", :force => true do |t|
+    t.integer "deal_id"
+    t.integer "cart_id"
+  end
+
+  create_table "carts", :force => true do |t|
+  end
+
   create_table "comments", :force => true do |t|
     t.integer  "deal_id"
     t.text     "message"
@@ -77,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20121216230823) do
     t.string   "image"
     t.integer  "contract_id"
     t.text     "description"
-    t.decimal  "original_price",     :precision => 10, :scale => 2
+    t.decimal  "original_price",     :precision => 10, :scale => 0
     t.integer  "quantity_purchased"
   end
 
@@ -100,9 +108,17 @@ ActiveRecord::Schema.define(:version => 20121216230823) do
 
   add_index "locations", ["restaurant_id"], :name => "index_locations_on_restaurant_id"
 
+  create_table "merchants_restaurants", :id => false, :force => true do |t|
+    t.integer "merchant_id"
+    t.integer "restaurant_id"
+  end
+
+  add_index "merchants_restaurants", ["merchant_id"], :name => "index_merchants_restaurants_on_merchant_id"
+  add_index "merchants_restaurants", ["restaurant_id"], :name => "index_merchants_restaurants_on_restaurant_id"
+
   create_table "purchase_items", :force => true do |t|
     t.integer  "purchase_id"
-    t.string   "deal_id"
+    t.integer  "deal_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "redemption_code"
@@ -154,8 +170,9 @@ ActiveRecord::Schema.define(:version => 20121216230823) do
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.boolean  "is_merchant",            :default => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -168,8 +185,8 @@ ActiveRecord::Schema.define(:version => 20121216230823) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

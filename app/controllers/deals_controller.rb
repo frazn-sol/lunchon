@@ -2,6 +2,7 @@ class DealsController < ApplicationController
   respond_to :json
 
   def index
+    redirect_to redeem_path and return if current_user && current_user.is_merchant?
     @deals = Deal.includes(:restaurant, :ratings, :purchase_items).all.shuffle
     @deals[-2..-1].map{ |d| d.featured=true}
     @deals_json = @deals.map{ |d| DealSerializer.new(d).as_json}.to_json

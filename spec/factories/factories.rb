@@ -40,6 +40,12 @@ FactoryGirl.define do
     password_confirmation '123456'
   end
 
+  factory :merchant do
+    email
+    password '123456'
+    password_confirmation '123456'
+  end
+
   factory :redemption do
     purchase_item_id 5
   end
