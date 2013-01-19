@@ -1,8 +1,14 @@
 class Redemption < ActiveRecord::Base
   belongs_to :purchase_item
+  has_one :deal, through: :purchase_item
+  has_one :restaurant, through: :deal
+
   attr_accessible :code, :purchase_item_id, :redeemable, :redeemed_at, :redeemed_by, :requested_at
   
   delegate :restaurant, :deal, :purchase_price, :contract_conditions, to: :purchase_item
+
+  scope :redeemed, where('redeemed_at IS NOT NULL')
+
 
   def generate_code
     self.code = "#{encoded_restaurant}#{encoded_purchase_item}"

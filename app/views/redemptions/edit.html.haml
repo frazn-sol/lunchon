@@ -4,3 +4,5 @@
   = form_for @redemption, url: validate_redemptions_path do |f|
     = f.text_field :code, class: 'span6', placeholder: 'Repemption Code'
     %button{ type: 'submit', class: 'btn btn-info btn-block', name: 'submit'} Redeem Now
+  %legend= "#{@redemption_count} redemptions to date"
+

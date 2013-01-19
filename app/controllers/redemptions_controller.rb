@@ -5,7 +5,7 @@ class RedemptionsController < ApplicationController
 
   def create
     @purchase_item = current_user.purchase_items.find_by_id(params[:purchase_item_id])
-    @redemption = Redemption.first_or_initialize purchase_item_id: @purchase_item.id#, redeemable: true, 
+    @redemption = Redemption.find_or_initialize_by_purchase_item_id @purchase_item.id
     if @redemption.new_record?
       @redemption.requested_at  = Time.now
       @redemption.generate_code
@@ -16,6 +16,7 @@ class RedemptionsController < ApplicationController
   end
 
   def edit
+    @redemption_count = current_merchant.restaurants.first.redeemed_redemptions.size
     @redemption = Redemption.new
   end
 
