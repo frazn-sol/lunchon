@@ -1,0 +1,18 @@
+.modal-header.redemption-header
+  %image{ src: '/assets/logo-header.png', alt: 'Lunchon.co'}
+  .pull-right
+    %address
+      132 Regions Way
+      %br
+      Jupiter, FL 33548
+      %br
+      Ph 561.247.1207
+      %br
+.modal-body.redemption
+  .row-fluid
+    .span6
+      .small= @redemption.get('restaurant_name')
+      %h3.deal_name= @redemption.get('deal_name')
+  %p.small= "The voucher was redeemed #{@redemption.get('redeemed_at')}"
+.modal-footer
+  .help_message Need Help?  Call Lunchon to Speak to Our Customer Care Right Away!

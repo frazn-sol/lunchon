@@ -15,7 +15,11 @@ class Lunchon.Views.PurchaseItem extends Backbone.View
     redemption = new Lunchon.Models.Redemption purchase_item_id: @model.get('id')
     redemption.save {},
       success: (model,response) =>
-        modalHtml = new Lunchon.Views.RedemptionModal(model: model, restaurant_location: @restaurant_location)
+        if model.get('redeemable')
+          modalHtml = new Lunchon.Views.RedemptionModal(model: model, restaurant_location: @restaurant_location)
+        else
+          modalHtml = new Lunchon.Views.RedeemedModal(model: model)
+          $this.parent().removeClass('redeem').addClass('redeemed_at').html('Redeemed at:').append($("<span>#{model.get('redeemed_at')}</span>"))
         $target = $($this.data('target'))
         $target.html(modalHtml.render().el)
       error: (model,response) ->

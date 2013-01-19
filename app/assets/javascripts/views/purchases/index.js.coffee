@@ -9,7 +9,6 @@ class Lunchon.Views.PurchasesIndex extends Backbone.View
   render: ->
     @$el.html(@template())
     @collection.each(@appendPurchase)
-    @$el.find('ul.purchases').append $('<li>Clicking "Generate Redemption Certificate" will void ALL other certificates for that item</span>')
     this
 
   appendPurchase: (purchase, index) =>
