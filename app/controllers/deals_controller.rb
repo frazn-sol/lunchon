@@ -4,6 +4,8 @@ class DealsController < ApplicationController
   def index
     redirect_to redeem_path and return if current_user && current_user.is_merchant?
     @deals = Deal.includes(:restaurant, :ratings, :purchase_items).all.shuffle
+
+    #TODO decide how to handle featured deals
     @deals[-2..-1].map{ |d| d.featured=true}
     @deals_json = @deals.map{ |d| DealSerializer.new(d).as_json}.to_json
     @locations_json = Location.all.map{ |l| LocationSerializer.new(l).as_json }.to_json

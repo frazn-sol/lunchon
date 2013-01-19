@@ -11,6 +11,7 @@ FactoryGirl.define do
     name
     original_price 10
     contract_id 1
+    quantity_purchased 100
   end
 
   factory :restaurant do
