@@ -6,7 +6,7 @@ if RUBY_VERSION =~ /1.9/
   Encoding.default_internal = Encoding::UTF_8
 end 
 
-gem 'rails', '3.2.6'
+gem 'rails'
 gem 'rake', '0.8.7'
 
 # Bundle edge Rails instead:
