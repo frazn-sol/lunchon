@@ -15,11 +15,13 @@ describe RedemptionsController do
     purchase_item = FactoryGirl.create(:purchase_item, purchase_id: purchase.id, deal_id: deal.id)
     redemption = FactoryGirl.create(:redemption, purchase_item_id: purchase_item.id, requested_at: Time.now)
     code = redemption.generate_code
+    purchase_item.redeemed_at.should be_nil
     redemption.save
     post :validate, redemption: {code: code+ '1'}
     redemption.reload
     redemption.redeemed_at.should_not be_nil
     redemption.redeemed_by.should == @current_merchant.id
+    purchase_item.reload.redeemed_at.should_not be_nil
   end
   
 

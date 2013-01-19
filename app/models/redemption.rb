@@ -26,7 +26,8 @@ class Redemption < ActiveRecord::Base
 
   def redeem_error(user)
     #TODO create an audit trail, either in db or log, for errors
-    return "You do not have access to redeem this code" unless user.is_merchant? && user.works_for?(restaurant.id)
+    merchant = Merchant.find_by_id(user.id)
+    return "You do not have access to redeem this code" unless user.is_merchant? && merchant && merchant.works_for?(restaurant.id)
     return "That code has been invalidated by the purchaser" if invalidated?
     return "That code was redeemed on #{redeemed_at.to_s(:long)}" if redeemed?
     return "That code has expired" if expired?
@@ -56,6 +57,7 @@ class Redemption < ActiveRecord::Base
     update_column :redeemed_at, Time.now
     update_column :redeemed_by, user.id
     update_column :redeemable, false
+    purchase_item.update_column :redeemed_at, Time.now
   end
 
   private
