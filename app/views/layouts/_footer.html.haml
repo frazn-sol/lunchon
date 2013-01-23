@@ -1,28 +1,13 @@
 .container
   %ul.breadcrumb
     %li
-      &copy; Lunchon.co 2012
+      &copy; Lunchon.co 2013
       %span.divider &middot;
     %li
       = link_to image_tag('facebook-logo.png', size: "35x35"), 'http://facebook.com/lunchon.co', target: "_blank"
       %span.divider &middot;
     %li
       = link_to image_tag('twitter-logo.png', size: "35x35"), 'http://twitter.com/getyourlunchon', target: "_blank"
-      %span.divider &middot;
-    %li
-      %a Contact Us
-      %span.divider &middot;
-    %li
-      %a FAQ
-      %span.divider &middot;
-    %li
-      %a Press
-      %span.divider &middot;
-    %li
-      %a Privacy
-      %span.divider &middot;
-    %li
-      %a Terms of Use
       %span.divider &middot;
     - if user_signed_in?
       %li
