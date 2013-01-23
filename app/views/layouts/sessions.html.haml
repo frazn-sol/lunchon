@@ -19,10 +19,11 @@
             %ul.nav.pull-right
               %li.nav-center-vertical
                 .btn-group.nav
-                  %button{ class: 'btn btn-large btn-inverse'} Support
+                  = link_to "Support", '#support', class: 'btn btn-large btn-inverse'
     .container
       .row
-        = yield
+        #container
+          = yield
     #footer
       = render 'layouts/footer'
           

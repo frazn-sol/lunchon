@@ -8,5 +8,6 @@ class Lunchon.Routers.Deals extends Backbone.Router
     this
 
   index: ->
-    view = new Lunchon.Views.DealsIndex(collection: @collection)
-    $('#container').html(view.render().el)
+    if @collection.length > 0
+      view = new Lunchon.Views.DealsIndex(collection: @collection)
+      $('#container').html(view.render().el)
