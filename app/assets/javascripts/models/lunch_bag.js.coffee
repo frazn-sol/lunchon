@@ -18,6 +18,7 @@ class Lunchon.Models.LunchBag extends Backbone.Model
     "#{@.discount*100}%"
 
   build: (lunch_bag_data) ->
+    return unless lunch_bag_data
     @lunch_bag_items = new Lunchon.Collections.LunchBagItems
     @.total_price = lunch_bag_data['total_price']
     @.discounted_price = lunch_bag_data['discounted_price']
