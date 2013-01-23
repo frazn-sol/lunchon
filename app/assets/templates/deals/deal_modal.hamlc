@@ -1,15 +1,12 @@
 .modal-body
   .row-fluid
+    .span12
+      %h2= @deal.get('name')
+  .row-fluid
     .span4
       %img{ src: @deal.get('image')['thumb']['url'], class: 'img-rounded'}
     .span4
-      %h2= @deal.get('name')
-      %h3= @deal.get('restaurant')?['name'] || 'None Yet'
-      %p= @deal.get('description')
-    .span4
-      %img{ src: 'assets/sample_map.png', class: 'img-rounded'}
-      -if @shortestDistance
-        %span.distance= "about #{@shortestDistance} miles away"
+      %h4= @deal.get('restaurant')?['name'] || 'None Yet'
       .tiny.grey
         %address
           = @restaurant_location.get 'street_1'
@@ -21,11 +18,20 @@
           %br
           = "Ph #{@restaurant_location.get('phone')}"
           %br
-  .row-fluid
     .span4
+      %img{ src: 'assets/sample_map.png', class: 'img-rounded'}
+  .row-fluid.secondary
+    .span8
+      %p= @deal.get('description')
+    .span4
+      -if @shortestDistance
+        %span.distance= "about #{@shortestDistance} miles away"
+      - else
+        Allow this site to access your location to get the distance to this restaurant
       %h2= accounting.formatMoney @deal.get('original_price')
-    .span4
       - if @deal.get('remaining') == 0
         %button.btn.btn-primary.add_to_cart.disabled Sold Out
       - else
         %button.btn.btn-primary.add_to_cart Add to Lunch Bag
+
+
