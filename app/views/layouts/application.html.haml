@@ -20,8 +20,8 @@
             %ul.nav.pull-right
               %li.nav-center-vertical
                 .btn-group.nav
-                  %button{ class: 'btn btn-large btn-inverse'} Support
-                  %a{ class: 'btn btn-large btn-inverse', href: "/#purchases"} Account
+                  = link_to "Support", '/#support', class: 'btn btn-large btn-inverse'
+                  = link_to "Account", '/#purchases', class: 'btn btn-large btn-inverse'
               - if user_signed_in?
                 %li.nav-center-vertical
                   %p Logged In as:
@@ -43,14 +43,8 @@
         %div.alert.span9.alert-error
           %a{class: 'close', data: {dismiss: 'alert'}, href: '#'} &times;
           = flash[:alert]
-    %ul.breadcrumb.no-background
-      %li
-        = link_to 'Dashboard', '#'
-        %span.divider /
-      %li.active
-        = link_to 'Select Meals', '#'
     .container
-      .row
+      .row.top_row
         = yield :container
         #cart.span3
           .box

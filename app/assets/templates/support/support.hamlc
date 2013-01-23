@@ -1,0 +1,10 @@
+.span6.offset2.well
+  %legend Need Help?
+  %div
+    %p You can contact us using the methods below:
+    %p
+      = '- Email:'
+      %a(href= 'mail_to:info@lunchon.co') info@lunchon.co
+    %p - Phone: 561-247-1207
+    %p We look forward to hearing from you
+  %legend Lunchon Support Team
