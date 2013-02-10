@@ -22,9 +22,8 @@
                   %button{ class: 'btn btn-large btn-inverse'} Support
     .container
       .row
-        .modal.fade.in
-          .modal-body
-            = yield
-    %div{class: "modal-backdrop fade in"}
+        = yield
+    #footer
+      = render 'layouts/footer'
           
 

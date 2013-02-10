@@ -1,7 +1,7 @@
 class RedemptionsController < ApplicationController
   respond_to :json
   before_filter :authenticate_user!
-  layout 'sessions'
+  layout 'redemptions'
 
   def create
     @purchase_item = current_user.purchase_items.find_by_id(params[:purchase_item_id])
