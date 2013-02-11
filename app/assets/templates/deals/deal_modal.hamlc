@@ -19,7 +19,7 @@
           = "Ph #{@restaurant_location.get('phone')}"
           %br
     .span4
-      %img{ src: 'assets/sample_map.png', class: 'img-rounded'}
+      #map_canvas
   .row-fluid.secondary
     .span8
       %p= @deal.get('description')

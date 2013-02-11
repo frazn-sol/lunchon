@@ -33,7 +33,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass', '~> 2.2.1.1'
+  gem 'bootstrap-sass'#, '~> 2.2.1.1'
   gem 'haml_coffee_assets'
 end
 
