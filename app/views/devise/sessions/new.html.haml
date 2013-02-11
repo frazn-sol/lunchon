@@ -1,5 +1,7 @@
-.span6.offset2.well
-  %legend Sign in
+.row-fluid
+  %legend
+    Sign in
+    .pull-right= link_to '&times;'.html_safe, root_path
   = render 'devise/shared/flash', flash: flash
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
     = f.email_field :email, class: 'span6', placeholder: 'Email'

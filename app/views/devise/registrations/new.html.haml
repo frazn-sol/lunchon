@@ -1,5 +1,7 @@
-.span6.offset2.well
-  %legend Sign Up
+.row-fluid
+  %legend
+    Sign Up
+    .pull-right= link_to '&times;'.html_safe, root_path
   = devise_error_messages!
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
     = f.email_field :email, class: 'span6', placeholder: 'Email'

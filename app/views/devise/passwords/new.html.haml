@@ -1,5 +1,7 @@
-.span6.offset2.well
-  %legend Forgot your password?
+.row-fluid
+  %legend 
+    Forgot your password?
+    .pull-right= link_to '&times;'.html_safe, root_path
   = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :defaults => { :input_html => {:class => 'span6'}}, :html => { :method => :post }) do |f|
     = f.error_notification
     .form-inputs

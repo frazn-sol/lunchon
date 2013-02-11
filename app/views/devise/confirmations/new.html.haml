@@ -1,5 +1,7 @@
-.span6.offset2.well
-  %legend Resend confirmation instructions
+.row-fluid
+  %legend 
+    Resend confirmation instructions
+    .pull-right= link_to '&times;'.html_safe, root_path
   = render 'devise/shared/flash', flash: flash
   = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name),  :defaults => { :input_html => {:class => 'span6'}}, :html => { :method => :post }) do |f|
     = f.error_notification
