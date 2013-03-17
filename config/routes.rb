@@ -5,6 +5,7 @@ Lunchon::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  root :to => 'redemptions#edit', as: 'redeem',  :constraints => lambda { |request| request.env['warden'].user.try(:is_merchant?) }
   root :to => 'deals#index'
   scope 'api' do
     resources :deals, only: [:show, :index]
@@ -15,8 +16,6 @@ Lunchon::Application.routes.draw do
   end
 
   resources :deals
-  match 'redeem' => 'redemptions#edit', as: 'redeem'
-  #   match 'products/:id' => 'catalog#view'
 
   resource :lunch_bag, controller: :lunch_bag do
     get :add_item
