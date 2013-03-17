@@ -13,6 +13,7 @@ class Lunchon.Models.LunchBag extends Backbone.Model
       data: {deal_id: deal.id}
       success: (data) ->
         that.build(data)
+        Lunchon.show_flash(data.discount_message)
 
   discountStr: ->
     "#{@.discount*100}%"

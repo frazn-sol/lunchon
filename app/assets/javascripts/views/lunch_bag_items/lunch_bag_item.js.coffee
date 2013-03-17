@@ -22,6 +22,7 @@ class Lunchon.Views.LunchBagItem extends Backbone.View
       data: {deal_id: deal_id, quantity: quantity}
       success: (data) ->
         Lunchon.lunch_bag.build(data)
+        Lunchon.show_flash(data.discount_message)
 
   render: ->
     $(@el).html(@template(lunch_bag_item: @model))

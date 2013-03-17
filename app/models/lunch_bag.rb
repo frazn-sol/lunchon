@@ -17,7 +17,8 @@ class LunchBag
   end
 
   def to_json
-    {total_price: total_price.to_f, discounted_price: discounted_price.to_f, items: items, discount: discount_percentage}
+    {total_price: total_price.to_f, discounted_price: discounted_price.to_f, items: items, 
+     discount: discount_percentage, total_item_count: total_quantity_of_items, discount_message: discount_message}
   end
 
   def discounted_price
@@ -31,6 +32,7 @@ class LunchBag
   def discount_percentage
     discounts.fetch(total_quantity_of_items, max_discount)
   end
+
 
   private
 
@@ -52,5 +54,17 @@ class LunchBag
 
   def item_price(item)
     item.fetch(:original_price, 0)*item.fetch(:quantity, 0)
+  end
+
+  def discount_message
+    if next_discount = discounts[total_quantity_of_items+1]
+      "Add one more item to increase your savings to #{formatted_discount(next_discount)}"
+    else
+      "Woot! You are saving #{formatted_discount(max_discount)}"
+    end
+  end
+
+  def formatted_discount(discount_percentage)
+    "#{(discount_percentage*100).to_i}%"
   end
 end

@@ -11,9 +11,20 @@ window.Lunchon =
     @buy_button = new Lunchon.Models.BuyButton
     @locations = new Lunchon.Collections.Locations
 
+    @show_flash = (message) ->
+      flash_row = $('.row.flash')
+      flash_row.empty()
+      flash_close_button = $('<button>').addClass('close').attr('data-dismiss', 'alert').append("&times;")
+      flash_message_container = $('<p>').attr('id', 'notice').text(message)
+      flash_container = $('<div>').addClass('span9 alert').attr('id', 'notice')
+      flash_container.append(flash_close_button)
+      flash_container.append(flash_message_container)
+      flash_row.append(flash_container).alert()
 
     Backbone.history.start()
 
 $(document).ready ->
   Lunchon.init()
+
+
   
