@@ -18,6 +18,7 @@ Lunchon::Application.routes.draw do
   resources :deals
 
   match 'terms' => 'static_pages#terms', as: :terms
+  match 'privacy' => 'static_pages#privacy', as: :privacy
 
   resource :lunch_bag, controller: :lunch_bag do
     get :add_item

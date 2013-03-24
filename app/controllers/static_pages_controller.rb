@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
-  layout 'redemptions'
+  layout 'static'
   def terms
+  end
 
+  def privacy
   end
 end
