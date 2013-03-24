@@ -9,6 +9,9 @@
     %li
       = link_to image_tag('twitter-logo.png', size: "35x35"), 'http://twitter.com/getyourlunchon', target: "_blank"
       %span.divider &middot;
+    %li
+      = link_to 'Terms of Use', terms_path
+      %span.divider &middot;
     - if user_signed_in?
       %li
         = link_to "Log Out", destroy_user_session_path, method: 'delete'

@@ -17,6 +17,8 @@ Lunchon::Application.routes.draw do
 
   resources :deals
 
+  match 'terms' => 'static_pages#terms', as: :terms
+
   resource :lunch_bag, controller: :lunch_bag do
     get :add_item
     post :add_item
