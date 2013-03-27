@@ -23,6 +23,7 @@ gem 'carrierwave', :git => 'git://github.com/jnicklas/carrierwave.git'
 gem 'rmagick'
 gem 'backbone-on-rails'
 gem 'sass-rails',   '~> 3.2.3'
+gem 'stripe'
 
 # Gems used only for assets and not required
 # in production environments by default.

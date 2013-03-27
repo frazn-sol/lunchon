@@ -11,13 +11,13 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    @purchase = Purchase.new user_id: current_user.id, cc_transaction_id: params[:cc_transaction_id]
+    @purchase = Purchase.new user_id: current_user.id, cc_token: params[:cc_token]
     lunch_bag = LunchBag.new({items: session[:lunch_bag] || {}})
     @purchase.price = lunch_bag.discounted_price
     @purchase.discount_percentage = lunch_bag.discount_percentage
     @purchase.build_purchase_items(lunch_bag.items)
 
-    if @purchase.save
+    if @purchase.save_with_payment
       clear_lunch_bag
       render json: current_user.purchases.to_json
     else
