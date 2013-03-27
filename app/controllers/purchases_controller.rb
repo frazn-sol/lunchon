@@ -18,6 +18,7 @@ class PurchasesController < ApplicationController
     @purchase.build_purchase_items(lunch_bag.items)
 
     if @purchase.save_with_payment
+      UserMailer.purchase_email current_user, @purchase
       clear_lunch_bag
       render json: current_user.purchases.to_json
     else

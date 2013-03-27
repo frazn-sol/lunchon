@@ -1,0 +1,33 @@
+%h2 Congratulations!
+
+%p …and thank you for using LunchOn! We hope you’ve enjoyed your experience with us, but the experience of enjoying your substantially discounted lunches has just begun!
+
+%p Go ahead, your coupon(s) are ready to use right now! A list is provided below.
+
+%p Using them is easy! No printing, or saving-to-disk required! Just log-in to Lunchon.co and click on your ACCOUNT page with your mobile device. There, you will find a list of your purchased meals. Click on the REDEEM NOW button when you arrive at the Restaurant, and present the REDEMPTION CODE to the server before you order.
+%p That’s it!
+
+%p If you have any issues/suggestions/or really good compliments to share, please contact our SUPPORT TEAM at the numbers below. We hope you visit us again soon for more ridiculous savings off lunch!
+
+%p Here for you,
+
+%p -Lunchon
+
+%a{href: 'www.LunchOn.co'}www.LunchOn.co
+%a{href: 'https://twitter.com/getyourlunchon'}Twitter
+%a{href: 'https://www.facebook.com/LunchOn.co'}Facebook
+ 
+
+%p SUPPORT TEAM PHONE: 561/ 247-1207
+
+%p 
+  SUPPORT TEAM EMAIL:
+  %a{mailto: 'info@lunchon.co'}info@lunchon.co
+
+%h3 Items purchased:
+- @purchase.purchase_items.each do |purchase_item|
+  %h6= purchase_item.deal_name
+  %p= purchase_item.deal.restaurant_name
+  %p= purchase_item.purchase_price
+
+
