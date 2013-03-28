@@ -26,8 +26,12 @@
 
 %h3 Items purchased:
 - @purchase.purchase_items.each do |purchase_item|
-  %h6= purchase_item.deal_name
-  %p= purchase_item.deal.restaurant_name
-  %p= purchase_item.purchase_price
+  %p
+    %span
+      %strong= purchase_item.deal_name
+      %span from 
+      %span= purchase_item.deal.restaurant_name
+      %span --
+      %span= number_to_currency(purchase_item.purchase_price, precision: 2)
 
 
