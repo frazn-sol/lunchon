@@ -57,5 +57,3 @@
 .modal-footer
   .help_message Need Help?  Call Lunchon to Speak to Our Customer Care Right Away!
   .pull-left#barcode.barcode
-  %button.btn.email Email Certificate
-  %button.btn.to_pdf Save as PDF
