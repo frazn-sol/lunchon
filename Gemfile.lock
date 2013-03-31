@@ -246,7 +246,7 @@ DEPENDENCIES
   jquery-rails
   mysql2
   rails
-  rake (= 0.8.7)
+  rake
   rmagick
   rspec-rails
   sass

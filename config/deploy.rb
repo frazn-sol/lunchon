@@ -1,13 +1,13 @@
 set :application, "lunchon"
 set :repository,  "git@github.com:davidbl/lunchon.git"
 set :deploy_to, '/var/rails/lunchon_staging'
-set :user, 'david'
+set :user, 'lunchon'
 
 set :scm, 'git'
 
-role :web, "67.23.45.13"                          # Your HTTP server, Apache/etc
-role :app, "67.23.45.13"                          # This may be the same as your `Web` server
-role :db,  "67.23.45.13", :primary => true # This is where Rails migrations will run
+role :web, "166.78.156.210"                          # Your HTTP server, Apache/etc
+role :app, "166.78.156.210"                          # This may be the same as your `Web` server
+role :db,  "166.78.156.210", :primary => true # This is where Rails migrations will run
 
 set :branch, "master"
 set :repository_cache, "git_cache"
@@ -17,7 +17,7 @@ set :use_sudo, false
 ssh_options[:forward_agent] = true
 
 set :scm_passphrase, ""
-set :port, 1551
+set :port, 22
 
 namespace :deploy do
   task :restart do
