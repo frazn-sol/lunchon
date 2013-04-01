@@ -4,7 +4,7 @@ ActiveAdmin.register Redemption do
       Redemption.redeemed
     end
   end
-  filter :restaurant_name, as: :select, collection: Restaurant.scoped.order(:name)
+  filter :restaurant, as: :select, collection: Restaurant.scoped.order(:name)
   filter :redeemed_at, as: :date_range
   index do |redemption|
     column :id do |redemption|
