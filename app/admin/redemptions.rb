@@ -23,10 +23,13 @@ ActiveAdmin.register Redemption do
       number_to_currency redemption.original_price, precision: 2
     end
     column :discount do |redemption|
-      number_to_percentage redemption.discount_percentage*100, precision: 2
+      number_to_percentage redemption.contract_discount_percentage*100, precision: 2
     end
-    column :purchase_price do |redemption|
-      number_to_currency redemption.purchase_price, precision: 2
+    column :owed_to_restaurant do |redemption|
+      number_to_currency redemption.owed_to_restaurant, precision: 2
+    end
+    column :code do |redemption|
+      redemption.code.scan(/.{1,4}/).join(' ')
     end
   end
   

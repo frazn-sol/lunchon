@@ -38,12 +38,16 @@ class Redemption < ActiveRecord::Base
     deal.name
   end
 
-  def discount_percentage
-    purchase_item.discount_percentage
+  def contract_discount_percentage
+    contract.total_discount
   end
 
   def original_price
     deal.original_price
+  end
+
+  def owed_to_restaurant
+    (1 - contract_discount_percentage)*original_price
   end
 
   def redeem_error(user)
