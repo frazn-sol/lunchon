@@ -5,9 +5,9 @@ class Redemption < ActiveRecord::Base
 
   attr_accessible :code, :purchase_item_id, :redeemable, :redeemed_at, :redeemed_by, :requested_at
   
-  delegate :restaurant, :deal, :purchase_price, :contract_conditions, to: :purchase_item
+  delegate :restaurant, :deal, :purchase_price, :purchase, :contract, :contract_conditions, to: :purchase_item
 
-  scope :redeemed, where('redeemed_at IS NOT NULL')
+  scope :redeemed, where('redemptions.redeemed_at IS NOT NULL')
 
 
   def generate_code
@@ -26,8 +26,24 @@ class Redemption < ActiveRecord::Base
     restaurant.name
   end
 
+  def merchant
+    restaurant_name
+  end
+
+  def contract_name
+    contract.name
+  end
+
   def deal_name
     deal.name
+  end
+
+  def discount_percentage
+    purchase_item.discount_percentage
+  end
+
+  def original_price
+    deal.original_price
   end
 
   def redeem_error(user)

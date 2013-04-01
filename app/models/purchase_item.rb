@@ -4,7 +4,7 @@ class PurchaseItem < ActiveRecord::Base
   has_many :redemptions
   attr_accessible :deal_id, :purchase_id
 
-  delegate :restaurant, :restaurant_name, to: :deal
+  delegate :contract, :restaurant, :restaurant_name, to: :deal
   
   scope :for_deal, lambda{ |deal_id| where(deal_id: deal_id) } 
 
@@ -18,6 +18,10 @@ class PurchaseItem < ActiveRecord::Base
 
   def purchase_price
     deal.original_price * (1- purchase.discount_percentage)
+  end
+
+  def discount_percentage
+    purchase.discount_percentage
   end
 
   def invalidate_redemptions
