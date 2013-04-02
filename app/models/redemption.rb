@@ -47,7 +47,7 @@ class Redemption < ActiveRecord::Base
   end
 
   def owed_to_restaurant
-    (1 - contract_discount_percentage)*original_price
+    contract_discount_percentage*original_price
   end
 
   def redeem_error(user)
