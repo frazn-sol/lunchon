@@ -22,9 +22,35 @@ class PurchasesController < ApplicationController
       clear_lunch_bag
       render json: current_user.purchases.to_json
     else
-      #handle the error
+      # @purchase.save_with_payment raises exceptions
+      # so error handling is done in the rescue body
     end
+  rescue Stripe::CardError => e
+    log_error(e)
+    body = e.json_body
+    err  = body[:error]
+    render json: {error: {message: err[:message]}}.to_json, status: e.http_status
+  rescue Stripe::InvalidRequestError => e
+    handle_error(e)
+  rescue Stripe::AuthenticationError => e
+    handle_error(e)
+  rescue Stripe::APIConnectionError => e
+    handle_error(e)
+  rescue Stripe::StripeError => e
+    handle_error(e)
+  rescue => e
+    handle_error(e)
+  end
 
+  private
+
+  def handle_error(e)
+    log_error(e)
+   render json: {error: {message: 'There has been a error processing your request.  Please contact Lunchon.co'}}.to_json, status: e.http_status
+  end
+
+  def log_error(e)
+   Rails.logger.info "Stripe Error: current_user: #{@current_user.id}  message: #{e.json_body}  @ #{Time.now}"
   end
 
 end

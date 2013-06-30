@@ -3,7 +3,7 @@ class Lunchon.Views.BuyButtonModal extends Backbone.View
 
   events:
     "click button.purchase": "purchase"
-    
+
   purchase: (event) ->
     event.preventDefault()
     Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
@@ -16,21 +16,18 @@ class Lunchon.Views.BuyButtonModal extends Backbone.View
     $(@el).html(@template(lunch_bag_items: lunch_bag_items, csrf_token: csrf_token, csrf_param: csrf_param, total_cost: Lunchon.lunch_bag.discounted_price))
     purchase.setupForm()
     this
- 
 
   purchase =
     disable_button: ->
-      console.log('disable')
       $('button.purchase').attr('disabled', true).text('Please wait...')
 
     enable_button: ->
-      console.log('enable')
       $('button.purchase').attr('disabled', false).text('Complete Purchase')
 
     setupForm: ->
       $('#new_purchase').submit ->
         purchase.processCard()
-    
+
     processCard: ->
       @disable_button()
       card =
@@ -39,7 +36,7 @@ class Lunchon.Views.BuyButtonModal extends Backbone.View
         expMonth: $('#card_month').val()
         expYear: $('#card_year').val()
       Stripe.createToken(card, purchase.handleStripeResponse)
-    
+
     handleStripeResponse: (status, response) ->
       if status == 200
         #a call to the server
@@ -48,6 +45,10 @@ class Lunchon.Views.BuyButtonModal extends Backbone.View
           dataType: 'json'
           data:  "cc_token=#{response.id}"
           type: 'post'
+          error: (xhr, status, error) ->
+            data = $.parseJSON(xhr.responseText)
+            $('#stripe_error').text(data.error.message)
+            purchase.enable_button()
           success: (data) ->
             $('#modal').modal('hide')
             Lunchon.purchases.removeCart()
@@ -56,4 +57,3 @@ class Lunchon.Views.BuyButtonModal extends Backbone.View
       else
         $('#stripe_error').text(response.error.message)
         purchase.enable_button()
-      
