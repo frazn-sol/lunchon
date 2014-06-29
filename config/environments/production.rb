@@ -1,7 +1,7 @@
 Lunchon::Application.configure do
-  config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging site for testing only") do |u,p|
-    u.in?(["lunchon_tester"]) && p.in?('test_me!')
-  end
+  # config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Staging site for testing only") do |u,p|
+  #   u.in?(["lunchon_tester"]) && p.in?('test_me!')
+  # end
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
