@@ -8,8 +8,8 @@ class Deal < ActiveRecord::Base
   attr_accessible :name, :image, :description, :original_price, :quantity_purchased, :contract_id
   attr_accessor :featured, :remaining
 
-  validates_numericality_of :original_price
-  validates_presence_of :name, :original_price
+  validates_numericality_of :original_price, :quantity_purchased
+  validates_presence_of :name, :original_price, :quantity_purchased
 
   mount_uploader :image, ImageUploader
 

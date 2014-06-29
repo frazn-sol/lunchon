@@ -6,7 +6,8 @@ class DealsController < ApplicationController
     @deals = Deal.includes(:restaurant, :ratings, :purchase_items).all.shuffle
 
     #TODO decide how to handle featured deals
-    @deals[-2..-1].map{ |d| d.featured=true}
+    featured_deals = @deals[-2..-1] || []
+    featured_deals.map{ |d| d.featured=true}
     @deals_json = @deals.map{ |d| DealSerializer.new(d).as_json}.to_json
     @locations_json = Location.all.map{ |l| LocationSerializer.new(l).as_json }.to_json
     @lunch_bag = LunchBag.new({items: session[:lunch_bag] || {}})
