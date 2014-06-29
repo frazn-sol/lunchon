@@ -6,7 +6,7 @@ if RUBY_VERSION =~ /1.9/
   Encoding.default_internal = Encoding::UTF_8
 end 
 
-gem 'rails'
+gem 'rails', '3.2.11'
 gem 'rake'#, '0.8.7'
 
 # Bundle edge Rails instead:
@@ -49,7 +49,7 @@ gem 'jquery-rails'
 group :test do
   gem 'rspec-rails'
   gem 'spork-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '4.1.0'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

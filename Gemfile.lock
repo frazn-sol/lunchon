@@ -240,14 +240,14 @@ DEPENDENCIES
   capistrano
   carrierwave!
   coffee-rails (~> 3.2.1)
-  factory_girl_rails
+  factory_girl_rails (= 4.1.0)
   geocoder
   haml-rails
   haml_coffee_assets
   jquery-rails
   mysql2
   newrelic_rpm
-  rails
+  rails (= 3.2.11)
   rake
   rmagick
   rspec-rails

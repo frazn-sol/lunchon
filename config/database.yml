@@ -6,7 +6,7 @@ development:
   pool: 5
   username: lunchon
   password: lunchon123
-  socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
 
 test:
   adapter: mysql2
@@ -16,4 +16,4 @@ test:
   pool: 5
   username: lunchon
   password: lunchon123
-  socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
