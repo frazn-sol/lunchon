@@ -3,7 +3,9 @@ class Lunchon.Collections.Locations extends Backbone.Collection
 
   initialize: ->
     @.reset($('#container').data 'locations')
+    @modelSetLatLng(locationModel) for locationModel in @.models
     navigator.geolocation.getCurrentPosition( (p) => @buildDistances(p))
+
     this
 
   buildDistances: (locationData) ->
@@ -11,7 +13,6 @@ class Lunchon.Collections.Locations extends Backbone.Collection
     @setDistance(locationModel, currentLatLng) for locationModel in @.models
 
   setDistance: (locationModel, currentLatLng) ->
-    @modelSetLatLng(locationModel)
     locationModel.set(distance: @computeDistance(locationModel.get('googleLatLng'), currentLatLng))
 
   computeDistance: (latLng1, latLng2) ->
