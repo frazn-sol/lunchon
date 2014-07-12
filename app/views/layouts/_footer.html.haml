@@ -23,4 +23,5 @@
       %li
         = link_to "Log In", new_user_session_path
         %span.divider.last &middot;
-
+- if Rails.env.production?
+  = render 'shared/ga'
