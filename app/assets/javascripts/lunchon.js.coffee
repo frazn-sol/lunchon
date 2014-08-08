@@ -46,13 +46,17 @@ $(document).ready ->
         discount_5 = (50.00 * original_price)/100.00
         discount_price_5 = (original_price - discount_5).toFixed(2)
         item_number = data["total_item_count"]
-        $(".span4 h2").append "<span style='color:#808080;'> Original Price</span>"
+        $(".span4 h2").append "<span style='color:#808080; font-weight:normal; font-size:15px;'> Original Price</span>"
         $(".span4 h2").addClass "strikethrough"
-        $(".span4 h2").after "<h5 style='margin-top: -5px;color:#808080;font-size:14px;'> $" + discount_price_1 + "<span style='color:#808080;'> if 1 Total Items in Lunch Bag </span></h5>
-        <h5 style='margin-top: -15px;color:#7E7E7E;font-size:15px;'> $" + discount_price_2 + "<span style='color:#808080;'> if 2 Total Items in Lunch Bag </span></h5>
-        <h5 style='margin-top: -15px;color:#595959;font-size:16px;'> $" + discount_price_3 + "<span style='color:#808080;'> if 3 Total Items in Lunch Bag</span></h5>
-        <h5 style='margin-top: -15px;color:#404040;font-size:17px;'> $" + discount_price_4 + " <span style='color:#808080;'>if 4 Total Items in Lunch Bag</span></h5>
-        <h5 style='margin-top: -15px; margin-bottom: 15px; margin-right:-25px;font-size:18px;'> $" + discount_price_5 + "<span style='color:#808080;'> if 5+ Total Items in Lunch Bag</span></h5>"
+        $(".span4 h2").after "<h5 style='margin-top: -18px;color:#808080;font-size:13px; margin-right:-25px;'> $" + discount_price_1 + "<span style='color:#808080; font-size:11px; font-weight:normal;'> if <b style='color:black;'>1</b> Total Items in Lunch Bag </span></h5>
+
+        <h5 style='margin-top: -15px;color:#7E7E7E;font-size:13px; margin-right:-25px;'> $" + discount_price_2 + "<span style='color:#808080; font-size:11px; font-weight:normal;'> if <b style='color:black;'>2</b> Total Items in Lunch Bag </span></h5>
+
+        <h5 style='margin-top: -15px;color:#595959;font-size:13px; margin-right:-25px;'> $" + discount_price_3 + "<span style='color:#808080; font-size:11px; font-weight:normal;'> if <b style='color:black;'>3</b> Total Items in Lunch Bag</span></h5>
+
+        <h5 style='margin-top: -15px;color:#404040;font-size:13px; margin-right:-25px;'> $" + discount_price_4 + " <span style='color:#808080; font-size:11px; font-weight:normal;'>if <b style='color:black;'>4</b> Total Items in Lunch Bag</span></h5>
+
+        <h5 style='margin-top: -15px; margin-bottom: 15px; margin-right:-25px;font-size:13px;'> $" + discount_price_5 + "<span style='color:#808080; font-size:11px; font-weight:normal;'> if <b style='color:black;'>5+</b> Total Items in Lunch Bag</span></h5>"
         return
 
 
