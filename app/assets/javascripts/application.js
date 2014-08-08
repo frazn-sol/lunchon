@@ -17,6 +17,7 @@
 //= require underscore
 //= require backbone
 //= require hamlcoffee
+//= require ckeditor/init
 //= require jquery-barcode-2.0.2
 //= require .//lunchon
 //= require_tree ../templates/

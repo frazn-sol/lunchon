@@ -8,6 +8,8 @@ end
 
 gem 'rails', '3.2.11'
 gem 'rake'#, '0.8.7'
+gem 'ckeditor'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -25,6 +27,8 @@ gem 'backbone-on-rails'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'stripe'
 gem 'newrelic_rpm'
+gem 'pry-rails', :group => :development
+gem "letter_opener", :group => :development
 
 
 # Gems used only for assets and not required

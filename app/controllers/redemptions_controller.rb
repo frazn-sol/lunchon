@@ -4,6 +4,7 @@ class RedemptionsController < ApplicationController
   layout 'redemptions'
 
   def create
+    binding.pry
     @purchase_item = current_user.purchase_items.find_by_id(params[:purchase_item_id])
     @redemption = Redemption.find_or_initialize_by_purchase_item_id @purchase_item.id
     if @redemption.new_record?

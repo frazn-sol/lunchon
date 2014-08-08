@@ -7,6 +7,11 @@ class LunchBagController < ApplicationController
     render json: lunch_bag.to_json
   end
 
+  def get_items
+    session[:lunch_bag][params[:deal_id]]
+    render json: lunch_bag.to_json
+  end
+
   def set_quantity
     set_session_quantity params.fetch(:quantity, 1)
     render json: lunch_bag.to_json

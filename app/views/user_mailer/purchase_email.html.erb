@@ -1,0 +1,56 @@
+<%if EmailMessage.first.present?%>
+  <%= EmailMessage.first.content.to_s.html_safe %>
+  <h3>Items purchased:</h3>
+  <% @purchase.purchase_items.each do |purchase_item| %>
+  <p>
+    <span>
+      <strong>
+        <%= purchase_item.deal_name %>
+      </strong>
+      <span>from </span>
+      <span>
+        <%= purchase_item.deal.restaurant_name %>
+      </span>
+      <span>--</span>
+      <span>
+        <%= number_to_currency(purchase_item.purchase_price, precision: 2) %>
+      </span>
+    </span>
+  </p>
+  <%end%>
+<%else%>
+  <h2>Congratulations!</h2>
+  <p>…and thank you for using LunchOn! We hope you’ve enjoyed your experience with us, but the experience of enjoying your substantially discounted lunches has just begun!</p>
+  <p>Go ahead, your coupon(s) are ready to use right now! A list is provided below.</p>
+  <p>Using them is easy! No printing, or saving-to-disk required! Just log-in to Lunchon.co and click on your ACCOUNT page with your mobile device. There, you will find a list of your purchased meals. Click on the REDEEM NOW button when you arrive at the Restaurant, and present the REDEMPTION CODE to the server before you order.</p>
+  <p>That’s it!</p>
+  <p>If you have any issues/suggestions/or really good compliments to share, please contact our SUPPORT TEAM at the numbers below. We hope you visit us again soon for more ridiculous savings off lunch!</p>
+  <p>Here for you,</p>
+  <p>-Lunchon</p>
+  <a href="www.LunchOn.co">www.LunchOn.co</a>
+  <a href="https://twitter.com/getyourlunchon">Twitter</a>
+  <a href="https://www.facebook.com/LunchOn.co">Facebook</a>
+  <p>SUPPORT TEAM PHONE: 561/ 247-1207</p>
+  <p>
+    SUPPORT TEAM EMAIL:
+    <a mailto="info@lunchon.co">info@lunchon.co</a>
+  </p>
+  <h3>Items purchased:</h3>
+  <% @purchase.purchase_items.each do |purchase_item| %>
+  <p>
+    <span>
+      <strong>
+        <%= purchase_item.deal_name %>
+      </strong>
+      <span>from </span>
+      <span>
+        <%= purchase_item.deal.restaurant_name %>
+      </span>
+      <span>--</span>
+      <span>
+        <%= number_to_currency(purchase_item.purchase_price, precision: 2) %>
+      </span>
+    </span>
+  </p>
+  <%end%>
+<%end%>

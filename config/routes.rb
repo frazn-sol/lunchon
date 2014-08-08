@@ -1,4 +1,6 @@
 Lunchon::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   devise_for :users
 
   ActiveAdmin.routes(self)
@@ -22,6 +24,7 @@ Lunchon::Application.routes.draw do
 
   resource :lunch_bag, controller: :lunch_bag do
     get :add_item
+    get :get_items
     post :add_item
     get :remove_item
     post :remove_item
