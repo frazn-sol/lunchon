@@ -29,7 +29,7 @@ gem 'stripe'
 gem 'newrelic_rpm'
 gem 'pry-rails', :group => :development
 gem "letter_opener", :group => :development
-
+gem "mini_magick"
 
 # Gems used only for assets and not required
 # in production environments by default.
