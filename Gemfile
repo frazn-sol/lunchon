@@ -48,6 +48,10 @@ group :development do
   gem 'capistrano'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'jquery-rails'
 
 group :test do
