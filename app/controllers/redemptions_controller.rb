@@ -8,7 +8,14 @@ class RedemptionsController < ApplicationController
     @redemption = Redemption.find_or_initialize_by_purchase_item_id @purchase_item.id
     if @redemption.new_record?
       @redemption.requested_at  = Time.now
-      @redemption.generate_code
+      @deal_id = PurchaseItem.where(:id => params[:purchase_item_id]).first.deal_id
+      @code = CustomCode.where(:deal_id => @deal_id, :consumed => false).first
+      if @code.present?
+        @redemption.code = @code.code
+        @code.update_attributes(:consumed=>true)
+      else
+        @redemption.generate_code
+      end
       @redemption.redeemable = true
     end
     @redemption.save

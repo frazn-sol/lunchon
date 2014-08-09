@@ -44,4 +44,33 @@ ActiveAdmin.register Deal do
     end
     deal.buttons
   end
+
+  controller do
+      # This code is evaluated within the controller class
+    def create
+      if params[:deal][:code].present?
+        @code = Hash.new()
+        @code = params[:deal][:code]
+      end
+      params[:deal].delete :code
+      @deal = Deal.new(params[:deal])
+
+      respond_to do |format|
+        if @deal.save
+          if @code.present?
+            @code.each  do |code|
+              @temp = code[1].size
+              @size = 13 - @temp
+              CustomCode.create(:code => "0".to_s.rjust(@size, "0") + code[1].to_s, :deal_id => @deal.id)
+            end
+          end
+          format.html { redirect_to admin_deal_path(@deal), notice: 'Deal was successfully created.' }
+          format.json { render json: @deal, status: :created, location: admin_deal_path(@deal) }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @deal.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  end
 end

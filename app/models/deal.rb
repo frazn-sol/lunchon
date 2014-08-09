@@ -2,6 +2,7 @@ class Deal < ActiveRecord::Base
   has_many :comments
   has_many :ratings
   has_many :purchase_items
+  has_many :custom_codes
   belongs_to :contract
   has_one :restaurant, through: :contract
 
