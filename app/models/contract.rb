@@ -13,7 +13,11 @@ class Contract < ActiveRecord::Base
   end
 
   def deals_remaining_count
-    number_of_deals - deals_sold_count
+    if number_of_deals.present?
+      number_of_deals - deals_sold_count
+    else
+      0
+    end
   end
 
   private
