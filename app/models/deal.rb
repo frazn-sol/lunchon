@@ -5,8 +5,9 @@ class Deal < ActiveRecord::Base
   has_many :custom_codes
   belongs_to :contract
   has_one :restaurant, through: :contract
+  accepts_nested_attributes_for :custom_codes
 
-  attr_accessible :name, :image, :description, :original_price, :quantity_purchased, :contract_id
+  attr_accessible :name, :image, :description, :original_price, :quantity_purchased, :contract_id, :custom_codes_attributes
   attr_accessor :featured, :remaining
 
   validates_numericality_of :original_price, :quantity_purchased
