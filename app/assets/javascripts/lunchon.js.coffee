@@ -59,5 +59,13 @@ $(document).ready ->
         <h5 style='margin-top: -15px; margin-bottom: 15px; margin-right:-25px;font-size:13px;'> $" + discount_price_5 + "<span style='color:#808080; font-size:11px; font-weight:normal;'> if <b style='color:black;'>5+</b> Total Items in Lunch Bag</span></h5>"
         return
 
+  current_width = $(window).width()
+
+  #do something with the width value here!
+  if current_width < 1050
+    $(".modal").addClass("wide-popup")
+
+
+
 
   

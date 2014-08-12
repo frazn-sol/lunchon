@@ -8,7 +8,7 @@ class CustomCode < ActiveRecord::Base
 
    def set_code_length
    	@temp = self.code.size
-   	@size = 13 - @temp
+   	@size = 12 - @temp
    	self.code = "0".to_s.rjust(@size, "0") + self.code.to_s
    end
 end
