@@ -2,7 +2,7 @@ class DealsController < ApplicationController
   respond_to :json
 
   def index
-    # redirect_to redeem_path and return if current_user && current_user.is_merchant?
+    redirect_to redeem_path and return if current_user && current_user.is_merchant?
     @deals = Deal.includes(:restaurant, :ratings, :purchase_items).all.shuffle
 
     #TODO decide how to handle featured deals
