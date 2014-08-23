@@ -29,14 +29,15 @@ class RedemptionsController < ApplicationController
 
   def validate
     code = params[:redemption][:code].gsub(/\s+/, "")
-    @temp = code.size
-    @size = 13 - @temp
-    if @size > 0
-      code = "0".to_s.rjust(@size, "0") + code.to_s
-    end
-    new_code = code[0...-1].delete(' ')
+    # @temp = code.size
+    # @size = 13 - @temp
+    # if @size > 0
+    #   code = "0".to_s.rjust(@size, "0") + code.to_s
+    # end
 
-    @redemption = Redemption.find_by_code(new_code)
+    # new_code = code[0...-1].delete(' ')
+    @redemption = Redemption.find_by_code(code)
+      
     if @redemption
       unless flash[:alert] = @redemption.redeem_error(current_user)
         @redemption.redeem(current_user)

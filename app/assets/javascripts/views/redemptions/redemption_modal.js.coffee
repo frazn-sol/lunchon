@@ -23,5 +23,5 @@ class Lunchon.Views.RedemptionModal extends Backbone.View
     hours = restaurant_location.hours.split(',')
     @$el.html(@template(redemption: @model, restaurant_location: restaurant_location, hours: hours))
     console.log @model.get('code')
-    @$el.find('#barcode').barcode(@model.get('code'),'ean13', {barWidth: 2, barHeight:30, fontSize: 12})
+    @$el.find('#barcode').barcode(@model.get('code'),'code39', {barWidth: 2, barHeight:30, fontSize: 12})
     this
