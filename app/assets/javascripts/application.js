@@ -19,7 +19,6 @@
 //= require hamlcoffee
 //= require ckeditor/init
 //= require jquery-barcode-2.0.2
-//= require ean13.min
 //= require .//lunchon
 //= require_tree ../templates/
 //= require_tree .//models
