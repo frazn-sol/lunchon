@@ -13,6 +13,13 @@ class PurchasesController < ApplicationController
   def create
     @purchase = Purchase.new user_id: current_user.id, cc_token: params[:cc_token]
     lunch_bag = LunchBag.new({items: session[:lunch_bag] || {}})
+    lunch_bag.items.each do |item|
+      @deal = Deal.find(item[:deal_id])
+      @remaining = @deal.remaining
+      if item[:quantity] > @remaining
+        item[:quantity] = @remaining
+      end
+    end
     @purchase.price = lunch_bag.discounted_price
     @purchase.discount_percentage = lunch_bag.discount_percentage
     @purchase.build_purchase_items(lunch_bag.items)
