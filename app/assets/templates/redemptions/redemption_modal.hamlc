@@ -10,11 +10,11 @@
       %br
 .modal-body.redemption
   .row-fluid
+    .span6{:style => "width:100%"}
+      .pull-right#barcode.barcode
     .span6
       .small= @redemption.get('restaurant_name')
-      %h3.deal_name= @redemption.get('deal_name')
-    .span6
-      .pull-right#barcode.barcode
+      %h3.deal_name= @redemption.get('deal_name')  
   %p.small= "The amount paid for this voucher (#{accounting.formatMoney(@redemption.get('purchase_price'))}) with #{@redemption.get('restaurant_name')} NEVER EXPIRES"
   %p.small= "The promotional values expires #{@redemption.get('expiration_date')}"
   .fine_print
