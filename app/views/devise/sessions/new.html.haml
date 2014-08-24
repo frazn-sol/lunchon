@@ -1,14 +1,48 @@
-.row-fluid
-  %legend
-    Sign in
-    .pull-right= link_to '&times;'.html_safe, root_path
-  = render 'devise/shared/flash', flash: flash
-  = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-    = f.email_field :email, class: 'span6', placeholder: 'Email'
-    = f.password_field :password, class: 'span6', placeholder: 'Password'
-    - if devise_mapping.rememberable?
-      %label.checkbox
-        = f.check_box :remember_me
-        Remember Me
-    %button{ type: 'submit', class: 'btn btn-info btn-block', name: 'submit'} Sign In
-  = render "devise/shared/links"
+/ .row-fluid
+/   %legend
+/     Sign in
+/     .pull-right= link_to '&times;'.html_safe, root_path
+/   = render 'devise/shared/flash', flash: flash
+/   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+/     = f.email_field :email, class: 'span6', placeholder: 'Email'
+/     = f.password_field :password, class: 'span6', placeholder: 'Password'
+/     - if devise_mapping.rememberable?
+/       %label.checkbox
+/         = f.check_box :remember_me
+/         Remember Me
+/     %button{ type: 'submit', class: 'btn btn-info btn-block', name: 'submit'} Sign In
+/   = render "devise/shared/links"
+.main
+  .popup
+    = render 'devise/shared/flash', flash: flash
+    .popup-arrow
+      %img{:src => "/assets/arrow.png"}/
+    .close-btn.glyphicon.glyphicon-remove-circle
+    .row
+      .col-xs-12
+        .col-xs-6.popup-logo.text-center
+          %img.img-responsive{:src => "/assets/logo.png"}/
+        .col-xs-12.col-sm-6.signup-popup
+          = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+            .col-xs-8
+              = f.email_field :email, placeholder: 'Email'
+              = f.password_field :password, placeholder: 'Password'
+            .col-xs-4
+              %input{:type => "submit", :value => "GO"}
+
+:css     
+  .popup {
+   margin-top:100px;
+   z-index:1050;
+  }
+  .main{
+    padding-left:15%;
+    padding-right:15%;
+  }
+  .alert-error{
+  margin-top:-35px;
+  text-align:center;
+  color:#ffffff;
+  background-color:#45A0CE;
+  border-color:#45A0CE;
+  }

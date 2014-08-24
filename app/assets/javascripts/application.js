@@ -11,10 +11,12 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require accounting.min
 //= require bootstrap
 //= require underscore
+//= require custom
 //= require backbone
 //= require hamlcoffee
 //= require ckeditor/init

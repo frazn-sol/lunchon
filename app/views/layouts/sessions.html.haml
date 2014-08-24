@@ -4,6 +4,7 @@
     %title Lunchon.co
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
+    = javascript_include_tag "bootstrap.min.js"
     = csrf_meta_tag
   %body.wooden
     .navbar.navbar-fixed-top.navbar-inverse
@@ -24,7 +25,6 @@
       .row
         .modal.fade.in
           .modal-body
-            = yield
-    %div{class: "modal-backdrop fade in"}
-          
+    = yield
+    %div{class: "modal-backdrop fade in"}     
 
