@@ -11,6 +11,10 @@ gem 'rake'#, '0.8.7'
 gem 'ckeditor'
 gem 'pg'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

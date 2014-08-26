@@ -22,12 +22,10 @@
         .col-xs-6.col-sm-6.signup-popup
           .col-xs-12.social
             .social-icons
-              %a{:href => "#"}
-                %img.img-responsive{:src => "/assets/fb.png"}/
+              = link_to image_tag( 'fb.png', :size=>"200x200"), user_omniauth_authorize_path(:facebook), :class=>"img-responsive"
           .col-xs-12.social
             .social-icons
-              %a{:href => "#"}
-                %img.img-responsive{:src => "/assets/twiiter.png"}/
+              = link_to image_tag( 'twiiter.png'), user_omniauth_authorize_path(:twitter), :class=>"img-responsive"
   .row
     .col-xs-12.email-login
       .col-xs-4.email-text

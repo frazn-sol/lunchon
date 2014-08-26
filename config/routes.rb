@@ -1,7 +1,7 @@
 Lunchon::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   ActiveAdmin.routes(self)
 
