@@ -4,11 +4,6 @@ $( document ).ready(function() {
 	// 	$( ".overlay" ).show();
 	// 	$( ".main" ).show();
 	// });
-	$.cookie('rcount', 1);
-	$(window).unload(function() {
- 		$.removeCookie('rcount');
- 		// delete your cookie here
-	});
 	$( ".close-btn" ).click(function() {
 		//$( ".main" ).fadeOut();
 		var id = $(this).attr('id');

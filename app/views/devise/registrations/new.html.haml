@@ -37,11 +37,7 @@
         .col-xs-8.email-form
           = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
             .email-input
-              = f.email_field :email, placeholder: 'Email'
-            .email-input
-              = f.password_field :password, placeholder: 'Password'
-            .email-input
-              = f.password_field :password_confirmation, placeholder: 'Confirm Password'
+              = f.text_field :email, placeholder: 'Email'
               %input{:type => "submit", :value => "SUBMIT"}
 .how-it-works-popup
   .main.container.how-it

@@ -267,7 +267,7 @@ border:2px solid #a0cee5;
 }
 
 .social-icons {
-	width:54%;
+	width:70%;
 	float:right;
 /*	height:55px;*/
 	background:#fff;
@@ -277,7 +277,7 @@ border:2px solid #a0cee5;
 	-moz-box-shadow:    inset 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
 	box-shadow:         inset 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
 	text-align:center;
-	padding:10px;
+	padding:6px;
 }
 
 .social-icons img {
