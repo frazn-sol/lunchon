@@ -26,6 +26,7 @@ window.Lunchon =
 
 $(document).ready ->
   Lunchon.init()
+  $(".how-it-works-popup").hide()
   $(".deal").click ->
     $.ajax
       url: "lunch_bag/get_items"

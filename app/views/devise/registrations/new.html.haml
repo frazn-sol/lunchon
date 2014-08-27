@@ -10,60 +10,64 @@
 /     %button{ type: 'submit', class: 'btn btn-info btn-block', name: 'submit'} Sign Up
 /   = render "devise/shared/links"
 
-.main.container
-  .popup
-    .popup-arrow
-      %img{:src => "/assets/arrow.png"}/
-    .close-btn.glyphicon.glyphicon-remove-circle#sign-up-close
+.sign-up-popup
+  .main.container
+    .popup
+      .popup-arrow
+        %img{:src => "/assets/arrow.png"}/
+      .close-btn.glyphicon.glyphicon-remove-circle#sign-up-close
+      .row
+        .col-xs-12.email-body
+          .col-xs-6.popup-logo.text-center.sign-up-logo
+            %img.img-responsive{:src => "/assets/logo.png"}/
+          .col-xs-6.col-sm-6.signup-popup
+            .col-xs-12.social
+              .social-icons
+                = link_to image_tag( 'fb.png', :size=>"200x200"), user_omniauth_authorize_path(:facebook), :class=>"img-responsive"
+            .col-xs-12.social
+              .social-icons
+                = link_to image_tag( 'twiiter.png'), user_omniauth_authorize_path(:twitter), :class=>"img-responsive"
     .row
-      .col-xs-12.email-body
-        .col-xs-6.popup-logo.text-center.sign-up-logo
-          %img.img-responsive{:src => "/assets/logo.png"}/
-        .col-xs-6.col-sm-6.signup-popup
-          .col-xs-12.social
-            .social-icons
-              = link_to image_tag( 'fb.png', :size=>"200x200"), user_omniauth_authorize_path(:facebook), :class=>"img-responsive"
-          .col-xs-12.social
-            .social-icons
-              = link_to image_tag( 'twiiter.png'), user_omniauth_authorize_path(:twitter), :class=>"img-responsive"
-  .row
-    .col-xs-12.email-login
-      .col-xs-4.email-text
-        %p Don't have a Twitter or Facebook Account?
-        %p Sign-up Using Your Email.
-        %p 
-          = devise_error_messages!
-      .col-xs-8.email-form
-        = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-          .email-input
-            = f.email_field :email, placeholder: 'Email'
-          .email-input
-            = f.password_field :password, placeholder: 'Password'
-          .email-input
-            = f.password_field :password_confirmation, placeholder: 'Confirm Password'
-            %input{:type => "submit", :value => "SUBMIT"}
-
-.main.container.how-it
-  .popup
-    .popup-arrow
-      %img{:src => "/assets/arrow.png"}/
-    .close-btn.glyphicon.glyphicon-remove-circle
-    .row
-      .col-xs-12.how-col12
-        .col-xs-6.popup-logo.text-center.how-logo
-          %img.img-responsive{:src => "/assets/logo.png"}/
-        .col-xs-6.how-col
-          .how-works.animated.bounceInRight.col-xs-12
-            .col-xs-12.col-sm-4.works-left
-              %h1 HOW IT WORKS
-            .col-xs-12.col-sm-8.meal-listing
-              %span Its Free Its Yummy
-              %ul
-                %li Buy 1 Meal - Get 10% of That Meal
-                %li Buy 2 Meal - Get 20% of Each Meal
-                %li Buy 3 Meal - Get 30% of Each Meal
-                %li Buy 4 Meal - Get 40% of Each Meal            
+      .col-xs-12.email-login
+        .col-xs-4.email-text
+          %p Don't have a Twitter or Facebook Account?
+          %p Sign-up Using Your Email.
+          %p 
+            = devise_error_messages!
+        .col-xs-8.email-form
+          = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+            .email-input
+              = f.email_field :email, placeholder: 'Email'
+            .email-input
+              = f.password_field :password, placeholder: 'Password'
+            .email-input
+              = f.password_field :password_confirmation, placeholder: 'Confirm Password'
+              %input{:type => "submit", :value => "SUBMIT"}
+.how-it-works-popup
+  .main.container.how-it
+    .popup
+      .popup-arrow
+        %img{:src => "/assets/arrow.png"}/
+      .close-btn.glyphicon.glyphicon-remove-circle
+      .row
+        .col-xs-12.how-col12
+          .col-xs-6.popup-logo.text-center.how-logo
+            %img.img-responsive{:src => "/assets/logo.png"}/
+          .col-xs-6.how-col
+            .how-works.animated.bounceInRight.col-xs-12
+              .col-xs-12.col-sm-4.works-left
+                %h1 HOW IT WORKS
+              .col-xs-12.col-sm-8.meal-listing
+                %span Its Free Its Yummy
+                %ul
+                  %li Buy 1 Meal - Get 10% of Each Meal
+                  %li Buy 2 Meal - Get 20% of Each Meal
+                  %li Buy 3 Meal - Get 30% of Each Meal
+                  %li Buy 4 Meal - Get 40% of Each Meal            
 :css     
+  body {
+    overflow-x: hidden;
+  }
   .popup {
    margin-top:100px;
    z-index:1050;
@@ -86,4 +90,4 @@
   }   
   .how-it{
   display:none;
-  }  
+  } 
