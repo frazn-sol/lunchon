@@ -14,6 +14,7 @@
 //= require jquery.cookie
 //= require jquery-ui
 //= require jquery_ujs
+//= require jquery.qtip.min
 //= require accounting.min
 //= require bootstrap
 //= require underscore
