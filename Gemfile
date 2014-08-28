@@ -13,7 +13,7 @@ gem 'pg'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
