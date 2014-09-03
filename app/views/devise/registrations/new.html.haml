@@ -44,7 +44,7 @@
     .popup
       .popup-arrow
         %img{:src => "/assets/arrow.png"}/
-      .close-btn.glyphicon.glyphicon-remove-circle
+      .close-btn.glyphicon.glyphicon-remove-circle.working-close
       .row
         .col-xs-12.how-col12
           .col-xs-6.popup-logo.text-center.how-logo
@@ -65,7 +65,7 @@
     overflow-x: hidden;
   }
   .popup {
-   margin-top:100px;
+   margin-top:30px;
    z-index:1050;
   }
   .email-login{
@@ -87,3 +87,8 @@
   .how-it{
   display:none;
   } 
+:javascript
+  $( ".working-close" ).click(function() {
+      //$( ".main" ).fadeOut();
+      window.location = "#{root_url}";
+  });  

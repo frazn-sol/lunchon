@@ -21,13 +21,13 @@
             %span.icon-bar
             %span.icon-bar
           = link_to  root_path, class: 'brand' do
-            =image_tag 'lunchonlogoALPHA.png', height: '53px', width: '211px', class: 'header_image'
+            =image_tag 'logo.png', height: '53px', width: '211px', class: 'header_image'
 
           .nav-collapse
             %ul.nav.pull-right
               %li.nav-center-vertical
                 .btn-group.nav
-                  = link_to "How it Works", '#', class: 'btn btn-large btn-inverse', id: 'how-tooltip'
+                  = link_to "How it Works", how_it_works_path, class: 'btn btn-large btn-inverse', id: 'how-tooltip'
                   = link_to "Support", '/#support', class: 'btn btn-large btn-inverse'
                   = link_to "Account", '/#purchases', class: 'btn btn-large btn-inverse'
               - if user_signed_in?

@@ -32,7 +32,7 @@
 
 :css     
   .popup {
-   margin-top:100px;
+   margin-top:30px;
    z-index:1050;
   }
   .main{
@@ -46,3 +46,8 @@
   background-color:#45A0CE;
   border-color:#45A0CE;
   }
+:javascript
+  $( ".close-btn" ).click(function() {
+      //$( ".main" ).fadeOut();
+      window.location = "#{root_url}";
+  });  
