@@ -54,12 +54,21 @@
               .col-xs-12.col-sm-4.works-left
                 %h1 HOW IT WORKS
               .col-xs-12.col-sm-8.meal-listing
-                %span Its Free Its Yummy
+                - if HowItWork.first.present?
+                  %span #{HowItWork.first.heading}
+                -else
+                  %span Its Free Its Yummy
                 %ul
-                  %li Buy 1 Meal - Get 10% of Each Meal
-                  %li Buy 2 Meal - Get 20% of Each Meal
-                  %li Buy 3 Meal - Get 30% of Each Meal
-                  %li Buy 4 Meal - Get 40% of Each Meal            
+                  - if HowItWork.first.present?
+                    %li #{HowItWork.first.line1}
+                    %li #{HowItWork.first.line2}
+                    %li #{HowItWork.first.line3}
+                    %li #{HowItWork.first.line4} 
+                  -else
+                    %li Buy 1 Meal - Get 10% of Each Meal
+                    %li Buy 2 Meal - Get 20% of Each Meal
+                    %li Buy 3 Meal - Get 30% of Each Meal
+                    %li Buy 4 Meal - Get 40% of Each Meal            
 :css     
   body {
     overflow-x: hidden;
