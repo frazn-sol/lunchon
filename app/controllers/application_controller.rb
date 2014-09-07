@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
-  before_filter :set_time_zone
+  before_filter :set_time_zone, :instantiateUser, :checkcount
   helper_method :current_merchant
   protect_from_forgery
+
 
   private
 
@@ -11,6 +12,22 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
+  end
+
+  def instantiateUser
+    @user = User.new  
+  end
+
+  def checkcount
+    if current_user.present?
+      return true
+    elsif cookies[:count]==nil
+      cookies[:count] = 1 
+      redirect_to new_user_registration_path
+    elsif cookies[:count].present? && cookies[:count] ==1
+      cookies[:count] = 2
+      redirect_to root_url and return     
+    end 
   end
 
   def set_time_zone

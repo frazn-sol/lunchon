@@ -87,12 +87,10 @@
     }
   });
   if (#{HowItWork.first.present?})
-    var work = "#{HowItWork.first};
-    consol.log(work);
     $('#how-tooltip').qtip({ // Grab some elements to apply the tooltip to
         content: {
-          title: "How it works",
-          text: '<p> @work.line1 <br/> Buy 2 Meal - Get 20% of Each Meal<br/> Buy 3 Meal - Get 30% of Each Meal<br/> Buy 4 Meal - Get 40% of Each Meal<br/> Buy 5 Meal - Get 50% of Each Meal </p>',
+          title: 'How it works',
+          text: '<p>Buy 1 Meal - Get 10% of Each Meal <br/> Buy 2 Meal - Get 20% of Each Meal<br/> Buy 3 Meal - Get 30% of Each Meal<br/> Buy 4 Meal - Get 40% of Each Meal<br/> Buy 5 Meal - Get 50% of Each Meal </p>',
           button: true
         },
         show: {

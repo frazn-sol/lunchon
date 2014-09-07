@@ -29,10 +29,19 @@
               = f.password_field :password, placeholder: 'Password'
             .col-xs-4
               %input{:type => "submit", :value => "GO"}
-
+        .devise-links
+          = render "devise/shared/links"      
+  = content_for :container do
+    #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
+    %div{id: 'modal', class: 'modal hide fade'}             
+%div{class: "modal-backdrop fade in"}
 :css     
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
   .popup {
-   margin-top:30px;
+   margin-top:-300px;
    z-index:1050;
   }
   .main{
@@ -45,6 +54,12 @@
   color:#ffffff;
   background-color:#45A0CE;
   border-color:#45A0CE;
+  }
+  a{
+    color:white;
+  }
+  a:hover{
+    color:white;
   }
 :javascript
   $( ".close-btn" ).click(function() {

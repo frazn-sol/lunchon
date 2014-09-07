@@ -1,11 +1,57 @@
-.row-fluid
-  %legend 
-    Resend confirmation instructions
-    .pull-right= link_to '&times;'.html_safe, root_path
-  = render 'devise/shared/flash', flash: flash
-  = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name),  :defaults => { :input_html => {:class => 'span6'}}, :html => { :method => :post }) do |f|
-    = f.error_notification
-    .form-inputs
-      = f.input :email, :required => true, label: false, placeholder: 'Email'
-    %button{ type: 'submit', class: 'btn btn-info btn-block', name: 'submit'} Resend me confirmation instructions
-  = render "devise/shared/links"
+/ .row-fluid
+/   %legend 
+/     Resend confirmation instructions
+/     .pull-right= link_to '&times;'.html_safe, root_path
+/   = render 'devise/shared/flash', flash: flash
+/   = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name),  :defaults => { :input_html => {:class => 'span6'}}, :html => { :method => :post }) do |f|
+/     = f.error_notification
+/     .form-inputs
+/       = f.input :email, :required => true, label: false, placeholder: 'Email'
+/     %button{ type: 'submit', class: 'btn btn-info btn-block', name: 'submit'} Resend me confirmation instructions
+/   = render "devise/shared/links"
+.main
+  .popup
+    = render 'devise/shared/flash', flash: flash
+    .popup-arrow
+      %img{:src => "/assets/arrow.png"}/
+    .close-btn.glyphicon.glyphicon-remove-circle
+    .row
+      .col-xs-12
+        .col-xs-6.popup-logo.text-center
+          %img.img-responsive{:src => "/assets/logo.png"}/
+        .col-xs-12.col-sm-6.signup-popup
+          = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name),  :defaults => { :input_html => {:class => 'span6'}}, :html => { :method => :post }) do |f|
+            = f.error_notification
+            .col-xs-8
+              = f.email_field :email, required: true, placeholder: 'Email'
+            .col-xs-4
+              %input{:type => "submit", :value => "Send"}            
+%div{class: "modal-backdrop fade in"}
+:css     
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .popup {
+   margin-top:30px;
+   z-index:1050;
+  }
+  .main{
+    padding-left:15%;
+    padding-right:15%;
+  }
+  .alert-error{
+  margin-top:-35px;
+  text-align:center;
+  color:#ffffff;
+  background-color:#45A0CE;
+  border-color:#45A0CE;
+  }
+  a{
+    color:white;
+  }
+:javascript
+  $( ".close-btn" ).click(function() {
+      //$( ".main" ).fadeOut();
+      window.location = "#{root_url}";
+  });  

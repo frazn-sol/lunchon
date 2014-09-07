@@ -20,7 +20,20 @@
             %ul.nav.pull-right
               %li.nav-center-vertical
                 .btn-group.nav
+                  %button{ class: 'btn btn-large btn-inverse'} How it Works
+                  %button{ class: 'btn btn-large btn-inverse'} Account
                   %button{ class: 'btn btn-large btn-inverse'} Support
+                - if user_signed_in?
+                  %li.nav-center-vertical
+                    %p Logged In as:
+                    %p= current_user.email
+                  %li.nav-center-vertical
+                    = link_to "Log Out", destroy_user_session_path, class: 'btn btn-large btn-inverse log-out', method: 'delete'
+                - else
+                  %li.nav-center-vertical
+                    .btn-group.nav
+                      = link_to "Log In", new_user_session_path, class: 'btn btn-large btn-inverse', id: 'login-button'
+                      = link_to "Sign Up", new_user_registration_path, class: 'btn btn-large btn-inverse', id: 'signup-button'    
     .container
       .row.top_row
         = yield :container
@@ -33,5 +46,4 @@
     #footer
       = render 'layouts/footer'
     = yield    
-    %div{class: "modal-backdrop fade in"}
     

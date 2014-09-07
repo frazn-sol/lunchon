@@ -29,13 +29,14 @@
                   %li Buy 4 Meal - Get 40% of Each Meal    
 = content_for :container do
   #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
-  %div{id: 'modal', class: 'modal hide fade'}                        
+  %div{id: 'modal', class: 'modal hide fade'}
+%div{class: "modal-backdrop fade in"}                          
 :css     
   body {
     overflow-x: hidden;
   }
   .popup {
-   margin-top:-200px;
+   margin-top:-300px;
    z-index:1050;
   }
   .email-login{
