@@ -31,9 +31,9 @@
               %input{:type => "submit", :value => "GO"}
         .devise-links
           = render "devise/shared/links"      
-  = content_for :container do
-    #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
-    %div{id: 'modal', class: 'modal hide fade'}             
+= content_for :container do
+  #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
+  %div{id: 'modal', class: 'modal hide fade'}             
 %div{class: "modal-backdrop fade in"}
 :css     
   body {
@@ -41,10 +41,12 @@
     overflow-y: hidden;
   }
   .popup {
-   margin-top:-100px;
    z-index:1050;
   }
   .main{
+    position: absolute;
+    left: 0%;
+    top: 0%;
     padding-left:15%;
     padding-right:15%;
   }

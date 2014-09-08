@@ -66,24 +66,24 @@
   %div{id: 'redemption_modal', class: 'redemption_modal modal hide fade'}
 
 :javascript
-  $('#cart.span3').qtip({ // Grab some elements to apply the tooltip to
+  $("#tooltip").qtip({ // Grab some elements to apply the tooltip to
     content: {
       title: 'Lunch Bag',
-        text: '<p>All the items and discount prices can be seen here</p>',
-        button: true
+      text: '<p>All the items and discount prices can be seen here</p>',
+      button: true
     },
     show: {
-        ready: true,
-        when: false
+      ready: true,
+      when: false
     },
     hide: {
       event: 'mouseenter hover',  
       when:false
     },
     position: {
-        my: 'right top',  // Position my top left...
-        at: 'center left', // at the bottom right of...
-        target: $('#cart.span3') // my target
+      my: 'right top',  // Position my top left...
+      at: 'center left', // at the bottom right of...
+      target: $("#tooltip")// my target
     }
   });
   if (#{HowItWork.first.present?})

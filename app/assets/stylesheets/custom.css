@@ -35,7 +35,7 @@
 }
 
 .close-btn{
-	color: black;
+	color: #399CCD;
 }
 
 .email-login p {
@@ -147,7 +147,7 @@
 	-webkit-box-shadow: inset 2px 3px 14px 0px rgba(50, 50, 50, 0.75);
 	-moz-box-shadow:    inset 2px 3px 14px 0px rgba(50, 50, 50, 0.75);
 	box-shadow:         inset 2px 3px 14px 0px rgba(50, 50, 50, 0.75);
-	max-height:139px;
+	max-height:142px;
 	overflow:auto;
 	/*display:none;*/
 }

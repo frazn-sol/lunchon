@@ -22,11 +22,13 @@
                   %li #{HowItWork.first.line2}
                   %li #{HowItWork.first.line3}
                   %li #{HowItWork.first.line4} 
+                  %li #{HowItWork.first.line5} 
                 -else
                   %li Buy 1 Meal - Get 10% of Each Meal
-                  %li Buy 2 Meal - Get 20% of Each Meal
-                  %li Buy 3 Meal - Get 30% of Each Meal
-                  %li Buy 4 Meal - Get 40% of Each Meal    
+                  %li Buy 2 Meals - Get 20% of Each Meal
+                  %li Buy 3 Meals - Get 30% of Each Meal
+                  %li Buy 4 Meals - Get 40% of Each Meal
+                  %li Buy 5 Meals - Get 50% of Each Meal    
 = content_for :container do
   #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
   %div{id: 'modal', class: 'modal hide fade'}
@@ -36,9 +38,12 @@
     overflow-x: hidden;
   }
   .popup {
-   margin-top:-300px;
+  position: absolute;
+    left: 13%;
+    top: 0%;
    z-index:1050;
   }
+
   .email-login{
   z-index:1050;
   }
