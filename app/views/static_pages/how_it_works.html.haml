@@ -1,51 +1,60 @@
-.main.container.how-it
-  .popup
-    .popup-arrow
-      %img{:src => "/assets/arrow.png"}/
-    .close-btn.glyphicon.glyphicon-remove-circle.working-close
-    .row
-      .col-xs-12.how-col12
-        .col-xs-6.popup-logo.text-center.how-logo
-          %img.img-responsive{:src => "/assets/logo.png"}/
-        .col-xs-6.how-col
-          .how-works.animated.bounceInRight.col-xs-12
-            .col-xs-12.col-sm-4.works-left
-              %h1 HOW IT WORKS
-            .col-xs-12.col-sm-8.meal-listing
-              - if HowItWork.first.present?
-                %span #{HowItWork.first.heading.html_safe}
-              -else
-                %span Its Free Its Yummy
-              %ul
+.how-it-works-popup
+  .main.container.how-it
+    .popup
+      .popup-arrow
+        %img{:src => "/assets/arrow.png"}/
+      .close-btn.glyphicon.glyphicon-remove-circle.working-close
+      .row
+        .col-xs-12.how-col12
+          .col-xs-6.popup-logo.text-center.how-logo
+            %img.img-responsive{:src => "/assets/logo.png"}/
+          .col-xs-6.how-col
+            .how-works.animated.bounceInRight.col-xs-12
+              .col-xs-12.col-sm-4.works-left
+                %h1 HOW IT WORKS
+              .col-xs-12.col-sm-8.meal-listing
                 - if HowItWork.first.present?
-                  %li #{HowItWork.first.line1}
-                  %li #{HowItWork.first.line2}
-                  %li #{HowItWork.first.line3}
-                  %li #{HowItWork.first.line4} 
-                  %li #{HowItWork.first.line5} 
+                  %span #{HowItWork.first.heading}
                 -else
-                  %li Buy 1 Meal - Get 10% of Each Meal
-                  %li Buy 2 Meals - Get 20% of Each Meal
-                  %li Buy 3 Meals - Get 30% of Each Meal
-                  %li Buy 4 Meals - Get 40% of Each Meal
-                  %li Buy 5 Meals - Get 50% of Each Meal    
+                  %span Its Free Its Yummy
+                %ul
+                  - if HowItWork.first.present?
+                    %li #{HowItWork.first.line1}
+                    %li #{HowItWork.first.line2}
+                    %li #{HowItWork.first.line3}
+                    %li #{HowItWork.first.line4}
+                    %li #{HowItWork.first.line5} 
+                  -else
+                    %li Buy 1 Meal - Get 10% of Each Meal
+                    %li Buy 2 Meals - Get 20% of Each Meal
+                    %li Buy 3 Meals - Get 30% of Each Meal
+                    %li Buy 4 Meals - Get 40% of Each Meal
+                    %li Buy 5 Meals - Get 50% of Each Meal   
 = content_for :container do
   #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
-  %div{id: 'modal', class: 'modal hide fade'}
-%div{class: "modal-backdrop fade in"}                          
+  %div{id: 'modal', class: 'modal hide fade'}  
+%div{class: "modal-backdrop fade in"}                            
 :css     
   body {
     overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .how-it-works-popup{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    display:block!important;
+  }
+  .how-logo{
+    width:48%;
+    float:left;
+  }
+  .how-col{
+    width:49%;
   }
   .popup {
-  position: absolute;
-    left: 13%;
-    top: 0%;
    z-index:1050;
-  }
-
-  .email-login{
-  z-index:1050;
+   width:100%;
   }
   .main{
     padding-left:15%;
@@ -58,10 +67,12 @@
   }
 
   #error_explanation h2{
-  display:none;
+    display:none;
   }   
 :javascript
-    $( ".close-btn" ).click(function() {
-        //$( ".main" ).fadeOut();
-        window.location = "#{root_url}";
-    });  
+  $(".how-it-works-popup").show();
+  $( ".working-close" ).click(function() {
+      //$( ".main" ).fadeOut();
+      $(".how-it-works-popup").hide();
+      window.location = "#{root_url}";
+  });  

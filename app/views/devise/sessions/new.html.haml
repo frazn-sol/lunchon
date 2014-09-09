@@ -29,8 +29,8 @@
               = f.password_field :password, placeholder: 'Password'
             .col-xs-4
               %input{:type => "submit", :value => "GO"}
-        .devise-links
-          = render "devise/shared/links"      
+          .devise-links
+            = render "devise/shared/links"      
 = content_for :container do
   #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
   %div{id: 'modal', class: 'modal hide fade'}             
@@ -42,6 +42,11 @@
   }
   .popup {
    z-index:1050;
+  }
+  .devise-links{
+    float: left;
+    margin-top: -28px;
+    padding-left: 15px;
   }
   .main{
     position: absolute;
