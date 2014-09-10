@@ -119,7 +119,6 @@ $(document).ready ->
     $(".signup-popup").css("float":"right")
     $(".email-login").css("margin-top":"20px")
     $(".sign-up-logo").css("width":"48%")
-    
 if window.location.hash is "#_=_"
   window.location.hash = "" # for older browsers, leaves a # behind
   history.pushState "", document.title, window.location.pathname # nice and clean
