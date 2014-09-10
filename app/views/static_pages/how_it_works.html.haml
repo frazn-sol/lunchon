@@ -30,9 +30,9 @@
                     %li Buy 3 Meals - Get 30% of Each Meal
                     %li Buy 4 Meals - Get 40% of Each Meal
                     %li Buy 5 Meals - Get 50% of Each Meal   
-  = content_for :container do
-    #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
-    %div{id: 'modal', class: 'modal hide fade'}  
+= content_for :container do
+  #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
+  %div{id: 'modal', class: 'modal hide fade'}  
 %div{class: "modal-backdrop fade in"}                            
 :css     
   body {
@@ -49,7 +49,7 @@
     top: 0%;
   }
   .email-login{
-  z-index:1050;
+    z-index:1050;
   }
   .main{
     padding-left:15%;
@@ -62,7 +62,7 @@
   }
 
   #error_explanation h2{
-  display:none;
+    display:none;
   }   
 :javascript
   $( ".working-close" ).click(function() {
