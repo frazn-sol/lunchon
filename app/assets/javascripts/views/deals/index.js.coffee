@@ -7,7 +7,7 @@ class Lunchon.Views.DealsIndex extends Backbone.View
     @collection.on('reset', @render, this)
 
   render: ->
-    $(@el).addClass('thumbnails deals').html(@template())
+    $(@el).addClass('thumbnails deals tool-thumb').html(@template())
     @collection.each(@appendDeal)
     this
 

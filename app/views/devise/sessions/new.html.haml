@@ -20,17 +20,17 @@
     .close-btn.glyphicon.glyphicon-remove-circle
     .row
       .col-xs-12
-        .col-xs-6.popup-logo.text-center
+        .col-xs-6.popup-logo.text-center.signin-logo
           %img.img-responsive{:src => "/assets/logo.png"}/
-        .col-xs-12.col-sm-6.signup-popup
+        .col-xs-12.col-sm-6.signup-popup.signin-popup
           = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-            .col-xs-8
+            .col-xs-8.signin-fields
               = f.email_field :email, placeholder: 'Email'
               = f.password_field :password, placeholder: 'Password'
-            .col-xs-4
+            .col-xs-4.signin-button
               %input{:type => "submit", :value => "GO"}
-        .devise-links
-          = render "devise/shared/links"      
+          .devise-links
+            = render "devise/shared/links"      
 = content_for :container do
   #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
   %div{id: 'modal', class: 'modal hide fade'}             
@@ -39,6 +39,11 @@
   body {
     overflow-x: hidden;
     overflow-y: hidden;
+  }
+  .devise-links{
+    float:left;
+    padding-left:15px;
+    margin-top:-8px;
   }
   .popup {
    z-index:1050;
