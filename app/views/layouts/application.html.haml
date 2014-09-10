@@ -85,7 +85,7 @@
     $('#how-tooltip').qtip({ // Grab some elements to apply the tooltip to
         content: {
           title: 'How it works',
-          text: '<p>"#{HowItWork.first.line1}" <br/> "#{HowItWork.first.line2}"<br/> "#{HowItWork.first.line3}"<br/> "#{HowItWork.first.line4}"<br/> "#{HowItWork.first.line5}" </p>',
+          text: '<p>#{HowItWork.first.line1.to_s} <br/> #{HowItWork.first.line2}<br/> #{HowItWork.first.line3}<br/> #{HowItWork.first.line4}<br/> #{HowItWork.first.line5} </p>',
           button: true
         },
         show: {
