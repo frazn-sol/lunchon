@@ -66,32 +66,41 @@ $(document).ready ->
   if current_width < 1050
     $(".modal").addClass("wide-popup")
   if current_width < 450  
-    $(".popup").css("margin-top":"60px")
-    $(".row").css("margin-left":"-60px","width":"180%", "margin-top":"-33px")
-    $(".popup-logo").css("width":"100%")
-    $(".col-xs-8").css("width":"100%")
-    $(".popup").css("height":"100%")
+    $("body").css("overflow-y":"auto") 
     $(".how-col").css("width":"100%")
-    $(".social").css("width":"270%")
-    $(".email-text").css("width":"100%", "font-size":"80%")
-    $(".email-login").css("margin-top":"20px")
+    $(".how-logo").css("width":"100%", "padding-bottom":"115px")
+    $(".how-works").css("font-size":"80%")
+    $(".works-left h1").css("font-size":"75%");
     $(".meal-listing span").css("padding-left":"0px");
-    $(".email-form").css("width":"90%")
-  if current_width > 450 && current_width < 1025   
+    $(".social-icons").css("width":"65%", "float":"none")
+    $(".signup-popup").css("float":"left", "width":"132%")
+    $(".email-login").css("margin-top":"20px")
+    $(".sign-up-logo").css("width":"95%")
+    $(".devise-links").css("float":"none")
+  if current_width > 450 && current_width <= 500
+    $("body").css("overflow-y":"auto") 
     $(".how-col").css("width":"100%")
-    $(".how-col12").css("margin-top":"-34px")
-    $(".how-logo").css("width":"100%")
-    $(".how-it .popup").css("height":"100%", "margin-top":"50px")
+    $(".how-logo").css("width":"100%", "padding-bottom":"115px")
+    $(".how-works").css("font-size":"80%")
+    $(".works-left h1").css("font-size":"75%");
     $(".meal-listing span").css("padding-left":"0px");
-    $(".social").css("width":"250%")
-    $(".social-icons").css("width":"50%")
-    $(".signup-popup").css("margin-left":"-120px")
-    $(".email-text").css("width":"100%", "font-size":"90%")
+    $(".social-icons").css("width":"65%", "float":"none")
+    $(".signup-popup").css("float":"left", "width":"132%")
     $(".email-login").css("margin-top":"20px")
-    $(".email-body").css("margin-top":"-28px")
-    $(".sign-up-logo").css("width":"100%")
-    $(".email-form").css("width":"100%")
-
+    $(".sign-up-logo").css("width":"95%")
+    $(".devise-links").css("float":"none")
+  if current_width > 500 && current_width < 1025   
+    $(".how-col").css("width":"52%")
+    $(".how-logo").css("width":"48%")
+    $(".how-works").css("font-size":"80%")
+    $(".works-left h1").css("font-size":"75%");
+    $(".meal-listing span").css("padding-left":"0px");
+    $(".social").css("width":"155%")
+    $(".social-icons").css("width":"50%", "float":"none")
+    $(".signup-popup").css("float":"right")
+    $(".email-login").css("margin-top":"20px")
+    $(".sign-up-logo").css("width":"48%")
+    
 if window.location.hash is "#_=_"
   window.location.hash = "" # for older browsers, leaves a # behind
   history.pushState "", document.title, window.location.pathname # nice and clean
