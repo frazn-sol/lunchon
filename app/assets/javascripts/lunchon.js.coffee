@@ -65,7 +65,7 @@ $(document).ready ->
   #do something with the width value here!
   if current_width < 1050
     $(".modal").addClass("wide-popup")
-  if current_width <= 450  
+  if current_width <= 550  
     $("body").css("overflow-y":"auto") 
     $(".how-col").css("width":"140%", "margin-top": "23px", "margin-left": "-10px")
     $(".how-logo").css("width":"100%", "padding-bottom":"115px", "padding-top":"31px")
@@ -87,7 +87,7 @@ $(document).ready ->
     $(".signup-social").css("width":"210%")
     $(".signin-popup").css("margin-top": "75px", "width":"136%", "float": "left", "margin-left":"-45px")
     $( ".meal-listing span" ).text("How it works")
-  if current_width > 450 && current_width <= 700
+  if current_width > 550 && current_width <= 700
     $("body").css("overflow-y":"auto") 
     $(".how-col").css("width":"100%")
     $(".how-logo").css("width":"100%", "padding-bottom":"115px", "padding-top":"31px")
