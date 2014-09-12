@@ -65,8 +65,9 @@ $(document).ready ->
   #do something with the width value here!
   if current_width < 1050
     $(".modal").addClass("wide-popup")
-    if current_width <= 550  
-      $("body").css("overflow-y":"auto") 
+    if current_width <= 450 
+      $("body").css("overflow-y":"auto")
+      $("body").css("overflow-x":"auto") 
       $(".how-col").css("width":"140%", "margin-top": "23px", "margin-left": "-10px")
       $(".how-logo").css("width":"100%", "padding-bottom":"115px", "padding-top":"31px")
       $(".how-works").css("font-size":"94%", "margin-top": "-30px", "width": "150%", "margin-left": "-58px")
@@ -87,8 +88,9 @@ $(document).ready ->
       $(".signup-social").css("width":"210%")
       $(".signin-popup").css("margin-top": "75px", "width":"136%", "float": "left", "margin-left":"-45px")
       $( ".meal-listing span" ).text("How it works")
-    if current_width > 550 && current_width <= 700
-      $("body").css("overflow-y":"auto") 
+    if current_width > 450 && current_width <= 700
+      $("body").css("overflow-y":"auto")
+      $("body").css("overflow-x":"auto") 
       $(".how-col").css("width":"100%")
       $(".how-logo").css("width":"100%", "padding-bottom":"115px", "padding-top":"31px")
       $(".how-works").css("font-size":"94%", "margin-top": "-30px", "width": "150%", "margin-left": "-58px")
@@ -108,7 +110,8 @@ $(document).ready ->
       $(".signin-popup").css("margin-top": "75px", "float": "left", "margin-left":"-45px")
       $( ".meal-listing span" ).text("How it works")
     if current_width > 700 && current_width < 1025
-      $("body").css("overflow-y":"auto")   
+      $("body").css("overflow-y":"auto")
+      $("body").css("overflow-x":"auto")   
       $(".how-col").css("width":"52%")
       $(".how-logo").css("width":"48%")
       $(".how-works").css("font-size":"80%")
