@@ -291,7 +291,7 @@ border:2px solid #a0cee5;
 	box-shadow:         3px 3px 3px 0px rgba(50, 50, 50, 0.75);
 }
 
-@media all and (max-width: 770px) and (min-width: 450px) {
+/*@media all and (max-width: 770px) and (min-width: 450px) {
 	.signup-popup input[type="text"]{
 		height:38px;
 		margin-bottom:10px;
@@ -308,4 +308,284 @@ border:2px solid #a0cee5;
 		padding:5px;
 	}
 
+}*/
+
+@media screen and (max-width: 320px), (min-device-width: 320px) and (max-device-width: 480px) and (orientation : portrait) {
+/* CSS */ 
+body{
+	overflow-y:auto;
+	overflow-x:auto;
+}
+.how-col{
+	width: 140%;
+	margin-top: 23px;
+	margin-left: -10px;
+}
+
+.how-logo{
+	width: 100%;
+	padding-bottom: 115px;
+	padding-top: 31px;
+}
+
+.how-works{
+	font-size: 94%;
+	margin-top: -30px;
+	width:150%;
+	margin-left: -58px;
+}
+
+.meal-listing span{
+	padding-left: 0px;
+	font-weight: bolder;
+	font-size: 130%;
+	text-decoration: underline;
+}
+
+.meal-listing{
+	text-align: center;
+}
+
+.social-icons{
+	width: 65%;
+	float: none;
+}
+
+.signup-popup{
+	float: left;
+	margin-left: -31px;
+	margin-top: 75px;
+	width: 136%;
+	margin-left: -45px; 
+}
+
+.email-login{
+	margin-top: 20px;
+}
+.sign-up-logo{
+	width:95%;
+}
+.signin-logo{
+	padding-top: 31px;
+}
+
+.devise-links{
+	float: left;
+	width: 140%;
+}
+
+.works-left{
+	display: none;
+}
+.email-text{
+	width: 100%;
+}
+
+.email-form{
+	width: 100%;
+}
+
+.popup-logo{
+	width: 100%;
+}
+
+.signin-fields{
+	width: 130%;
+	margin-top: 30px;
+}
+
+.signin-button{
+	float: none;
+}
+
+.signup-social{
+	width: 210%;
+}
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px), (min-device-width: 320px) and (max-device-width: 480px) and (orientation : landscape) {
+/* CSS */ 
+body{
+	overflow-y:auto;
+	overflow-x:auto;
+}
+.how-col{
+	width: 140%;
+	margin-top: 23px;
+	margin-left: -10px;
+}
+
+.how-logo{
+	width: 100%;
+	padding-bottom: 115px;
+	padding-top: 31px;
+}
+
+.how-works{
+	font-size: 94%;
+	margin-top: -30px;
+	width:150%;
+	margin-left: -58px;
+}
+
+.meal-listing span{
+	padding-left: 0px;
+	font-weight: bolder;
+	font-size: 130%;
+	text-decoration: underline;
+}
+
+.meal-listing{
+	text-align: center;
+}
+
+.social-icons{
+	width: 65%;
+	float: none;
+}
+
+.signup-popup{
+	float: left;
+	margin-left: -31px;
+	margin-top: 75px;
+	width: 136%;
+	margin-left: -45px; 
+}
+
+.email-login{
+	margin-top: 20px;
+}
+.sign-up-logo{
+	width:95%;
+}
+.signin-logo{
+	padding-top: 31px;
+}
+
+.devise-links{
+	float: left;
+	width: 140%;
+}
+
+.works-left{
+	display: none;
+}
+.email-text{
+	width: 100%;
+}
+
+.email-form{
+	width: 100%;
+}
+
+.popup-logo{
+	width: 100%;
+}
+
+.signin-fields{
+	width: 130%;
+	margin-top: 30px;
+}
+
+.signin-button{
+	float: none;
+}
+
+.signup-social{
+	width: 210%;
+}
+}
+
+@media screen and (max-width: 320px), (min-device-width: 320px) and (max-device-width: 568px) and (orientation : portrait) {
+/* CSS */ 
+
+body{
+	overflow-y:auto;
+	overflow-x:auto;
+}
+.how-col{
+	width: 140%;
+	margin-top: 23px;
+	margin-left: -10px;
+}
+
+.how-logo{
+	width: 100%;
+	padding-bottom: 115px;
+	padding-top: 31px;
+}
+
+.how-works{
+	font-size: 94%;
+	margin-top: -30px;
+	width:150%;
+	margin-left: -58px;
+}
+
+.meal-listing span{
+	padding-left: 0px;
+	font-weight: bolder;
+	font-size: 130%;
+	text-decoration: underline;
+}
+
+.meal-listing{
+	text-align: center;
+}
+
+.social-icons{
+	width: 65%;
+	float: none;
+}
+
+.signup-popup{
+	float: left;
+	margin-left: -31px;
+	margin-top: 75px;
+	width: 136%;
+	margin-left: -45px; 
+}
+
+.email-login{
+	margin-top: 20px;
+}
+.sign-up-logo{
+	width:95%;
+}
+.signin-logo{
+	padding-top: 31px;
+}
+
+.devise-links{
+	float: left;
+	width: 140%;
+}
+
+.works-left{
+	display: none;
+}
+.email-text{
+	width: 100%;
+}
+
+.email-form{
+	width: 100%;
+}
+
+.popup-logo{
+	width: 100%;
+}
+
+.signin-fields{
+	width: 130%;
+	margin-top: 30px;
+}
+
+.signin-button{
+	float: none;
+}
+
+.signup-social{
+	width: 210%;
+}
 }
