@@ -25,4 +25,4 @@ production:
   database:  lunchon
   pool: 5
   username: root
-  password: root
+  password: sokk3r
