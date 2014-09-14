@@ -309,26 +309,3 @@ border:2px solid #a0cee5;
 	}
 
 }
-
-/*@media screen and (max-width: 320px), (min-device-width: 320px) and (max-device-width: 480px) and (orientation : portrait) {*/
-/* CSS */ 
-/*.how-col{
-	width: 140%;
-	margin-top: 23px;
-	margin-left: -10px;
-}
-
-.how-logo{
-	width: 100%;
-	padding-bottom: 115px;
-	padding-top: 31px;
-}
-
-.how-works{
-	font-size: 94%;
-	margin-top: -30px;
-	width:150%;
-	margin-left: -58px;
-}
-
-}*/
