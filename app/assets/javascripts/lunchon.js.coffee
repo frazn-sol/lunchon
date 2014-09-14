@@ -60,14 +60,15 @@ $(document).ready ->
         <h5 style='margin-top: -15px; margin-bottom: 15px; margin-right:-25px;font-size:13px;'> $" + discount_price_5 + "<span style='color:#808080; font-size:11px; font-weight:normal;'> if <b style='color:black;'>5+</b> Total Items in Lunch Bag</span></h5>"
         return
 
-  current_width = $(window).width()
+  current_width = (if (window.innerWidth > 0) then window.innerWidth else screen.width)
 
   #do something with the width value here!
   if current_width < 1050
     $(".modal").addClass("wide-popup")
-  if current_width <= 450 
+  if current_width < 450 
     $("body").css("overflow-y":"auto")
     $("body").css("overflow-x":"auto") 
+    $(".modal").css("top":"44%", "position":"absolute") 
     $(".how-col").css("width":"140%", "margin-top": "23px", "margin-left": "-10px")
     $(".how-logo").css("width":"100%", "padding-bottom":"115px", "padding-top":"31px")
     $(".how-works").css("font-size":"94%", "margin-top": "-30px", "width": "150%", "margin-left": "-58px")
@@ -92,6 +93,7 @@ $(document).ready ->
     $("body").css("overflow-y":"auto")
     $("body").css("overflow-x":"auto") 
     $(".how-col").css("width":"100%")
+    $(".modal").css("top":"25%", "position":"absolute")
     $(".how-logo").css("width":"100%", "padding-bottom":"115px", "padding-top":"31px")
     $(".how-works").css("font-size":"94%", "margin-top": "-30px", "width": "150%", "margin-left": "-58px")
     $(".meal-listing span").css("padding-left":"0px", "font-weight": "bolder", "font-size": "130%", "text-decoration": "underline")
@@ -111,6 +113,7 @@ $(document).ready ->
     $( ".meal-listing span" ).text("How it works")
   if current_width > 700 && current_width < 1025
     $("body").css("overflow-y":"auto")
+    $(".modal").css("top":"65%", "position":"absolute")
     $("body").css("overflow-x":"auto")   
     $(".how-col").css("width":"52%")
     $(".how-logo").css("width":"48%")
