@@ -30,14 +30,33 @@
                     %li Buy 3 Meals - Get 30% of Each Meal
                     %li Buy 4 Meals - Get 40% of Each Meal
                     %li Buy 5 Meals - Get 50% of Each Meal   
+
+    .col-xs-12.col-sm-6.visible-xs
+      .how-works.animated.bounceInRight.col-xs-12
+        .col-xs-12.col-sm-4.works-left.how-it-left
+          %h1 HOW IT WORKS
+        .col-xs-12.col-sm-8.meal-listing
+          %span Its Free Its Yummy
+          %ul
+            - if HowItWork.first.present?
+              %li #{HowItWork.first.line1}
+              %li #{HowItWork.first.line2}
+              %li #{HowItWork.first.line3}
+              %li #{HowItWork.first.line4}
+              %li #{HowItWork.first.line5} 
+            -else
+              %li Buy 1 Meal - Get 10% of Each Meal
+              %li Buy 2 Meals - Get 20% of Each Meal
+              %li Buy 3 Meals - Get 30% of Each Meal
+              %li Buy 4 Meals - Get 40% of Each Meal
+              %li Buy 5 Meals - Get 50% of Each Meal
 = content_for :container do
   #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
   %div{id: 'modal', class: 'modal hide fade'}  
 %div{class: "modal-backdrop fade in"}                            
-:css     
-  body {
-    overflow-x: hidden;
-    overflow-y: hidden;
+:css  
+  body{
+  overflow-x:hidden;
   }
   .popup {
    z-index:1050;
@@ -51,19 +70,20 @@
   .email-login{
     z-index:1050;
   }
+  .visible-xs{
+     z-index:1050;
+  }
+    .works-left h1{
+    font-size:100%; 
+  }
+  .works-left{
+    margin-top:42px;
+  }
   .main{
+    display:block!important;
     padding-left:15%;
     padding-right:15%;
-  }   
-  #error_explanation li{
-    font-family: 'Lato', sans-serif;
-    color:red;
-    list-style-type:square;
   }
-
-  #error_explanation h2{
-    display:none;
-  }   
 :javascript
   $( ".working-close" ).click(function() {
       //$( ".main" ).fadeOut();
