@@ -293,6 +293,11 @@ border:2px solid #a0cee5;
 		margin-left: 0px;
 	}
 
+	.signup-social{
+		width: 77%;
+		margin-left: 25px;
+	}
+
 	.devise-links {
 		float: left;
 		padding-left: 16px;
@@ -304,6 +309,35 @@ border:2px solid #a0cee5;
 	}
 	.signin-fields {
 		margin-top: 0px;
+	}
+
+	.signup-social{
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	.how-col{
+		display: none;
+	}
+	.visible-xs{
+		margin-left: 0px!important;
+		margin-top: 0px!important;
+	}
+
+	.how-logo{
+		width: 100%;
+	}
+	
+	.sign-up-logo{
+		width:100%;
+	}
+
+	.email-text{
+		width: 100%;
+	}
+
+	.email-form{
+		width: 100%;
 	}
 
 }
@@ -323,11 +357,47 @@ border:2px solid #a0cee5;
 		padding-left: 16px!important;
 		margin-top: -7px!important;
 	}
-
+	.how-it-left{
+		display: none;
+	}
+	.meal-listing span{
+		font-weight: bold;
+		text-align:center;
+		text-decoration: underline;
+	}
+	.how-works{
+		margin-left: 0px;
+		margin-top: 0px;
+	}
 	.signin-logo{
 		padding-top: 0px;
 		margin-left: -10px;
 		width:60%;
+	}
+
+	.signup-social{
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	.how-col{
+		display: none;
+	}
+
+	.how-logo{
+		width: 100%;
+	}
+
+	.sign-up-logo{
+		width:100%;
+	}
+
+	.email-text{
+		width: 100%;
+	}
+
+	.email-form{
+		width: 100%;
 	}
 	.signin-fields {
 		margin-top: 0px;
@@ -351,6 +421,14 @@ border:2px solid #a0cee5;
 		width:50%
 	}
 
+	#modal{
+		width: 100%;
+		position: absolute;
+	}
+	.modal.fade.in{
+		top:15%!important;
+	}
+
 }
 
 
@@ -364,4 +442,8 @@ border:2px solid #a0cee5;
 		.email-input input[type="password"] {
 			width:70%
 		}
+	.how-col{
+		display: block;
+	}
+
 } 

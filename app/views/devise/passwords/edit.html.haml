@@ -1,11 +1,68 @@
-%h2 Change your password
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
-  = f.error_notification
-  = f.input :reset_password_token, :as => :hidden
-  = f.full_error :reset_password_token
-  .form-inputs
-    = f.input :password, :label => "New password", :required => true
-    = f.input :password_confirmation, :label => "Confirm your new password", :required => true
-  .form-actions
-    = f.button :submit, "Change my password"
-= render "devise/shared/links"
+.main
+  .popup
+    = render 'devise/shared/flash', flash: flash
+    .popup-arrow
+      %img{:src => "/assets/arrow.png"}/
+    .close-btn.glyphicon.glyphicon-remove-circle
+    .row
+      .col-xs-12
+        .col-xs-6.popup-logo.text-center.signin-logo
+          %img.img-responsive{:src => "/assets/logo.png"}/
+        .col-xs-12.col-sm-6.signup-popup.signin-popup
+          = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+            = devise_error_messages!
+            .col-xs-8.signin-fields
+              = f.password_field :password, placeholder: 'Pasword', :required => true	
+              = f.password_field :password_confirmation, placeholder: 'Confirm Pasword', :required => true
+            .col-xs-4.signin-button
+              %input{:type => "submit", :value => "Change"} 
+	%div{class: "modal-backdrop fade in"}
+:css     
+  .devise-links{
+    float:left;
+    padding-left:15px;
+    margin-top:-8px;
+  }
+  .popup {
+   z-index:1050;
+  }
+  .devise-links{
+    float: left;
+    padding-left: 15px;
+  }
+  .main{
+    position: absolute;
+    display:block;
+    left: 0%;
+    top: 0%;
+    padding-left:15%;
+    padding-right:15%;
+  }
+  .alert-error{
+  margin-top:-35px;
+  text-align:center;
+  color:#ffffff;
+  background-color:#45A0CE;
+  border-color:#45A0CE;
+  }
+  #error_explanation li{
+    font-family: 'Lato', sans-serif;
+    color:white;
+    list-style-type:square;
+  }
+
+  #error_explanation h2{
+  display:none;
+  }   
+  a{
+    color:white;
+  }
+  a:hover{
+    color:white;
+  }
+:javascript
+  $(".row.top_row").hide();
+  $( ".close-btn" ).click(function() {
+      //$( ".main" ).fadeOut();
+      window.location = "#{root_url}";
+  });

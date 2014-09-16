@@ -25,16 +25,9 @@
             .col-xs-8.signin-fields
               = f.email_field :email, placeholder: 'Email'
             .col-xs-4.signin-button
-              %input{:type => "submit", :value => "Get Link"}
-= content_for :container do
-  #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
-  %div{id: 'modal', class: 'modal hide fade'}             
+              %input{:type => "submit", :value => "Get Link"}             
 %div{class: "modal-backdrop fade in"}
 :css     
-  body {
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
   .devise-links{
     float:left;
     padding-left:15px;
@@ -49,6 +42,7 @@
   }
   .main{
     position: absolute;
+    display:block;
     left: 0%;
     top: 0%;
     padding-left:15%;
@@ -77,6 +71,7 @@
     color:white;
   }
 :javascript
+  $(".row.top_row").hide();
   $( ".close-btn" ).click(function() {
       //$( ".main" ).fadeOut();
       window.location = "#{root_url}";
