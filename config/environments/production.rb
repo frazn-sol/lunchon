@@ -23,6 +23,7 @@ Lunchon::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+  
   APP_HOST = 'lunchon.herokuapp.com'
   config.action_mailer.default_url_options = { :host => APP_HOST, :protocol => 'http' }
   config.action_mailer.perform_deliveries  = true

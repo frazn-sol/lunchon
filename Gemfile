@@ -34,6 +34,7 @@ gem 'newrelic_rpm'
 gem 'pry-rails', :group => :development
 gem "letter_opener", :group => :development
 gem "mini_magick"
+gem 'bootstrap-sass'#, '~> 2.2.1.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -44,7 +45,6 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass'#, '~> 2.2.1.1'
   gem 'haml_coffee_assets'
 end
 
