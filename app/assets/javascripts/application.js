@@ -17,7 +17,6 @@
 //= require jquery.qtip.min
 //= require accounting.min
 //= require bootstrap
-//= require lunchon.js
 //= require underscore
 //= require custom
 //= require backbone
