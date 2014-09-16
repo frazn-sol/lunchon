@@ -17,26 +17,40 @@
     .close-btn.glyphicon.glyphicon-remove-circle
     .row
       .col-xs-12
-        .col-xs-6.popup-logo.text-center
+        .col-xs-6.popup-logo.text-center.signin-logo
           %img.img-responsive{:src => "/assets/logo.png"}/
-        .col-xs-12.col-sm-6.signup-popup
-          = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :defaults => { :input_html => {:class => 'span6'}}, :html => { :method => :post }) do |f|
-            = f.error_notification
-            .col-xs-8
-              = f.email_field :email, required: true, placeholder: 'Email'
-            .col-xs-4
-              %input{:type => "submit", :value => "Send"}            
+        .col-xs-12.col-sm-6.signup-popup.signin-popup
+          = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+            = devise_error_messages!
+            .col-xs-8.signin-fields
+              = f.email_field :email, placeholder: 'Email'
+            .col-xs-4.signin-button
+              %input{:type => "submit", :value => "Get Link"}
+= content_for :container do
+  #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
+  %div{id: 'modal', class: 'modal hide fade'}             
 %div{class: "modal-backdrop fade in"}
 :css     
   body {
     overflow-x: hidden;
     overflow-y: hidden;
   }
+  .devise-links{
+    float:left;
+    padding-left:15px;
+    margin-top:-8px;
+  }
   .popup {
-   margin-top:30px;
    z-index:1050;
   }
+  .devise-links{
+    float: left;
+    padding-left: 15px;
+  }
   .main{
+    position: absolute;
+    left: 0%;
+    top: 0%;
     padding-left:15%;
     padding-right:15%;
   }
@@ -47,11 +61,45 @@
   background-color:#45A0CE;
   border-color:#45A0CE;
   }
+  #error_explanation li{
+    font-family: 'Lato', sans-serif;
+    color:white;
+    list-style-type:square;
+  }
+
+  #error_explanation h2{
+  display:none;
+  }   
   a{
+    color:white;
+  }
+  a:hover{
     color:white;
   }
 :javascript
   $( ".close-btn" ).click(function() {
       //$( ".main" ).fadeOut();
       window.location = "#{root_url}";
-  }); 
+  });  
+
+/ .main
+/   .popup
+/     = render 'devise/shared/flash', flash: flash
+/     .popup-arrow
+/       %img{:src => "/assets/arrow.png"}/
+/     .close-btn.glyphicon.glyphicon-remove-circle
+/     .row
+/       .col-xs-12
+/         .col-xs-6.popup-logo.text-center
+/           %img.img-responsive{:src => "/assets/logo.png"}/
+/         .col-xs-12.col-sm-6.signup-popup
+/           = form_for(resource, :as => resource_name, :url => password_path(resource_name), :defaults => { :input_html => {:class => 'span6'}}, :html => { :method => :post }) do |f|
+/             = devise_error_messages!
+/             .col-xs-8
+/               = f.email_field :email, required: true, placeholder: 'Email'
+/             .col-xs-4
+/               %input{:type => "submit", :value => "Get Link"}       
+/ = content_for :container do
+/   #container{data: {deals: @deals_json, locations: @locations_json, lunch_bag: @lunch_bag.to_json.to_json, is_user_signed_in: @is_user_signed_in.to_json}, class: 'span8'} Loading...
+/   %div{id: 'modal', class: 'modal hide fade'}             
+/ %div{class: "modal-backdrop fade in"}

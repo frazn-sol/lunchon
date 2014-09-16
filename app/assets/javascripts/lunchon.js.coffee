@@ -61,8 +61,6 @@ $(document).ready ->
         return
 
   current_width = (if (window.innerWidth > 0) then window.innerWidth else screen.width)
-
-  #do something with the width value here!
 if window.location.hash is "#_=_"
   window.location.hash = "" # for older browsers, leaves a # behind
   history.pushState "", document.title, window.location.pathname # nice and clean
