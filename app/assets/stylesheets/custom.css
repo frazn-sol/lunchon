@@ -2,7 +2,7 @@
 
 .main {
 	padding:0 40px 0 7px;
-	display:block;
+	display:none;
 }
 
 .overlay {
@@ -32,10 +32,6 @@
 
 .email-login {
 	padding-top:10px;
-}
-
-.close-btn{
-	color: #399CCD;
 }
 
 .email-login p {
@@ -75,7 +71,7 @@
 	border-bottom-left-radius: 10px;
 }
 
-.email-input input[type="email"] {
+.email-input input[type="password"] {
 	border:none;
 	background:#cecece;
 	height: 100%;
@@ -88,7 +84,7 @@
 	border-bottom-left-radius: 10px;
 }
 
-.email-input input[type="password"] {
+.email-input input[type="email"] {
 	border:none;
 	background:#cecece;
 	height: 100%;
@@ -103,11 +99,11 @@
 
 .email-input input[type="submit"] {
 	background:#3299cd;
-	width:80px;
-	height:25px;
+/*	width:11.5%;
+	height:57%;*/
+	padding:4px 16px;
 	border:none;
-	margin-left:5px;
-	margin-top: -8px;
+	margin-left:20px;
 	color:#fff;
 	font-family:Arial, Helvetica, sans-serif;
 	border-radius:3px;
@@ -139,6 +135,7 @@
 	font-size:25px;
 	cursor:pointer;
 	font-weight:100;
+	color:#379BCD;
 }
 
 .how-works {
@@ -148,35 +145,23 @@
 	-webkit-box-shadow: inset 2px 3px 14px 0px rgba(50, 50, 50, 0.75);
 	-moz-box-shadow:    inset 2px 3px 14px 0px rgba(50, 50, 50, 0.75);
 	box-shadow:         inset 2px 3px 14px 0px rgba(50, 50, 50, 0.75);
-	max-height:142px;
+	max-height:139px;
 	overflow:auto;
 	/*display:none;*/
 }
-
-
 
 .works-left h1 {
 	border-right:1px solid #666;
 	color:#7b7b7b;
 	font-weight:bold;
 	line-height:1.3;
+	font-size:2vw;
 }
 
 .meal-listing {
 	padding:10px 0;
-	font-size: 80%;
 }
 
-.how-it .works-left{
-	margin-top: 35px;
-}
-
-.close{
-	right:0px!important;
-}
-.works-left h1{
-	font-size: 115%;
-}
 .meal-listing span{
 	padding-left:40px
 }
@@ -272,7 +257,7 @@ border:2px solid #a0cee5;
 }
 
 .social-icons {
-	width:70%;
+	width:54%;
 	float:right;
 /*	height:55px;*/
 	background:#fff;
@@ -282,7 +267,7 @@ border:2px solid #a0cee5;
 	-moz-box-shadow:    inset 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
 	box-shadow:         inset 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
 	text-align:center;
-	padding:6px;
+	padding:10px;
 }
 
 .social-icons img {
@@ -296,9 +281,35 @@ border:2px solid #a0cee5;
 		height:38px;
 		margin-bottom:10px;
 	}
+
+	.signup-popup input[type="email"]{
+		height:38px;
+		margin-bottom:10px;
+	}
+	.signup-popup input[type="password"]{
+		height:38px;
+		margin-bottom:10px;
+	}
 	.signup-popup input[type="submit"]{
 		padding: 10%;
 	}
+
+	.social-icons {
+		width: 68%!important;
+		padding: 5px;
+		margin-right: 38px;
+	}
+	.how-col{
+		display: none;
+	}
+
+	.how-logo{
+		margin-top: 50px;
+	}
+
+	.col-xs-6{
+    	width:100%;
+  	}
 
 }
 
@@ -306,6 +317,52 @@ border:2px solid #a0cee5;
 	.social-icons {
 		width:100%;
 		padding:5px;
+	}
+	.col-xs-6{
+    	width:100%;
+  	}
+
+  	.row{
+    	margin-right: -15px;
+    	margin-left: -15px;
+  	}
+	.email-text {
+		width: 100%;
+	}
+	.email-form {
+		width: 100%;
+	}
+	.devise-links{
+		margin-top: 5px!important;
+	}
+	.popup {
+		padding:10px;
+	}
+	
+	.works-left h1 {
+		font-size:3vw;
+	}
+
+	.how-col{
+		display: none;
+	}
+
+	.how-logo{
+		margin-top: 50px;
+	}
+
+	.email-input input[type="text"] {
+		width:50%
+	}
+	.email-input input[type="email"] {
+		width:50%
+	}
+	.email-input input[type="password"] {
+		width:50%
+	}
+	.visible-xs {
+		width: 100%;
+		display: block!important;
 	}
 
 }*/
@@ -589,3 +646,32 @@ body{
 	width: 210%;
 }
 }
+
+
+@media all and (max-width: 1000px) and (min-width: 770px) {
+		.email-input input[type="text"] {
+		width:70%
+		}
+		.email-input input[type="email"] {
+		width:70%
+		}
+		.email-input input[type="password"] {
+		width:70%
+		}
+		.how-col{
+		display: none;
+	}
+
+	.how-logo{
+		margin-top: 50px;
+	}
+	.visible-xs {
+		width: 100%;
+		display: block!important;
+	}
+
+	.social-icons {
+		width:100%;
+		padding:5px;
+	}
+} 
