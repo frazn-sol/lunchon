@@ -60,7 +60,6 @@ $(document).ready ->
         <h5 style='margin-top: -15px; margin-bottom: 15px; margin-right:-25px;font-size:13px;'> $" + discount_price_5 + "<span style='color:#808080; font-size:11px; font-weight:normal;'> if <b style='color:black;'>5+</b> Total Items in Lunch Bag</span></h5>"
         return
 
-  current_width = (if (window.innerWidth > 0) then window.innerWidth else screen.width)
 if window.location.hash is "#_=_"
   window.location.hash = "" # for older browsers, leaves a # behind
   history.pushState "", document.title, window.location.pathname # nice and clean
