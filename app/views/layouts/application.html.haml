@@ -54,32 +54,37 @@
           = flash[:alert]
     .container
       .row.top_row
-        = yield :container
-        #cart.span3
-          .box
-            .top
-              %h2 Lunch Bag
-            %div.lunch_bag
-          .buy_button
+        .toolplaza
+          = yield :container
+          #cart.span3
+            .box
+              .top
+                %h2 Lunch Bag
+              %div.lunch_bag
+            .buy_button
     #footer
       = render 'layouts/footer'
   %div{id: 'modal', class: 'modal hide fade'}
   %div{id: 'redemption_modal', class: 'redemption_modal modal hide fade'}
 
 :javascript
-  $(".deal").qtip({ // Grab some elements to apply the tooltip to
+  $(".toolplaza").qtip({ // Grab some elements to apply the tooltip to
     content: {
-      title: 'Lunch Bag',
-      text: '<p>All the items and discount prices can be seen here</p>',
+      title: 'Deal',
+      text: '<p>Add a meal to the lunch bag to start seeing your savings</p>',
       button: true
     },
     show: {
       ready: true,
      },
+     hide: {
+        event: 'mouseenter hover',  
+        when:false
+      },
     position: {
-      my: 'right top',  // Position my top left...
-      at: 'center left', // at the bottom right of...
-      target: $(".deal")// my target
+      my: 'bottom left',  // Position my top left...
+      at: 'left left', // at the bottom right of...
+      target: $(".toolplaza")// my target
     }
   });
   
