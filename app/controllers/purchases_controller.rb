@@ -24,7 +24,7 @@ class PurchasesController < ApplicationController
     @purchase.discount_percentage = lunch_bag.discount_percentage
     @purchase.build_purchase_items(lunch_bag.items)
 
-    if @purchase.save#_with_payment
+    if @purchase.save_with_payment
       UserMailer.purchase_email(current_user, @purchase).deliver
       clear_lunch_bag
       render json: current_user.purchases.to_json
