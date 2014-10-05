@@ -9,7 +9,7 @@ end
 gem 'rails', '3.2.11'
 gem 'rake'#, '0.8.7'
 gem 'ckeditor'
-gem 'pg'
+gem 'mysql2'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -31,7 +31,6 @@ gem 'backbone-on-rails'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'stripe'
 gem 'newrelic_rpm'
-gem 'pry-rails', :group => :development
 gem "letter_opener", :group => :development
 gem "mini_magick"
 gem 'bootstrap-sass'

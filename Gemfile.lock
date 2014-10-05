@@ -80,7 +80,6 @@ GEM
     ckeditor (4.0.8)
       mime-types
       orm_adapter
-    coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -156,7 +155,6 @@ GEM
       activerecord (~> 3.1)
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
-    method_source (0.8.2)
     mime-types (1.19)
     mini_magick (3.8.0)
       subexec (~> 0.2.1)
@@ -192,16 +190,9 @@ GEM
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
     orm_adapter (0.4.0)
-    pg (0.17.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
-    pry (0.10.0)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
-    pry-rails (0.3.2)
-      pry (>= 0.9.10)
     rack (1.4.4)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -256,7 +247,6 @@ GEM
     simple_form (2.0.4)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    slop (3.5.0)
     spork (1.0.0rc3)
     spork-rails (3.2.0)
       rails (>= 3.0.0, < 3.3.0)
@@ -306,8 +296,6 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   omniauth-linkedin
-  pg
-  pry-rails
   rails (= 3.2.11)
   rails_12factor
   rake
