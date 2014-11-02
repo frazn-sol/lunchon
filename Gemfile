@@ -19,8 +19,7 @@ gem 'omniauth-linkedin'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activeadmin'
-gem "active_model_serializers", :git => "git://github.com/rails-api/active_model_serializers.git"
-gem 'mysql2'
+gem "active_model_serializers"
 gem 'geocoder'
 gem 'haml-rails'
 gem 'sass'

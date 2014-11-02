@@ -1,5 +1,5 @@
 set :application, "lunchon"
-set :repository,  "git@github.com:davidbl/lunchon.git"
+set :repository,  "git@github.com:frazn-sol/lunchon.git"
 set :deploy_to, '/var/rails/lunchon_staging'
 set :user, 'lunchon'
 
