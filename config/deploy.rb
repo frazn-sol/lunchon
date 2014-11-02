@@ -10,7 +10,7 @@ role :app, "166.78.156.210"                          # This may be the same as y
 role :db,  "166.78.156.210", :primary => true # This is where Rails migrations will run
 
 set :branch, "master"
-set :repository_cache, "git_cache"
+set :repository_cache, "copy"
 set :deploy_via, :remote_cache
 
 set :use_sudo, false
@@ -44,7 +44,7 @@ task :bundle_install, :roles => :app do
 end
 
 task :precompile, :roles => :app, :except => { :no_release => true } do
-  run "cd #{release_path} && rake RAILS_ENV=production assets:precompile"
+  run "cd #{release_path} &&  bundle exec rake RAILS_ENV=production assets:precompile"
   #run "#{try_sudo} find #{shared_path}/assets -type f -exec chmod 664 {} \\;"
   #run "#{try_sudo} find #{shared_path}/assets -type d -exec chmod 775 {} \\;"
 end
