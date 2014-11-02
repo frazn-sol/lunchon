@@ -1,6 +1,5 @@
 GIT
   remote: git://github.com/jnicklas/carrierwave.git
-  revision: 87bd4fcf2843414451bfb85c4f371940bdfb9521
   specs:
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
