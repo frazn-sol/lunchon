@@ -47,13 +47,9 @@ group :assets do
 end
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', '~> 2.12.0'
 end
-
-group :production do
-  gem 'rails_12factor'
-end
-
+  
 gem 'jquery-rails'
 
 group :test do
