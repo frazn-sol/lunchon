@@ -44,7 +44,7 @@ task :bundle_install, :roles => :app do
 end
 
 task :precompile, :roles => :app, :except => { :no_release => true } do
-  run "cd #{release_path} &&  bundle exec rake RAILS_ENV=production assets:precompile"
+  run "cd #{release_path} && export RAILS_ENV=production && bundle exec rake assets:precompile"
   #run "#{try_sudo} find #{shared_path}/assets -type f -exec chmod 664 {} \\;"
   #run "#{try_sudo} find #{shared_path}/assets -type d -exec chmod 775 {} \\;"
 end
