@@ -38,7 +38,6 @@ gem 'bootstrap-sass', '3.1.1.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -46,7 +45,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'haml_coffee_assets'
-end
 
 group :development do
   gem 'capistrano', '~> 2.12.0'
