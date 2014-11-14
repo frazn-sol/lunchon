@@ -34,7 +34,7 @@ gem 'stripe'
 gem 'newrelic_rpm'
 gem "letter_opener", :group => :development
 gem "mini_magick"
-gem 'bootstrap-sass', '3.2.0.2'
+gem 'bootstrap-sass', '3.1.1.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
