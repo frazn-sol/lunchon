@@ -16,7 +16,7 @@
 //= require jquery_ujs
 //= require jquery.qtip.min
 //= require accounting.min
-//= require bootstrap
+//= require bootstrap.min
 //= require underscore
 //= require custom
 //= require backbone
