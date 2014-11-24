@@ -1,12 +1,12 @@
 class DealSerializer < ApplicationSerializer
   attributes :id, :description, :name
   has_one :restaurant
-  attribute :rating
-  attribute :rating_class
-  attribute :original_price
-  attribute :image
-  attribute :featured
-  attribute :remaining
+  # attribute :rating
+  # attribute :rating_class
+  # attribute :original_price
+  # attribute :image
+  # attribute :featured
+  # attribute :remaining
 
   def image
     {
