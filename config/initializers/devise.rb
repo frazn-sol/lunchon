@@ -49,6 +49,7 @@ Devise.setup do |config|
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
   config.strip_whitespace_keys = [ :email ]
+  config.secret_key = '06cf63c323ff03940067a867706dc6646d5c7567e3d7fa722afd7b39e4009a89a48919a560db26dfceab1064f450cff18197a39bd9a555f44daca45825b733cc' 
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
