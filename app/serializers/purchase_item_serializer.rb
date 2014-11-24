@@ -1,10 +1,10 @@
 class PurchaseItemSerializer < ApplicationSerializer
-  attribute :deal_name
-  attribute :restaurant_name
-  attribute :redeemed_at
-  attribute :deal_id
-  attribute :id
-  attribute :purchase_price
+  attributes :deal_name
+  attributes :restaurant_name
+  attributes :redeemed_at
+  attributes :deal_id
+  attributes :id
+  attributes :purchase_price
   has_one :restaurant
   has_many :contract_conditions
 

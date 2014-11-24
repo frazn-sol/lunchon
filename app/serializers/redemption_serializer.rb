@@ -1,10 +1,10 @@
 class RedemptionSerializer < ApplicationSerializer
   attributes :id, :code, :purchase_price, :contract_conditions
-  attribute  :expiration_date
-  attribute  :deal_name
-  attribute  :restaurant_name
-  attribute  :redeemable
-  attribute  :redeemed_at
+  attributes  :expiration_date
+  attributes  :deal_name
+  attributes  :restaurant_name
+  attributes :redeemable
+  attributes  :redeemed_at
 
   def expiration_date
     object.expiration_date.to_s(:long)
